@@ -1,0 +1,241 @@
+# Copyright (C) 2026 Telkari
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Telkari 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-01 00:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: telkari.php
+msgid "Telkari - Social Media Links Manager"
+msgstr ""
+
+#: telkari.php
+msgid "Theme-independent WordPress social media links management plugin."
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Telkari"
+msgstr ""
+
+#: telkari.php
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Design"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Position"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Social Accounts"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Appearance"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Active Design"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Go to the Design tab to change the active design."
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Select Position"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Icon Size (px)"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Icon size in pixels (24-96)."
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Icon Spacing (px)"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Space between icons in pixels (0-48)."
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Icon Style"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Rounded"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Square"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Link Target"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Same Tab"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "New Tab"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Tooltips"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Show platform name on hover"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Select Platform"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Are you sure you want to delete this account?"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Please select a platform and enter a valid URL."
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Enabled"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Edit"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Delete"
+msgstr ""
+
+#: includes/admin/design-selector.php
+msgid "Ribbon"
+msgstr ""
+
+#: includes/admin/design-selector.php
+msgid "Horizontal bar at the bottom of the page with icons in a row."
+msgstr ""
+
+#: includes/admin/design-selector.php
+msgid "Pillar"
+msgstr ""
+
+#: includes/admin/design-selector.php
+msgid "Vertical sidebar strip with icons stacked in a column."
+msgstr ""
+
+#: includes/admin/design-selector.php
+msgid "Orbit"
+msgstr ""
+
+#: includes/admin/design-selector.php
+msgid "Quarter circle trigger in a corner. Icons fan out in an arc on hover or click."
+msgstr ""
+
+#: includes/admin/design-selector.php
+msgid "Positions:"
+msgstr ""
+
+#: includes/admin/social-list-table.php
+msgid "Social Media Accounts"
+msgstr ""
+
+#: includes/admin/social-list-table.php
+msgid "Add, reorder, and manage your social media accounts. Drag to reorder."
+msgstr ""
+
+#: includes/admin/social-list-table.php
+msgid "No social accounts added yet. Add your first account below."
+msgstr ""
+
+#: includes/admin/social-list-table.php
+msgid "Add New Account"
+msgstr ""
+
+#: includes/admin/social-list-table.php
+msgid "Platform"
+msgstr ""
+
+#: includes/admin/social-list-table.php
+msgid "Profile URL"
+msgstr ""
+
+#: includes/admin/social-list-table.php
+msgid "Add Account"
+msgstr ""
+
+#: includes/core/options.php
+msgid "Bottom Left"
+msgstr ""
+
+#: includes/core/options.php
+msgid "Bottom Right"
+msgstr ""
+
+#: includes/core/options.php
+msgid "Bottom Center"
+msgstr ""
+
+#: includes/core/security.php
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#: includes/core/security.php
+msgid "Security check failed."
+msgstr ""
+
+#: includes/frontend/render-icons.php
+msgid "Social Media Links"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Icon Colors"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Override the default brand color for each platform. Leave empty to use the official brand color."
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Main Button (Orbit)"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Reset All Colors"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Bar Background (Ribbon / Pillar)"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Transparent"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "On"
+msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Off"
+msgstr ""

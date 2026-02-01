@@ -1,0 +1,216 @@
+/**
+ * Telkari Design 1: Orbit
+ *
+ * Quarter circle trigger in a corner with icons fanning out
+ * in an arc on hover or click.
+ *
+ * @package Telkari
+ */
+
+.telkari-container.telkari-design-1 {
+	position: fixed;
+	z-index: 9999;
+}
+
+/* Positions */
+.telkari-design-1.telkari-position-bottom-right {
+	bottom: 0;
+	right: 0;
+}
+
+.telkari-design-1.telkari-position-bottom-left {
+	bottom: 0;
+	left: 0;
+}
+
+/* Trigger button - quarter circle */
+.telkari-design-1 .telkari-trigger {
+	width: calc(var(--telkari-icon-size, 2.5rem) * 1.5);
+	height: calc(var(--telkari-icon-size, 2.5rem) * 1.5);
+	background-color: var(--telkari-trigger-bg, #1e293b);
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--telkari-trigger-fg, #fff);
+	position: relative;
+	z-index: 2;
+	padding: 0;
+	transition: opacity 0.2s;
+}
+
+.telkari-design-1 .telkari-trigger:hover {
+	opacity: 0.85;
+}
+
+.telkari-design-1 .telkari-trigger-icon {
+	width: 40%;
+	height: 40%;
+	transition: transform 0.3s;
+	position: absolute;
+	left: 40%;
+	top: 40%;
+}
+
+.telkari-design-1.telkari-open .telkari-trigger-icon {
+	transform: rotate(45deg);
+}
+
+/* Quarter circle shape per position */
+.telkari-design-1.telkari-position-bottom-right .telkari-trigger {
+	border-radius: 100% 0 0 0;
+	margin-left: auto;
+}
+
+.telkari-design-1.telkari-position-bottom-left .telkari-trigger {
+	border-radius: 0 100% 0 0;
+	margin-right: auto;
+}
+
+/* Icons wrapper */
+.telkari-design-1 .telkari-icons-wrapper {
+	position: absolute;
+	bottom: 0;
+	width: 0;
+	height: 0;
+}
+
+.telkari-design-1.telkari-position-bottom-right .telkari-icons-wrapper {
+	right: 0;
+}
+
+.telkari-design-1.telkari-position-bottom-left .telkari-icons-wrapper {
+	left: 0;
+}
+
+/* Icon links - start at trigger corner, fly out to arc positions */
+.telkari-design-1 .telkari-icon-link {
+	--telkari-arc-radius: calc((var(--telkari-icon-size, 2.5rem) + var(--telkari-icon-spacing, 0.5rem)) * var(--telkari-item-count) * 0.7 + var(--telkari-icon-size, 2.5rem));
+	--telkari-angle-pad: calc(1rem + var(--telkari-icon-size, 2.5rem) / 2);
+	--telkari-angle-min: calc(atan2(var(--telkari-angle-pad), var(--telkari-arc-radius)));
+	--telkari-angle-max: calc(90deg - var(--telkari-angle-min));
+	--telkari-angle: calc(var(--telkari-angle-min) + (var(--telkari-angle-max) - var(--telkari-angle-min)) * var(--telkari-item-index) / max(var(--telkari-item-count) - 1, 1));
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--telkari-icon-size, 2.5rem);
+	height: var(--telkari-icon-size, 2.5rem);
+	background-color: var(--telkari-bg, #1e293b);
+	color: var(--telkari-fg, #fff);
+	text-decoration: none;
+	opacity: 0;
+	transform: scale(0.2);
+	transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.2s ease;
+	transition-delay: calc((var(--telkari-item-count) - 1 - var(--telkari-item-index)) * 0.045s);
+}
+
+.telkari-design-1.telkari-open .telkari-icon-link:hover {
+	box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.3);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.35s ease;
+	transition-delay: 0s;
+}
+
+/* Closed state: all icons stacked at the corner (behind trigger) */
+.telkari-design-1.telkari-position-bottom-right .telkari-icon-link {
+	bottom: 0;
+	right: 0;
+}
+
+.telkari-design-1.telkari-position-bottom-left .telkari-icon-link {
+	bottom: 0;
+	left: 0;
+}
+
+/* Open state: icons fly from corner to arc positions while scaling up */
+.telkari-design-1.telkari-position-bottom-right.telkari-open .telkari-icon-link {
+	opacity: 1;
+	transform: translate(
+			calc(-1 * cos(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-icon-size, 2.5rem) / 2),
+			calc(-1 * sin(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-icon-size, 2.5rem) / 2)
+		)
+		scale(1);
+}
+
+.telkari-design-1.telkari-position-bottom-left.telkari-open .telkari-icon-link {
+	opacity: 1;
+	transform: translate(
+			calc(cos(var(--telkari-angle)) * var(--telkari-arc-radius) - var(--telkari-icon-size, 2.5rem) / 2),
+			calc(-1 * sin(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-icon-size, 2.5rem) / 2)
+		)
+		scale(1);
+}
+
+/* Hover: scale in place without shifting position */
+.telkari-design-1.telkari-position-bottom-right.telkari-open .telkari-icon-link:hover {
+	transform: translate(
+			calc(-1 * cos(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-icon-size, 2.5rem) / 2),
+			calc(-1 * sin(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-icon-size, 2.5rem) / 2)
+		)
+		scale(1.15);
+}
+
+.telkari-design-1.telkari-position-bottom-left.telkari-open .telkari-icon-link:hover {
+	transform: translate(
+			calc(cos(var(--telkari-angle)) * var(--telkari-arc-radius) - var(--telkari-icon-size, 2.5rem) / 2),
+			calc(-1 * sin(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-icon-size, 2.5rem) / 2)
+		)
+		scale(1.15);
+}
+
+/* Forward stagger on open, reverse stagger on close */
+.telkari-design-1.telkari-open .telkari-icon-link {
+	transition-delay: calc(var(--telkari-item-index) * 0.045s);
+}
+
+/* Icon style: rounded */
+.telkari-design-1.telkari-style-rounded .telkari-icon-link {
+	border-radius: 50%;
+}
+
+/* Icon style: square */
+.telkari-design-1.telkari-style-square .telkari-icon-link {
+	border-radius: 0.125rem;
+}
+
+/* SVG icon sizing */
+.telkari-design-1 .telkari-icon {
+	width: 55%;
+	height: 55%;
+	fill: currentColor;
+}
+
+/* Tooltips */
+.telkari-design-1.telkari-has-tooltips .telkari-icon-link {
+	position: absolute;
+}
+
+.telkari-design-1.telkari-has-tooltips .telkari-icon-link::after {
+	content: attr(title);
+	position: absolute;
+	white-space: nowrap;
+	padding: 0.25rem 0.5rem;
+	background-color: #1e293b;
+	color: #fff;
+	font-size: 0.75rem;
+	line-height: 1.4;
+	border-radius: 0.125rem;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.15s;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.telkari-design-1.telkari-has-tooltips .telkari-icon-link:hover::after {
+	opacity: 1;
+}
+
+.telkari-design-1.telkari-position-bottom-right.telkari-has-tooltips .telkari-icon-link::after {
+	right: calc(100% + 0.5rem);
+}
+
+.telkari-design-1.telkari-position-bottom-left.telkari-has-tooltips .telkari-icon-link::after {
+	left: calc(100% + 0.5rem);
+}

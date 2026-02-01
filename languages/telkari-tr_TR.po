@@ -1,0 +1,193 @@
+# Turkish translation for Telkari plugin.
+# Copyright (C) 2026 Tercan Keskin
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Telkari 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-01 00:00+0000\n"
+"PO-Revision-Date: 2026-02-01 18:50+0300\n"
+"Last-Translator: \n"
+"Language-Team: Turkish\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.8\n"
+
+#: telkari.php
+msgid "Telkari - Social Media Links Manager"
+msgstr "Telkârî - Sosyal Medya Bağlantı Yöneticisi"
+
+#: telkari.php
+msgid "Theme-independent WordPress social media links management plugin."
+msgstr "Temadan bağımsız WordPress sosyal medya bağlantı yönetim eklentisi."
+
+msgid "Telkari"
+msgstr "Telkârî"
+
+msgid "Settings"
+msgstr "Ayarlar"
+
+msgid "Design"
+msgstr "Tasarım"
+
+msgid "Position"
+msgstr "Konum"
+
+msgid "Social Accounts"
+msgstr "Sosyal Hesaplar"
+
+msgid "Appearance"
+msgstr "Görünüm"
+
+msgid "Documentation"
+msgstr "Dokümantasyon"
+
+msgid "Active Design"
+msgstr "Aktif Tasarım"
+
+msgid "Go to the Design tab to change the active design."
+msgstr "Aktif tasarımı değiştirmek için Tasarım sekmesine gidin."
+
+msgid "Select Position"
+msgstr "Konum Seçin"
+
+msgid "Icon Size (px)"
+msgstr "İkon Boyutu (px)"
+
+msgid "Icon size in pixels (24-96)."
+msgstr "Piksel cinsinden ikon boyutu (24-96)."
+
+msgid "Icon Spacing (px)"
+msgstr "İkon Aralığı (px)"
+
+msgid "Space between icons in pixels (0-48)."
+msgstr "İkonlar arası boşluk, piksel (0-48)."
+
+msgid "Icon Style"
+msgstr "İkon Stili"
+
+msgid "Rounded"
+msgstr "Yuvarlak"
+
+msgid "Square"
+msgstr "Köşeli"
+
+msgid "Link Target"
+msgstr "Bağlantı Hedefi"
+
+msgid "Same Tab"
+msgstr "Aynı Sekme"
+
+msgid "New Tab"
+msgstr "Yeni Sekme"
+
+msgid "Tooltips"
+msgstr "İpuçları"
+
+msgid "Show platform name on hover"
+msgstr "Üzerine gelindiğinde platform adını göster"
+
+msgid "Select Platform"
+msgstr "Platform Seçin"
+
+msgid "Are you sure you want to delete this account?"
+msgstr "Bu hesabı silmek istediğinizden emin misiniz?"
+
+msgid "Please select a platform and enter a valid URL."
+msgstr "Lütfen bir platform seçin ve geçerli bir URL girin."
+
+msgid "Enabled"
+msgstr "Aktif"
+
+msgid "Edit"
+msgstr "Düzenle"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "Ribbon"
+msgstr "Ribbon"
+
+msgid "Horizontal bar at the bottom of the page with icons in a row."
+msgstr "Sayfa altında ikonların yan yana sıralandığı yatay çubuk."
+
+msgid "Pillar"
+msgstr "Pillar"
+
+msgid "Vertical sidebar strip with icons stacked in a column."
+msgstr "İkonların alt alta sıralandığı dikey çubuk."
+
+msgid "Positions:"
+msgstr "Konumlar:"
+
+msgid "Social Media Accounts"
+msgstr "Sosyal Medya Hesapları"
+
+msgid "Add, reorder, and manage your social media accounts. Drag to reorder."
+msgstr "Sosyal medya hesaplarınızı ekleyin, sıralayın ve yönetin. Sıralamak için sürükleyin."
+
+msgid "No social accounts added yet. Add your first account below."
+msgstr "Henüz sosyal hesap eklenmedi. Aşağıdan ilk hesabınızı ekleyin."
+
+msgid "Add New Account"
+msgstr "Yeni Hesap Ekle"
+
+msgid "Platform"
+msgstr "Platform"
+
+msgid "Profile URL"
+msgstr "Profil Adresi"
+
+msgid "Add Account"
+msgstr "Hesap Ekle"
+
+msgid "Bottom Left"
+msgstr "Sol Alt"
+
+msgid "Bottom Right"
+msgstr "Sağ Alt"
+
+msgid "Bottom Center"
+msgstr "Alt Orta"
+
+msgid "You do not have permission to access this page."
+msgstr "Bu sayfaya erişim izniniz yok."
+
+msgid "Security check failed."
+msgstr "Güvenlik kontrolü başarısız."
+
+msgid "Social Media Links"
+msgstr "Sosyal Medya Bağlantıları"
+
+msgid "Orbit"
+msgstr "Orbit"
+
+msgid "Quarter circle trigger in a corner. Icons fan out in an arc on hover or click."
+msgstr "Köşede çeyrek daire tetikleyici. İkonlar üzerine gelindiğinde veya tıklandığında yay şeklinde açılır."
+
+msgid "Icon Colors"
+msgstr "İkon Renkleri"
+
+msgid "Override the default brand color for each platform. Leave empty to use the official brand color."
+msgstr "Her platform için varsayılan marka rengini değiştirin. Resmi marka rengini kullanmak için boş bırakın."
+
+msgid "Main Button (Orbit)"
+msgstr "Ana Buton (Orbit)"
+
+msgid "Reset All Colors"
+msgstr "Tüm Renkleri Sıfırla"
+
+msgid "Bar Background (Ribbon / Pillar)"
+msgstr "Çubuk Arka Planı (Ribbon / Pillar)"
+
+msgid "On"
+msgstr "Açık"
+
+msgid "Off"
+msgstr "Kapalı"
+
+msgid "Transparent"
+msgstr "Saydam"

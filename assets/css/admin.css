@@ -1,0 +1,446 @@
+/**
+ * Telkari Admin Styles
+ *
+ * @package Telkari
+ */
+
+/* ── General ── */
+
+.toplevel_page_telkari-settings {}
+
+.toplevel_page_telkari-settings #wpcontent {
+    padding-left: 0;
+}
+
+.toplevel_page_telkari-settings .wrap {
+    margin: 0;
+}
+
+.toplevel_page_telkari-settings .wrap .telkari-admin-header {
+	align-items: center;
+    background: #003999;
+    padding: 2rem;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.toplevel_page_telkari-settings .wrap h1 {
+	color: #fff;
+	font-size: 2.25rem;
+	font-weight: 100;
+}
+
+.toplevel_page_telkari-settings .wrap a:hover {
+	text-decoration: underline;
+}
+
+.toplevel_page_telkari-settings .wrap .telkari-admin-header-action {
+	color: #fff;
+	text-decoration: none;
+	font-size: .75rem;
+	font-weight: 400;
+}
+
+.toplevel_page_telkari-settings .wrap h1 .telkari-icon {
+	background-color: #fff;
+	border-radius: .5rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: .5rem;
+	padding: .325rem;
+	width: 2rem;
+	height: 2rem;
+}
+
+.toplevel_page_telkari-settings .wrap h1 .telkari-icon:before {
+	background-image: url("../icons/telkari-1.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	content: "";
+	display: inline-block;
+	width: 1.75rem;
+	height: 1.75rem;
+}
+
+.toplevel_page_telkari-settings .wrap .nav-tab-wrapper,
+.toplevel_page_telkari-settings .wrap form {
+    padding: 0 2rem;
+}
+
+
+/* ── Settings Panel ── */
+
+.telkari-settings-panel {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	max-width: 50rem;
+	margin: 1.5rem 0;
+}
+
+.telkari-settings-panel .telkari-setting-card {
+	background: #fff;
+	border: 0.0625rem solid #dcdcde;
+	border-radius: 0.125rem;
+	padding: 1rem 1.25rem;
+    border-bottom-width: 0;
+}
+
+.telkari-settings-panel .telkari-setting-card:last-child {
+    border-bottom-width: 1px;
+}
+
+.telkari-setting-label {
+	display: block;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+	color: #1e1e1e;
+}
+
+.telkari-setting-description {
+	font-size: 0.75rem;
+	color: #646970;
+	margin-top: 0.25rem;
+	display: block;
+}
+
+.telkari-settings-section-title {
+	font-size: 0.875rem;
+	font-weight: 600;
+	margin: 1.5rem 0 0.5rem;
+}
+
+.telkari-badge {
+	display: inline-block;
+	padding: 0.25rem 0.625rem;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	background: #f0f0f1;
+	border: 0.0625rem solid #dcdcde;
+	border-radius: 0.125rem;
+	color: #1e1e1e;
+}
+
+/* ── Design Selector ── */
+
+.telkari-design-selector {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem;
+	margin: 1.5rem 0;
+}
+
+.telkari-design-option {
+	display: block;
+	border: 0.0625rem solid #dcdcde;
+	border-radius: 0.125rem;
+	padding: 1rem;
+	cursor: pointer;
+	transition: border-color 0.15s;
+	background: #fff;
+}
+
+.telkari-design-option:hover {
+	border-color: #2271b1;
+}
+
+.telkari-design-option--active {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 0.0625rem #2271b1;
+}
+
+.telkari-design-radio {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.telkari-design-preview {
+	margin-bottom: 0.75rem;
+}
+
+.telkari-preview-svg {
+	width: 100%;
+	height: auto;
+	border-radius: 0.125rem;
+}
+
+.telkari-design-title {
+	margin: 0 0 0.25rem;
+	font-size: 0.875rem;
+}
+
+.telkari-design-desc {
+	margin: 0 0 0.5rem;
+	color: #646970;
+	font-size: 0.8125rem;
+}
+
+.telkari-design-positions {
+	margin: 0;
+	color: #646970;
+	font-size: 0.75rem;
+}
+
+/* ── Social Accounts List ── */
+
+.telkari-social-accounts {
+	max-width: 50rem;
+}
+
+.telkari-sortable-list {
+	margin: 1rem 0;
+}
+
+.telkari-account-row {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.625rem 0.75rem;
+	background: #fff;
+	border: 0.0625rem solid #dcdcde;
+	border-radius: 0.125rem;
+	margin-bottom: 0.25rem;
+}
+
+.telkari-account-row.sortable-ghost {
+	opacity: 0.4;
+}
+
+.telkari-drag-handle {
+	color: #8c8f94;
+	cursor: grab;
+}
+
+.telkari-drag-handle:active {
+	cursor: grabbing;
+}
+
+.telkari-account-info {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.125rem;
+	min-width: 0;
+}
+
+.telkari-account-platform {
+	font-size: 0.875rem;
+}
+
+.telkari-account-url {
+	font-size: 0.75rem;
+	color: #646970;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.telkari-account-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	flex-shrink: 0;
+}
+
+.telkari-toggle {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	font-size: 0.8125rem;
+}
+
+.telkari-empty-state {
+	padding: 1.5rem;
+	text-align: center;
+	color: #646970;
+	background: #f6f7f7;
+	border-radius: 0.125rem;
+}
+
+/* ── Add Account Form ── */
+
+.telkari-add-account {
+	margin-top: 1.5rem;
+	padding: 1rem;
+	background: #f6f7f7;
+	border-radius: 0.125rem;
+}
+
+.telkari-add-account h3 {
+	margin-top: 0;
+	font-size: 0.875rem;
+}
+
+.telkari-add-form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 0.75rem;
+}
+
+.telkari-add-form-row {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.telkari-add-form-row label {
+	font-size: 0.8125rem;
+	font-weight: 600;
+}
+
+.telkari-add-form-row select,
+.telkari-add-form-row input[type="url"] {
+	min-width: 14rem;
+}
+
+/* ── Range Slider ── */
+
+.telkari-range-field {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	max-width: 20rem;
+}
+
+.telkari-range-input {
+	flex: 1;
+	-webkit-appearance: none;
+	appearance: none;
+	height: 0.25rem;
+	background: #dcdcde;
+	border-radius: 0.125rem;
+	outline: none;
+	cursor: pointer;
+}
+
+.telkari-range-input::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 1rem;
+	height: 1rem;
+	background: #2271b1;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.telkari-range-input::-moz-range-thumb {
+	width: 1rem;
+	height: 1rem;
+	background: #2271b1;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.telkari-range-input:hover::-webkit-slider-thumb {
+	background: #135e96;
+}
+
+.telkari-range-input:hover::-moz-range-thumb {
+	background: #135e96;
+}
+
+.telkari-range-value {
+	min-width: 2rem;
+	text-align: center;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: #1e1e1e;
+}
+
+/* ── Button Group ── */
+
+.telkari-btn-group {
+	display: inline-flex;
+	border: 0.0625rem solid #dcdcde;
+	border-radius: 0.125rem;
+	overflow: hidden;
+    border-color: #2271b1;
+    border-radius: .325rem;
+    box-shadow: 0 0 .125rem #2271b1;
+}
+
+
+.telkari-btn-option {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.375rem 0.875rem;
+	font-size: 0.8125rem;
+	cursor: pointer;
+	background: #fff;
+	border-right: 0.0625rem solid #dcdcde;
+	color: #50575e;
+	transition: background-color 0.15s, color 0.15s;
+	user-select: none;
+}
+
+.telkari-btn-option:last-child {
+	border-right: none;
+}
+
+.telkari-btn-option input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.telkari-btn-option:hover {
+	background: #f6f7f7;
+}
+
+.telkari-btn-option--active {
+	background: #2271b1;
+	color: #fff;
+	border-color: #2271b1;
+}
+
+.telkari-btn-option--active:hover {
+	background: #135e96;
+}
+
+/* ── Color Grid ── */
+
+.telkari-color-highlight {
+	display: flex;
+    gap: 3rem;
+	padding: 0.75rem;
+	background: #fff;
+	border: 0.0625rem solid #dcdcde;
+	border-radius: 0.125rem;
+	margin-bottom: 1rem;
+}
+
+.telkari-color-grid {
+    background: #fff;
+    border: 0.0625rem solid #dcdcde;
+    border-radius: 0.125rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+	gap: 1rem;
+    padding: 0.75rem;
+}
+
+.telkari-color-item label {
+	display: block;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	margin-bottom: 0.25rem;
+}
+
+.telkari-transparent-toggle {
+	display: inline-flex !important;
+	align-items: center;
+	gap: 0.25rem;
+	font-weight: 400 !important;
+	margin-top: 0.375rem;
+	cursor: pointer;
+}

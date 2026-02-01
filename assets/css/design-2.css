@@ -1,0 +1,102 @@
+/**
+ * Telkari Design 2: Ribbon
+ *
+ * Horizontal strip at the bottom of the page with icons in a row.
+ *
+ * @package Telkari
+ */
+
+.telkari-container.telkari-design-2 {
+	position: fixed;
+	z-index: 9999;
+}
+
+/* Positions */
+.telkari-design-2.telkari-position-bottom-left {
+	bottom: 1.5rem;
+	left: 1.5rem;
+}
+
+.telkari-design-2.telkari-position-bottom-right {
+	bottom: 1.5rem;
+	right: 1.5rem;
+}
+
+.telkari-design-2.telkari-position-bottom-center {
+	bottom: 1.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* Icon wrapper: horizontal bar with background */
+.telkari-design-2 .telkari-icons-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: var(--telkari-icon-spacing, 0.5rem);
+	padding: 0.5rem 0.75rem;
+	background-color: var(--telkari-wrapper-bg, rgba(30, 41, 59, 0.95));
+	border-radius: 0.125rem;
+}
+
+/* Icon links */
+.telkari-design-2 .telkari-icon-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--telkari-icon-size, 2.5rem);
+	height: var(--telkari-icon-size, 2.5rem);
+	background-color: var(--telkari-bg, transparent);
+	color: var(--telkari-fg, #fff);
+	text-decoration: none;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.telkari-design-2 .telkari-icon-link:hover {
+	transform: scale(1.15);
+	box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+}
+
+/* Icon style: rounded */
+.telkari-design-2.telkari-style-rounded .telkari-icon-link {
+	border-radius: 50%;
+}
+
+/* Icon style: square */
+.telkari-design-2.telkari-style-square .telkari-icon-link {
+	border-radius: 0.125rem;
+}
+
+/* SVG icon sizing */
+.telkari-design-2 .telkari-icon {
+	width: 60%;
+	height: 60%;
+	fill: currentColor;
+}
+
+/* Tooltips (CSS only) */
+.telkari-design-2.telkari-has-tooltips .telkari-icon-link {
+	position: relative;
+}
+
+.telkari-design-2.telkari-has-tooltips .telkari-icon-link::after {
+	content: attr(title);
+	position: absolute;
+	bottom: calc(100% + 0.5rem);
+	left: 50%;
+	transform: translateX(-50%);
+	white-space: nowrap;
+	padding: 0.25rem 0.5rem;
+	background-color: #1e293b;
+	color: #fff;
+	font-size: 0.75rem;
+	line-height: 1.4;
+	border-radius: 0.125rem;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.15s;
+}
+
+.telkari-design-2.telkari-has-tooltips .telkari-icon-link:hover::after {
+	opacity: 1;
+}

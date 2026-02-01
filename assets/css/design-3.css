@@ -1,0 +1,108 @@
+/**
+ * Telkari Design 3: Pillar
+ *
+ * Vertical sidebar strip with icons stacked in a column.
+ *
+ * @package Telkari
+ */
+
+.telkari-container.telkari-design-3 {
+	position: fixed;
+	z-index: 9999;
+}
+
+/* Positions */
+.telkari-design-3.telkari-position-bottom-left {
+	bottom: 1.5rem;
+	left: 1.5rem;
+}
+
+.telkari-design-3.telkari-position-bottom-right {
+	bottom: 1.5rem;
+	right: 1.5rem;
+}
+
+/* Icon wrapper: vertical bar with background */
+.telkari-design-3 .telkari-icons-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--telkari-icon-spacing, 0.5rem);
+	padding: 0.75rem 0.5rem;
+	background-color: var(--telkari-wrapper-bg, rgba(30, 41, 59, 0.95));
+	border-radius: 0.125rem;
+}
+
+/* Icon links */
+.telkari-design-3 .telkari-icon-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--telkari-icon-size, 2.5rem);
+	height: var(--telkari-icon-size, 2.5rem);
+	background-color: var(--telkari-bg, transparent);
+	color: var(--telkari-fg, #fff);
+	text-decoration: none;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.telkari-design-3 .telkari-icon-link:hover {
+	transform: scale(1.15);
+	box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+}
+
+/* Icon style: rounded */
+.telkari-design-3.telkari-style-rounded .telkari-icon-link {
+	border-radius: 50%;
+}
+
+/* Icon style: square */
+.telkari-design-3.telkari-style-square .telkari-icon-link {
+	border-radius: 0.125rem;
+}
+
+/* SVG icon sizing */
+.telkari-design-3 .telkari-icon {
+	width: 60%;
+	height: 60%;
+	fill: currentColor;
+}
+
+/* Tooltips (CSS only) */
+.telkari-design-3.telkari-has-tooltips .telkari-icon-link {
+	position: relative;
+}
+
+.telkari-design-3.telkari-has-tooltips .telkari-icon-link::after {
+	content: attr(title);
+	position: absolute;
+	white-space: nowrap;
+	padding: 0.25rem 0.5rem;
+	background-color: #1e293b;
+	color: #fff;
+	font-size: 0.75rem;
+	line-height: 1.4;
+	border-radius: 0.125rem;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.15s;
+}
+
+.telkari-design-3.telkari-has-tooltips .telkari-icon-link:hover::after {
+	opacity: 1;
+}
+
+/* Tooltip position depends on container position */
+.telkari-design-3.telkari-position-bottom-right.telkari-has-tooltips .telkari-icon-link::after {
+	right: calc(100% + 0.5rem);
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.telkari-design-3.telkari-position-bottom-left.telkari-has-tooltips .telkari-icon-link::after {
+	left: calc(100% + 0.5rem);
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+

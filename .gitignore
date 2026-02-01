@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Documentation
+docs/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Claude Code
+.claude/
+
+# Node (if added later)
+node_modules/
+package-lock.json
+
+# Composer (if added later)
+vendor/
+composer.lock
+
+# Build artifacts
+*.map
