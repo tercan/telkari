@@ -15,10 +15,10 @@ delete_option( 'telkari_settings' );
 
 // Multisite support.
 if ( is_multisite() ) {
-	$sites = get_sites( array( 'number' => 0 ) );
+	$telkari_sites = get_sites( array( 'number' => 0 ) );
 
-	foreach ( $sites as $site ) {
-		switch_to_blog( $site->blog_id );
+	foreach ( $telkari_sites as $telkari_site ) {
+		switch_to_blog( $telkari_site->blog_id );
 		delete_option( 'telkari_settings' );
 		restore_current_blog();
 	}

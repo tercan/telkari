@@ -17,15 +17,12 @@ msgstr ""
 "X-Generator: Poedit 3.8\n"
 
 #: telkari.php
-msgid "Telkari - Social Media Links Manager"
-msgstr "Telkârî - Sosyal Medya Bağlantı Yöneticisi"
+msgid "Telkari"
+msgstr "Telkârî"
 
 #: telkari.php
 msgid "Theme-independent WordPress social media links management plugin."
 msgstr "Temadan bağımsız WordPress sosyal medya bağlantı yönetim eklentisi."
-
-msgid "Telkari"
-msgstr "Telkârî"
 
 msgid "Settings"
 msgstr "Ayarlar"

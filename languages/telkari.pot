@@ -13,15 +13,11 @@ msgstr ""
 "Language-Team: \n"
 
 #: telkari.php
-msgid "Telkari - Social Media Links Manager"
+msgid "Telkari"
 msgstr ""
 
 #: telkari.php
 msgid "Theme-independent WordPress social media links management plugin."
-msgstr ""
-
-#: includes/admin/settings-page.php
-msgid "Telkari"
 msgstr ""
 
 #: telkari.php
