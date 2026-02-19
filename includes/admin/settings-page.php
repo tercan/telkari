@@ -89,7 +89,6 @@ function telkari_enqueue_admin_assets( $hook ) {
 			'confirmDelete'  => __( 'Are you sure you want to delete this account?', 'telkari' ),
 			'fillFields'     => __( 'Please select a platform and enter a valid URL.', 'telkari' ),
 			'enabled'        => __( 'Enabled', 'telkari' ),
-			'edit'           => __( 'Edit', 'telkari' ),
 			'delete'         => __( 'Delete', 'telkari' ),
 		),
 	) );
@@ -105,7 +104,7 @@ function telkari_render_settings_page() {
 	}
 
 	$settings   = telkari_get_settings();
-	$active_tab = isset( $_GET['tab'] ) ? sanitize_key( $_GET['tab'] ) : 'design';
+	$active_tab = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : 'design'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Tab navigation only, no data processing.
 	$tabs       = array(
 		'design'     => __( 'Design', 'telkari' ),
 		'accounts'   => __( 'Social Accounts', 'telkari' ),
@@ -119,12 +118,12 @@ function telkari_render_settings_page() {
 				<i class="telkari-icon"></i>
 				<?php echo esc_html( get_admin_page_title() ); ?> 
 				<a href="https://tercan.net/telkari" target="_blank" class="telkari-admin-header-action" title="View Changelog">
-					(v<?php echo TELKARI_VERSION; ?>)
+					(v<?php echo esc_html( TELKARI_VERSION ); ?>)
 				</a>
 			</h1>
 			<div class="telkari-admin-header-actions">
 				<a href="https://tercan.net/telkari" target="_blank" class="telkari-admin-header-action" title="Visit Documentation">
-					<?php echo __( 'Documentation', 'telkari' ); ?>
+					<?php echo esc_html__( 'Documentation', 'telkari' ); ?>
 				</a>
 			</div>
 		</div>

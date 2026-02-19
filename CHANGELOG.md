@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.1] - 2026-02-19 18:06
+
+### Changed
+
+- Updated documentation wording to reflect the current social account flow (add/delete).
+- Bumped plugin version references to `0.1.1`.
+
+### Removed
+
+- Removed unused security helper file: `includes/core/security.php`.
+- Removed unused `Edit` i18n key from localized admin script payload.
+
 ## [0.1.0] - 2026-02-02 18:55:00
 
 ### Added

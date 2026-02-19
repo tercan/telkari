@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Telkari - Social Media Links Manager
+ * Plugin Name: Telkari
  * Plugin URI: https://tercan.net/telkari
  * Description: Theme-independent WordPress social media links management plugin.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Requires at least: 5.9
  * Requires PHP: 7.4
  * Author: Tercan Keskin
@@ -18,23 +18,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TELKARI_VERSION', '0.1.0' );
+define( 'TELKARI_VERSION', '0.1.1' );
 define( 'TELKARI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TELKARI_URL', plugin_dir_url( __FILE__ ) );
 define( 'TELKARI_BASENAME', plugin_basename( __FILE__ ) );
 
-/**
- * Load plugin text domain for translations.
- */
-function telkari_load_textdomain() {
-	load_plugin_textdomain( 'telkari', false, dirname( TELKARI_BASENAME ) . '/languages' );
-}
-add_action( 'init', 'telkari_load_textdomain' );
-
 // Core includes (always loaded).
 require_once TELKARI_PATH . 'includes/core/options.php';
 require_once TELKARI_PATH . 'includes/core/sanitization.php';
-require_once TELKARI_PATH . 'includes/core/security.php';
 
 // Admin includes.
 if ( is_admin() ) {

@@ -1,8 +1,8 @@
-# Telkari - Social Media Links Manager
+# Telkari
 
 Theme-independent WordPress social media links management plugin. Display your social media accounts anywhere on your site with multiple design layouts, customizable positions, and per-platform brand colors.
 
-**Version:** 0.1.0
+**Version:** 0.1.1
 **Requires WordPress:** 5.9+
 **Requires PHP:** 7.4+
 **License:** GPLv2 or later
@@ -37,7 +37,7 @@ Instagram, YouTube, Facebook, X (Twitter), LinkedIn, TikTok, GitHub, Pinterest, 
 
 ### Social Account Management
 
-- Add, edit, and delete social media accounts from the admin panel
+- Add and delete social media accounts from the admin panel
 - Drag-and-drop reordering via SortableJS
 - Per-account enable/disable toggle
 - URL validation on account creation
