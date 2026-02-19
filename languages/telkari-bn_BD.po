@@ -1,0 +1,187 @@
+# Bengali translation for Telkari plugin.
+# Copyright (C) 2026 Tercan Keskin
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Telkari 0.1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-01 00:00+0000\n"
+"PO-Revision-Date: 2026-02-19 18:26\n"
+"Last-Translator: \n"
+"Language-Team: Bengali\n"
+"Language: bn_BD\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Telkari"
+msgstr "Telkari"
+
+msgid "Theme-independent WordPress social media links management plugin."
+msgstr "Theme-swadhin WordPress social media link byabosthapona plugin."
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Design"
+msgstr "Design"
+
+msgid "Position"
+msgstr "Obosthan"
+
+msgid "Social Accounts"
+msgstr "Social account"
+
+msgid "Appearance"
+msgstr "Chehara"
+
+msgid "Documentation"
+msgstr "Documentation"
+
+msgid "Active Design"
+msgstr "Sokriyo design"
+
+msgid "Go to the Design tab to change the active design."
+msgstr "Sokriyo design poriborton korte Design tab e jan."
+
+msgid "Select Position"
+msgstr "Obosthan nirbachon korun"
+
+msgid "Icon Size (px)"
+msgstr "Icon size (px)"
+
+msgid "Icon size in pixels (24-96)."
+msgstr "Icon er size pixel e (24-96)."
+
+msgid "Icon Spacing (px)"
+msgstr "Icon er byabodhan (px)"
+
+msgid "Space between icons in pixels (0-48)."
+msgstr "Icon gulor moddhe byabodhan pixel e (0-48)."
+
+msgid "Icon Style"
+msgstr "Icon style"
+
+msgid "Rounded"
+msgstr "Golakar"
+
+msgid "Square"
+msgstr "Chouko"
+
+msgid "Link Target"
+msgstr "Link target"
+
+msgid "Same Tab"
+msgstr "Eki tab"
+
+msgid "New Tab"
+msgstr "Notun tab"
+
+msgid "Tooltips"
+msgstr "Tooltip"
+
+msgid "Show platform name on hover"
+msgstr "Hover korle platform er naam dekhun"
+
+msgid "Select Platform"
+msgstr "Platform nirbachon korun"
+
+msgid "Are you sure you want to delete this account?"
+msgstr "Apni ki nishchit je ei account ti muche felte chan?"
+
+msgid "Please select a platform and enter a valid URL."
+msgstr "Onugroho kore ekti platform nirbachon korun ebong ekti valid URL din."
+
+msgid "Enabled"
+msgstr "Sokriyo"
+
+msgid "Edit"
+msgstr "Sompadona"
+
+msgid "Delete"
+msgstr "Muchun"
+
+msgid "Ribbon"
+msgstr "Ribbon"
+
+msgid "Horizontal bar at the bottom of the page with icons in a row."
+msgstr "Page er niche onubhomik bar, jekhane icon gulo ek sari te thake."
+
+msgid "Pillar"
+msgstr "Pillar"
+
+msgid "Vertical sidebar strip with icons stacked in a column."
+msgstr "Ullombho sidebar strip jekhane icon gulo ekti column e sajano."
+
+msgid "Positions:"
+msgstr "Obosthansomuho:"
+
+msgid "Social Media Accounts"
+msgstr "Social media account"
+
+msgid "Add, reorder, and manage your social media accounts. Drag to reorder."
+msgstr "Apnar social media account jog korun, punorbinyas korun ebong porichalona korun. Punorbinyas korte drag korun."
+
+msgid "No social accounts added yet. Add your first account below."
+msgstr "Ekhono kono social account jog kora hoyni. Niche apnar prothom account jog korun."
+
+msgid "Add New Account"
+msgstr "Notun account jog korun"
+
+msgid "Platform"
+msgstr "Platform"
+
+msgid "Profile URL"
+msgstr "Profile URL"
+
+msgid "Add Account"
+msgstr "Account jog korun"
+
+msgid "Bottom Left"
+msgstr "Niche bame"
+
+msgid "Bottom Right"
+msgstr "Niche dane"
+
+msgid "Bottom Center"
+msgstr "Niche majkhane"
+
+msgid "You do not have permission to access this page."
+msgstr "Ei patai probesh er onumoti apnar nei."
+
+msgid "Security check failed."
+msgstr "Nirapotta jachai byartho hoyeche."
+
+msgid "Social Media Links"
+msgstr "Social media link"
+
+msgid "Orbit"
+msgstr "Orbit"
+
+msgid "Quarter circle trigger in a corner. Icons fan out in an arc on hover or click."
+msgstr "Kone e quarter-circle trigger. Hover ba click e icon gulo arc akare choriye jay."
+
+msgid "Icon Colors"
+msgstr "Icon er rong"
+
+msgid "Override the default brand color for each platform. Leave empty to use the official brand color."
+msgstr "Protiti platform er default brand rong poriborton korun. Official brand rong byabohar korte khali rakhun."
+
+msgid "Main Button (Orbit)"
+msgstr "Mul button (Orbit)"
+
+msgid "Reset All Colors"
+msgstr "Shob rong reset korun"
+
+msgid "Bar Background (Ribbon / Pillar)"
+msgstr "Bar background (Ribbon / Pillar)"
+
+msgid "On"
+msgstr "Chalu"
+
+msgid "Off"
+msgstr "Bondho"
+
+msgid "Transparent"
+msgstr "Swachchho"

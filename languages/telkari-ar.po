@@ -1,0 +1,187 @@
+# Arabic translation for Telkari plugin.
+# Copyright (C) 2026 Tercan Keskin
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Telkari 0.1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-01 00:00+0000\n"
+"PO-Revision-Date: 2026-02-19 18:26\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0?0:n==1?1:n==2?2:n%100>=3 && n%100<=10?3:n%100>=11 && n%100<=99?4:5;\n"
+
+msgid "Telkari"
+msgstr "Telkari"
+
+msgid "Theme-independent WordPress social media links management plugin."
+msgstr "Idafa WordPress mustaqilla an al-qalab li-idarat rawabit wasail al-tawasul al-ijtimaei."
+
+msgid "Settings"
+msgstr "Al-iidadat"
+
+msgid "Design"
+msgstr "Al-tasmim"
+
+msgid "Position"
+msgstr "Al-mawdi"
+
+msgid "Social Accounts"
+msgstr "Al-hisabat al-ijtimaeia"
+
+msgid "Appearance"
+msgstr "Al-mazhar"
+
+msgid "Documentation"
+msgstr "Al-wathaeq"
+
+msgid "Active Design"
+msgstr "Al-tasmim al-nashit"
+
+msgid "Go to the Design tab to change the active design."
+msgstr "Intaqil ila tabwib \"al-tasmim\" litaghyir al-tasmim al-nashit."
+
+msgid "Select Position"
+msgstr "Ikhtar al-mawdi"
+
+msgid "Icon Size (px)"
+msgstr "Hajm al-ayqona (px)"
+
+msgid "Icon size in pixels (24-96)."
+msgstr "Hajm al-ayqona bil-biksel (24-96)."
+
+msgid "Icon Spacing (px)"
+msgstr "Tabaud al-ayqonat (px)"
+
+msgid "Space between icons in pixels (0-48)."
+msgstr "Al-masafa bayn al-ayqonat bil-biksel (0-48)."
+
+msgid "Icon Style"
+msgstr "Namat al-ayqona"
+
+msgid "Rounded"
+msgstr "Mudawwar"
+
+msgid "Square"
+msgstr "Murabba"
+
+msgid "Link Target"
+msgstr "Hadaf al-rabit"
+
+msgid "Same Tab"
+msgstr "Nafs al-tabwib"
+
+msgid "New Tab"
+msgstr "Tabwib jadid"
+
+msgid "Tooltips"
+msgstr "Talmiihat"
+
+msgid "Show platform name on hover"
+msgstr "Izhhar ism al-mansa inda al-murur"
+
+msgid "Select Platform"
+msgstr "Ikhtar al-mansa"
+
+msgid "Are you sure you want to delete this account?"
+msgstr "Hal anta mutaakkid annaka turid hadhf hadha al-hisab?"
+
+msgid "Please select a platform and enter a valid URL."
+msgstr "Yurja ikhtiyar mansa wa-idkhal rabit URL sahih."
+
+msgid "Enabled"
+msgstr "Mufael"
+
+msgid "Edit"
+msgstr "Tahrir"
+
+msgid "Delete"
+msgstr "Hadhf"
+
+msgid "Ribbon"
+msgstr "Sharit"
+
+msgid "Horizontal bar at the bottom of the page with icons in a row."
+msgstr "Sharit ufuqi asfal al-safha mae ayqonat fi saff."
+
+msgid "Pillar"
+msgstr "Amud"
+
+msgid "Vertical sidebar strip with icons stacked in a column."
+msgstr "Sharit janibi amudi mae ayqonat mutarasa fi amud."
+
+msgid "Positions:"
+msgstr "Al-mawadi:"
+
+msgid "Social Media Accounts"
+msgstr "Hisabat wasail al-tawasul al-ijtimaei"
+
+msgid "Add, reorder, and manage your social media accounts. Drag to reorder."
+msgstr "Addif hisabatak al-ijtimaeia wa-aid tartibaha wa-adrha. Is-hab li-aadat al-tartib."
+
+msgid "No social accounts added yet. Add your first account below."
+msgstr "Lam yatim idafat ay hisabat ijtimaeia baed. Addif awal hisab adnah."
+
+msgid "Add New Account"
+msgstr "Idafat hisab jadid"
+
+msgid "Platform"
+msgstr "Al-mansa"
+
+msgid "Profile URL"
+msgstr "Rabit al-milaf al-shakhsi"
+
+msgid "Add Account"
+msgstr "Idafat hisab"
+
+msgid "Bottom Left"
+msgstr "Asfal al-yasar"
+
+msgid "Bottom Right"
+msgstr "Asfal al-yamin"
+
+msgid "Bottom Center"
+msgstr "Asfal al-wasat"
+
+msgid "You do not have permission to access this page."
+msgstr "Laysa ladayk idhn li-wusul hadhihi al-safha."
+
+msgid "Security check failed."
+msgstr "Fashal al-tahaqquq al-amni."
+
+msgid "Social Media Links"
+msgstr "Rawabit wasail al-tawasul al-ijtimaei"
+
+msgid "Orbit"
+msgstr "Madar"
+
+msgid "Quarter circle trigger in a corner. Icons fan out in an arc on hover or click."
+msgstr "Zirr tashghil rubu daira fi al-zawiya. Tatanathar al-ayqonat bishakl qaws inda al-murur aw al-naqr."
+
+msgid "Icon Colors"
+msgstr "Alwan al-ayqonat"
+
+msgid "Override the default brand color for each platform. Leave empty to use the official brand color."
+msgstr "Istibdal lawn al-alama al-tijariya al-ifteradi likul mansa. Otrukhu farighan li-istikhdam al-lawn al-rasmi."
+
+msgid "Main Button (Orbit)"
+msgstr "Al-zirr al-raisi (Madar)"
+
+msgid "Reset All Colors"
+msgstr "Ieadat dae kul al-alwan"
+
+msgid "Bar Background (Ribbon / Pillar)"
+msgstr "Khalfiyat al-sharit (Sharit / Amud)"
+
+msgid "On"
+msgstr "Tashghil"
+
+msgid "Off"
+msgstr "Iiqaf"
+
+msgid "Transparent"
+msgstr "Shafaf"

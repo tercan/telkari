@@ -1,0 +1,187 @@
+# Hindi translation for Telkari plugin.
+# Copyright (C) 2026 Tercan Keskin
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Telkari 0.1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-01 00:00+0000\n"
+"PO-Revision-Date: 2026-02-19 18:26\n"
+"Last-Translator: \n"
+"Language-Team: Hindi\n"
+"Language: hi_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Telkari"
+msgstr "Telkari"
+
+msgid "Theme-independent WordPress social media links management plugin."
+msgstr "Theme se swatantra WordPress social media link prabandhan plugin."
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Design"
+msgstr "Design"
+
+msgid "Position"
+msgstr "Sthiti"
+
+msgid "Social Accounts"
+msgstr "Social khate"
+
+msgid "Appearance"
+msgstr "Roop-rang"
+
+msgid "Documentation"
+msgstr "Dastavez"
+
+msgid "Active Design"
+msgstr "Sakriya design"
+
+msgid "Go to the Design tab to change the active design."
+msgstr "Sakriya design badalne ke liye Design tab par jayen."
+
+msgid "Select Position"
+msgstr "Sthiti chunen"
+
+msgid "Icon Size (px)"
+msgstr "Icon aakar (px)"
+
+msgid "Icon size in pixels (24-96)."
+msgstr "Icon ka aakar pixel me (24-96)."
+
+msgid "Icon Spacing (px)"
+msgstr "Icon antar (px)"
+
+msgid "Space between icons in pixels (0-48)."
+msgstr "Icons ke beech antar pixel me (0-48)."
+
+msgid "Icon Style"
+msgstr "Icon style"
+
+msgid "Rounded"
+msgstr "Gol"
+
+msgid "Square"
+msgstr "Chaukor"
+
+msgid "Link Target"
+msgstr "Link target"
+
+msgid "Same Tab"
+msgstr "Wahi tab"
+
+msgid "New Tab"
+msgstr "Naya tab"
+
+msgid "Tooltips"
+msgstr "Tooltips"
+
+msgid "Show platform name on hover"
+msgstr "Hover par platform ka naam dikhayen"
+
+msgid "Select Platform"
+msgstr "Platform chunen"
+
+msgid "Are you sure you want to delete this account?"
+msgstr "Kya aap vaastav me is khate ko hatana chahte hain?"
+
+msgid "Please select a platform and enter a valid URL."
+msgstr "Kripya ek platform chunen aur valid URL darj karen."
+
+msgid "Enabled"
+msgstr "Sakriya"
+
+msgid "Edit"
+msgstr "Sampadit karen"
+
+msgid "Delete"
+msgstr "Hataen"
+
+msgid "Ribbon"
+msgstr "Ribbon"
+
+msgid "Horizontal bar at the bottom of the page with icons in a row."
+msgstr "Page ke neeche kshetrij bar jisme icons ek pankti me hon."
+
+msgid "Pillar"
+msgstr "Pillar"
+
+msgid "Vertical sidebar strip with icons stacked in a column."
+msgstr "Lambvat sidebar strip jisme icons ek column me hon."
+
+msgid "Positions:"
+msgstr "Sthitiyan:"
+
+msgid "Social Media Accounts"
+msgstr "Social media khate"
+
+msgid "Add, reorder, and manage your social media accounts. Drag to reorder."
+msgstr "Apne social media khate joden, kram badlen aur prabandhit karen. Kram badalne ke liye drag karen."
+
+msgid "No social accounts added yet. Add your first account below."
+msgstr "Abhi tak koi social khata nahi joda gaya hai. Neeche apna pehla khata joden."
+
+msgid "Add New Account"
+msgstr "Naya khata joden"
+
+msgid "Platform"
+msgstr "Platform"
+
+msgid "Profile URL"
+msgstr "Profile URL"
+
+msgid "Add Account"
+msgstr "Khata joden"
+
+msgid "Bottom Left"
+msgstr "Neeche baen"
+
+msgid "Bottom Right"
+msgstr "Neeche daen"
+
+msgid "Bottom Center"
+msgstr "Neeche beech"
+
+msgid "You do not have permission to access this page."
+msgstr "Aapke paas is page tak pahunch ki anumati nahi hai."
+
+msgid "Security check failed."
+msgstr "Suraksha janch viphal rahi."
+
+msgid "Social Media Links"
+msgstr "Social media links"
+
+msgid "Orbit"
+msgstr "Orbit"
+
+msgid "Quarter circle trigger in a corner. Icons fan out in an arc on hover or click."
+msgstr "Kone me quarter-circle trigger. Hover ya click par icons arc me failte hain."
+
+msgid "Icon Colors"
+msgstr "Icon rang"
+
+msgid "Override the default brand color for each platform. Leave empty to use the official brand color."
+msgstr "Har platform ke liye default brand rang badlen. Official brand rang ke liye khali chhoden."
+
+msgid "Main Button (Orbit)"
+msgstr "Mukhya button (Orbit)"
+
+msgid "Reset All Colors"
+msgstr "Sabhi rang reset karen"
+
+msgid "Bar Background (Ribbon / Pillar)"
+msgstr "Bar background (Ribbon / Pillar)"
+
+msgid "On"
+msgstr "Chalu"
+
+msgid "Off"
+msgstr "Band"
+
+msgid "Transparent"
+msgstr "Paradarshi"

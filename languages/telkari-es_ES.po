@@ -1,0 +1,187 @@
+# Spanish translation for Telkari plugin.
+# Copyright (C) 2026 Tercan Keskin
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Telkari 0.1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-01 00:00+0000\n"
+"PO-Revision-Date: 2026-02-19 18:26\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Telkari"
+msgstr "Telkari"
+
+msgid "Theme-independent WordPress social media links management plugin."
+msgstr "Plugin de WordPress independiente del tema para gestionar enlaces de redes sociales."
+
+msgid "Settings"
+msgstr "Ajustes"
+
+msgid "Design"
+msgstr "Diseno"
+
+msgid "Position"
+msgstr "Posicion"
+
+msgid "Social Accounts"
+msgstr "Cuentas sociales"
+
+msgid "Appearance"
+msgstr "Apariencia"
+
+msgid "Documentation"
+msgstr "Documentacion"
+
+msgid "Active Design"
+msgstr "Diseno activo"
+
+msgid "Go to the Design tab to change the active design."
+msgstr "Ve a la pestana \"Diseno\" para cambiar el diseno activo."
+
+msgid "Select Position"
+msgstr "Seleccionar posicion"
+
+msgid "Icon Size (px)"
+msgstr "Tamano del icono (px)"
+
+msgid "Icon size in pixels (24-96)."
+msgstr "Tamano del icono en pixeles (24-96)."
+
+msgid "Icon Spacing (px)"
+msgstr "Espaciado de iconos (px)"
+
+msgid "Space between icons in pixels (0-48)."
+msgstr "Espacio entre iconos en pixeles (0-48)."
+
+msgid "Icon Style"
+msgstr "Estilo de icono"
+
+msgid "Rounded"
+msgstr "Redondeado"
+
+msgid "Square"
+msgstr "Cuadrado"
+
+msgid "Link Target"
+msgstr "Destino del enlace"
+
+msgid "Same Tab"
+msgstr "Misma pestana"
+
+msgid "New Tab"
+msgstr "Nueva pestana"
+
+msgid "Tooltips"
+msgstr "Informacion sobre herramientas"
+
+msgid "Show platform name on hover"
+msgstr "Mostrar nombre de la plataforma al pasar el cursor"
+
+msgid "Select Platform"
+msgstr "Seleccionar plataforma"
+
+msgid "Are you sure you want to delete this account?"
+msgstr "Seguro que quieres eliminar esta cuenta?"
+
+msgid "Please select a platform and enter a valid URL."
+msgstr "Selecciona una plataforma e introduce una URL valida."
+
+msgid "Enabled"
+msgstr "Activado"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "Ribbon"
+msgstr "Cinta"
+
+msgid "Horizontal bar at the bottom of the page with icons in a row."
+msgstr "Barra horizontal en la parte inferior de la pagina con iconos en fila."
+
+msgid "Pillar"
+msgstr "Pilar"
+
+msgid "Vertical sidebar strip with icons stacked in a column."
+msgstr "Barra lateral vertical con iconos apilados en una columna."
+
+msgid "Positions:"
+msgstr "Posiciones:"
+
+msgid "Social Media Accounts"
+msgstr "Cuentas de redes sociales"
+
+msgid "Add, reorder, and manage your social media accounts. Drag to reorder."
+msgstr "Anade, reordena y gestiona tus cuentas de redes sociales. Arrastra para reordenar."
+
+msgid "No social accounts added yet. Add your first account below."
+msgstr "Aun no se han anadido cuentas sociales. Anade tu primera cuenta abajo."
+
+msgid "Add New Account"
+msgstr "Anadir nueva cuenta"
+
+msgid "Platform"
+msgstr "Plataforma"
+
+msgid "Profile URL"
+msgstr "URL del perfil"
+
+msgid "Add Account"
+msgstr "Anadir cuenta"
+
+msgid "Bottom Left"
+msgstr "Inferior izquierda"
+
+msgid "Bottom Right"
+msgstr "Inferior derecha"
+
+msgid "Bottom Center"
+msgstr "Inferior centro"
+
+msgid "You do not have permission to access this page."
+msgstr "No tienes permiso para acceder a esta pagina."
+
+msgid "Security check failed."
+msgstr "La comprobacion de seguridad ha fallado."
+
+msgid "Social Media Links"
+msgstr "Enlaces de redes sociales"
+
+msgid "Orbit"
+msgstr "Orbita"
+
+msgid "Quarter circle trigger in a corner. Icons fan out in an arc on hover or click."
+msgstr "Activador de cuarto de circulo en una esquina. Los iconos se despliegan en arco al pasar el cursor o hacer clic."
+
+msgid "Icon Colors"
+msgstr "Colores de iconos"
+
+msgid "Override the default brand color for each platform. Leave empty to use the official brand color."
+msgstr "Anula el color de marca predeterminado para cada plataforma. Dejalo vacio para usar el color oficial."
+
+msgid "Main Button (Orbit)"
+msgstr "Boton principal (Orbita)"
+
+msgid "Reset All Colors"
+msgstr "Restablecer todos los colores"
+
+msgid "Bar Background (Ribbon / Pillar)"
+msgstr "Fondo de la barra (Cinta / Pilar)"
+
+msgid "On"
+msgstr "Activado"
+
+msgid "Off"
+msgstr "Desactivado"
+
+msgid "Transparent"
+msgstr "Transparente"

@@ -1,0 +1,187 @@
+# Chinese (Simplified) translation for Telkari plugin.
+# Copyright (C) 2026 Tercan Keskin
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Telkari 0.1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-01 00:00+0000\n"
+"PO-Revision-Date: 2026-02-19 18:26\n"
+"Last-Translator: \n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Telkari"
+msgstr "Telkari"
+
+msgid "Theme-independent WordPress social media links management plugin."
+msgstr "Yu zhutii wuguan de WordPress shejiao meiti lianjie guanli chajian."
+
+msgid "Settings"
+msgstr "Shezhi"
+
+msgid "Design"
+msgstr "Sheji"
+
+msgid "Position"
+msgstr "Weizhi"
+
+msgid "Social Accounts"
+msgstr "Shejiao zhanghao"
+
+msgid "Appearance"
+msgstr "Waiguan"
+
+msgid "Documentation"
+msgstr "Wendang"
+
+msgid "Active Design"
+msgstr "Dangqian sheji"
+
+msgid "Go to the Design tab to change the active design."
+msgstr "Qianwang \"Sheji\" xuangka genggai dangqian sheji."
+
+msgid "Select Position"
+msgstr "Xuanze weizhi"
+
+msgid "Icon Size (px)"
+msgstr "Tubiao daxiao (px)"
+
+msgid "Icon size in pixels (24-96)."
+msgstr "Tubiao xiangsu daxiao (24-96)."
+
+msgid "Icon Spacing (px)"
+msgstr "Tubiao jiange (px)"
+
+msgid "Space between icons in pixels (0-48)."
+msgstr "Tubiao zhi jian de xiangsu jiange (0-48)."
+
+msgid "Icon Style"
+msgstr "Tubiao yangshi"
+
+msgid "Rounded"
+msgstr "Yuanjiao"
+
+msgid "Square"
+msgstr "Fangxing"
+
+msgid "Link Target"
+msgstr "Lianjie mubiao"
+
+msgid "Same Tab"
+msgstr "Dangqian biaoqianye"
+
+msgid "New Tab"
+msgstr "Xin biaoqianye"
+
+msgid "Tooltips"
+msgstr "Gongju tishi"
+
+msgid "Show platform name on hover"
+msgstr "Xuanfu shi xianshi pingtai mingcheng"
+
+msgid "Select Platform"
+msgstr "Xuanze pingtai"
+
+msgid "Are you sure you want to delete this account?"
+msgstr "Queding yao shanchu ci zhanghao ma?"
+
+msgid "Please select a platform and enter a valid URL."
+msgstr "Qing xuanze yige pingtai bing shuru youxiao URL."
+
+msgid "Enabled"
+msgstr "Qiyong"
+
+msgid "Edit"
+msgstr "Bianji"
+
+msgid "Delete"
+msgstr "Shanchu"
+
+msgid "Ribbon"
+msgstr "Hengtiao"
+
+msgid "Horizontal bar at the bottom of the page with icons in a row."
+msgstr "Yemian dibu de shuiping tiao, tubiao yihang xianshi."
+
+msgid "Pillar"
+msgstr "Lizhu"
+
+msgid "Vertical sidebar strip with icons stacked in a column."
+msgstr "Chuizhi cebianlan, tubiao an lie duizhan."
+
+msgid "Positions:"
+msgstr "Weizhi:"
+
+msgid "Social Media Accounts"
+msgstr "Shejiao meiti zhanghao"
+
+msgid "Add, reorder, and manage your social media accounts. Drag to reorder."
+msgstr "Tianjia, paixu bing guanli ni de shejiao meiti zhanghao. Tuodong ji ke paixu."
+
+msgid "No social accounts added yet. Add your first account below."
+msgstr "Shangwei tianjia shejiao zhanghao. Qing zai xiafang tianjia di yi ge zhanghao."
+
+msgid "Add New Account"
+msgstr "Tianjia xin zhanghao"
+
+msgid "Platform"
+msgstr "Pingtai"
+
+msgid "Profile URL"
+msgstr "Ziliao URL"
+
+msgid "Add Account"
+msgstr "Tianjia zhanghao"
+
+msgid "Bottom Left"
+msgstr "Zuoxia"
+
+msgid "Bottom Right"
+msgstr "Youxia"
+
+msgid "Bottom Center"
+msgstr "Dibu jizhong"
+
+msgid "You do not have permission to access this page."
+msgstr "Ni meiyou quanxian fangwen ci yemian."
+
+msgid "Security check failed."
+msgstr "Anquan jiancha shibai."
+
+msgid "Social Media Links"
+msgstr "Shejiao meiti lianjie"
+
+msgid "Orbit"
+msgstr "Guidao"
+
+msgid "Quarter circle trigger in a corner. Icons fan out in an arc on hover or click."
+msgstr "Jiaoluo de si fen zhi yi yuan chufa anniu. Xuanfu huo dianji shi, tubiao yanhuxing zhankai."
+
+msgid "Icon Colors"
+msgstr "Tubiao yanse"
+
+msgid "Override the default brand color for each platform. Leave empty to use the official brand color."
+msgstr "Fugai mei ge pingtai de moren pinpai yanse. Liukong ji yong guanfang yanse."
+
+msgid "Main Button (Orbit)"
+msgstr "Zhu anniu (Guidao)"
+
+msgid "Reset All Colors"
+msgstr "Chongzhi suoyou yanse"
+
+msgid "Bar Background (Ribbon / Pillar)"
+msgstr "Lan beijing (Hengtiao / Lizhu)"
+
+msgid "On"
+msgstr "Kai"
+
+msgid "Off"
+msgstr "Guan"
+
+msgid "Transparent"
+msgstr "Touming"
