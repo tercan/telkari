@@ -24,10 +24,11 @@
     margin-bottom: 2rem;
 }
 
-.toplevel_page_telkari-settings .wrap h1 {
+.toplevel_page_telkari-settings .wrap .telkari-name {
 	color: #fff;
 	font-size: 2.25rem;
 	font-weight: 100;
+	line-height: 1.5;
 }
 
 .toplevel_page_telkari-settings .wrap a:hover {
@@ -41,7 +42,7 @@
 	font-weight: 400;
 }
 
-.toplevel_page_telkari-settings .wrap h1 .telkari-icon {
+.toplevel_page_telkari-settings .wrap .telkari-name .telkari-icon {
 	background-color: #fff;
 	border-radius: .5rem;
 	display: inline-flex;
@@ -53,7 +54,7 @@
 	height: 2rem;
 }
 
-.toplevel_page_telkari-settings .wrap h1 .telkari-icon:before {
+.toplevel_page_telkari-settings .wrap .telkari-name .telkari-icon:before {
 	background-image: url("../icons/telkari-1.svg");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -363,7 +364,7 @@
 	border-radius: 0.125rem;
 	overflow: hidden;
     border-color: #2271b1;
-    border-radius: .325rem;
+    border-radius: .125rem;
     box-shadow: 0 0 .125rem #2271b1;
 }
 
@@ -423,10 +424,10 @@
     background: #fff;
     border: 0.0625rem solid #dcdcde;
     border-radius: 0.125rem;
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
 	gap: 1rem;
     padding: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .telkari-color-item label {

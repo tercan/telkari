@@ -2,7 +2,7 @@
 .DS_Store
 
 # Documentation
-docs/
+documents/
 
 # IDE / Editor
 .idea/

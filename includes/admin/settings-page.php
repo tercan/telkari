@@ -114,13 +114,13 @@ function telkari_render_settings_page() {
 	?>
 	<div class="wrap">
 		<div class="telkari-admin-header" style="display: flex; justify-content: space-between;">
-			<h1>
+			<div class="telkari-name">
 				<i class="telkari-icon"></i>
-				<?php echo esc_html( get_admin_page_title() ); ?> 
+				<?php echo esc_html( get_admin_page_title() ); ?>
 				<a href="https://tercan.net/telkari" target="_blank" class="telkari-admin-header-action" title="View Changelog">
 					(v<?php echo esc_html( TELKARI_VERSION ); ?>)
 				</a>
-			</h1>
+			</div>
 			<div class="telkari-admin-header-actions">
 				<a href="https://tercan.net/telkari" target="_blank" class="telkari-admin-header-action" title="Visit Documentation">
 					<?php echo esc_html__( 'Documentation', 'telkari' ); ?>
