@@ -130,7 +130,31 @@ function render_platforms() {
 }
 
 /**
- * 6. Initialize
+ * 6. Orbit demo toggle
+ */
+
+const orbit_demo = document.getElementById("orbit-demo");
+const orbit_trigger = document.getElementById("orbit-trigger");
+
+if (orbit_demo && orbit_trigger) {
+  orbit_trigger.addEventListener("click", () => {
+    const is_open = orbit_demo.classList.toggle("telkari-open");
+    orbit_trigger.setAttribute("aria-expanded", is_open);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (
+      orbit_demo.classList.contains("telkari-open") &&
+      !orbit_demo.contains(event.target)
+    ) {
+      orbit_demo.classList.remove("telkari-open");
+      orbit_trigger.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+/**
+ * 7. Initialize
  */
 
 handle_scroll();
