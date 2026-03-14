@@ -185,3 +185,6 @@ msgstr "Guan"
 
 msgid "Transparent"
 msgstr "Touming"
+
+msgid "Demo/Documentation"
+msgstr "Demo/Documentation"

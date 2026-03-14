@@ -5,7 +5,7 @@ Tags: social media, social icons, social links, floating bar, social buttons
 Requires at least: 5.9
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 0.1.1
+Stable tag: 0.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,7 @@ Theme-independent WordPress social media links management plugin with multiple d
 == Description ==
 
 Telkari lets you display social media links on your WordPress site with three distinct design layouts. Each design has its own positioning options and all icons are rendered with pure CSS for optimal performance.
+Live demo and documentation: https://tercan.github.io/telkari/
 
 = Design Layouts =
 
@@ -96,6 +97,10 @@ Yes. Telkari renders icons via the wp_footer hook and uses its own CSS, so it wo
 = Is the plugin translatable? =
 
 Yes. All UI strings use WordPress i18n functions. A Turkish (tr_TR) translation is included.
+
+= Live demo / documentation URL? =
+
+You can access the live demo and documentation at: https://tercan.github.io/telkari/
 
 == Screenshots ==
 

@@ -185,3 +185,6 @@ msgstr "Iiqaf"
 
 msgid "Transparent"
 msgstr "Shafaf"
+
+msgid "Demo/Documentation"
+msgstr "Demo/Documentation"

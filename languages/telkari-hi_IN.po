@@ -185,3 +185,6 @@ msgstr "Band"
 
 msgid "Transparent"
 msgstr "Paradarshi"
+
+msgid "Demo/Documentation"
+msgstr "Demo/Documentation"

@@ -235,3 +235,7 @@ msgstr ""
 #: includes/admin/settings-page.php
 msgid "Off"
 msgstr ""
+
+#: includes/admin/settings-page.php
+msgid "Demo/Documentation"
+msgstr ""

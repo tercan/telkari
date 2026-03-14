@@ -117,13 +117,13 @@ function telkari_render_settings_page() {
 			<div class="telkari-name">
 				<i class="telkari-icon"></i>
 				<?php echo esc_html( get_admin_page_title() ); ?>
-				<a href="https://tercan.net/telkari" target="_blank" class="telkari-admin-header-action" title="View Changelog">
+				<a href="https://tercan.net/telkari/" target="_blank" class="telkari-admin-header-action" title="View Changelog">
 					(v<?php echo esc_html( TELKARI_VERSION ); ?>)
 				</a>
 			</div>
 			<div class="telkari-admin-header-actions">
-				<a href="https://tercan.net/telkari" target="_blank" class="telkari-admin-header-action" title="Visit Documentation">
-					<?php echo esc_html__( 'Documentation', 'telkari' ); ?>
+				<a href="https://tercan.github.io/telkari/" target="_blank" class="telkari-admin-header-action" title="Visit Documentation">
+					<?php echo esc_html__( 'Demo/Documentation', 'telkari' ); ?>
 				</a>
 			</div>
 		</div>
@@ -131,7 +131,7 @@ function telkari_render_settings_page() {
 		<nav class="nav-tab-wrapper">
 			<?php foreach ( $tabs as $tab_key => $tab_label ) : ?>
 				<a href="<?php echo esc_url( admin_url( 'admin.php?page=telkari-settings&tab=' . $tab_key ) ); ?>"
-				   class="nav-tab <?php echo $active_tab === $tab_key ? 'nav-tab-active' : ''; ?>">
+				   class="nav-tab <?php echo esc_attr( $active_tab === $tab_key ? 'nav-tab-active' : '' ); ?>">
 					<?php echo esc_html( $tab_label ); ?>
 				</a>
 			<?php endforeach; ?>
@@ -225,11 +225,11 @@ function telkari_render_appearance_tab( $settings ) {
 			<span class="telkari-setting-label"><?php esc_html_e( 'Icon Style', 'telkari' ); ?></span>
 			<div class="telkari-setting-control">
 				<div class="telkari-btn-group">
-					<label class="telkari-btn-option <?php echo 'rounded' === $settings['icon_style'] ? 'telkari-btn-option--active' : ''; ?>">
+					<label class="telkari-btn-option <?php echo esc_attr( 'rounded' === $settings['icon_style'] ? 'telkari-btn-option--active' : '' ); ?>">
 						<input type="radio" name="telkari_settings[icon_style]" value="rounded" <?php checked( $settings['icon_style'], 'rounded' ); ?>>
 						<?php esc_html_e( 'Rounded', 'telkari' ); ?>
 					</label>
-					<label class="telkari-btn-option <?php echo 'square' === $settings['icon_style'] ? 'telkari-btn-option--active' : ''; ?>">
+					<label class="telkari-btn-option <?php echo esc_attr( 'square' === $settings['icon_style'] ? 'telkari-btn-option--active' : '' ); ?>">
 						<input type="radio" name="telkari_settings[icon_style]" value="square" <?php checked( $settings['icon_style'], 'square' ); ?>>
 						<?php esc_html_e( 'Square', 'telkari' ); ?>
 					</label>
@@ -240,11 +240,11 @@ function telkari_render_appearance_tab( $settings ) {
 			<span class="telkari-setting-label"><?php esc_html_e( 'Link Target', 'telkari' ); ?></span>
 			<div class="telkari-setting-control">
 				<div class="telkari-btn-group">
-					<label class="telkari-btn-option <?php echo '_self' === $settings['link_target'] ? 'telkari-btn-option--active' : ''; ?>">
+					<label class="telkari-btn-option <?php echo esc_attr( '_self' === $settings['link_target'] ? 'telkari-btn-option--active' : '' ); ?>">
 						<input type="radio" name="telkari_settings[link_target]" value="_self" <?php checked( $settings['link_target'], '_self' ); ?>>
 						<?php esc_html_e( 'Same Tab', 'telkari' ); ?>
 					</label>
-					<label class="telkari-btn-option <?php echo '_blank' === $settings['link_target'] ? 'telkari-btn-option--active' : ''; ?>">
+					<label class="telkari-btn-option <?php echo esc_attr( '_blank' === $settings['link_target'] ? 'telkari-btn-option--active' : '' ); ?>">
 						<input type="radio" name="telkari_settings[link_target]" value="_blank" <?php checked( $settings['link_target'], '_blank' ); ?>>
 						<?php esc_html_e( 'New Tab', 'telkari' ); ?>
 					</label>
@@ -255,11 +255,11 @@ function telkari_render_appearance_tab( $settings ) {
 			<span class="telkari-setting-label"><?php esc_html_e( 'Tooltips', 'telkari' ); ?></span>
 			<div class="telkari-setting-control">
 				<div class="telkari-btn-group">
-					<label class="telkari-btn-option <?php echo $settings['show_tooltip'] ? 'telkari-btn-option--active' : ''; ?>">
+					<label class="telkari-btn-option <?php echo esc_attr( $settings['show_tooltip'] ? 'telkari-btn-option--active' : '' ); ?>">
 						<input type="radio" name="telkari_settings[show_tooltip]" value="1" <?php checked( $settings['show_tooltip'], true ); ?>>
 						<?php esc_html_e( 'On', 'telkari' ); ?>
 					</label>
-					<label class="telkari-btn-option <?php echo ! $settings['show_tooltip'] ? 'telkari-btn-option--active' : ''; ?>">
+					<label class="telkari-btn-option <?php echo esc_attr( ! $settings['show_tooltip'] ? 'telkari-btn-option--active' : '' ); ?>">
 						<input type="radio" name="telkari_settings[show_tooltip]" value="0" <?php checked( $settings['show_tooltip'], false ); ?>>
 						<?php esc_html_e( 'Off', 'telkari' ); ?>
 					</label>

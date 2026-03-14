@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.1.2] - 2026-03-14 02:24
+
+### Changed
+
+- Moved design-1 toggle inline `<script>` to external file `assets/js/design-1-toggle.js` loaded via `wp_enqueue_script` to comply with WordPress plugin directory requirements.
+- SVG icon output is now sanitized through `wp_kses` with a strict SVG element/attribute allowlist (`telkari_get_svg_kses_allowed`).
+- Design preview SVG output in admin panel also sanitized via `wp_kses` at echo point.
+- Refactored icon link attribute rendering to use late escaping at every echo point instead of intermediate string concatenation.
+- All ternary CSS class outputs in admin templates wrapped with `esc_attr()` for proper late escaping.
+- Added `esc_attr()` to `--telkari-item-count` style attribute output in frontend renderer.
+
+### Removed
+
+- Removed `telkari_render_design1_inline_js()` function (replaced by enqueued external JS file).
+- Removed `phpcs:ignore WordPress.Security.EscapeOutput` comment from icon echo statement.
+
 ## [0.1.1] - 2026-02-19 18:06
 
 ### Changed

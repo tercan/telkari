@@ -155,3 +155,86 @@ function telkari_sanitize_single_account( $account ) {
 		'order'    => isset( $account['order'] ) ? absint( $account['order'] ) : 0,
 	);
 }
+
+/**
+ * Return allowed HTML elements and attributes for SVG sanitization.
+ *
+ * Used with wp_kses() to ensure only safe SVG markup is output.
+ *
+ * @return array
+ */
+function telkari_get_svg_kses_allowed() {
+	return array(
+		'svg'      => array(
+			'class'           => true,
+			'xmlns'           => true,
+			'viewbox'         => true,
+			'fill'            => true,
+			'stroke'          => true,
+			'stroke-width'    => true,
+			'stroke-linecap'  => true,
+			'stroke-linejoin' => true,
+			'width'           => true,
+			'height'          => true,
+			'aria-hidden'     => true,
+			'role'            => true,
+			'focusable'       => true,
+		),
+		'path'     => array(
+			'd'               => true,
+			'fill'            => true,
+			'fill-rule'       => true,
+			'clip-rule'       => true,
+			'stroke'          => true,
+			'stroke-width'    => true,
+			'stroke-linecap'  => true,
+			'stroke-linejoin' => true,
+		),
+		'circle'   => array(
+			'cx'   => true,
+			'cy'   => true,
+			'r'    => true,
+			'fill' => true,
+		),
+		'rect'     => array(
+			'x'      => true,
+			'y'      => true,
+			'width'  => true,
+			'height' => true,
+			'rx'     => true,
+			'ry'     => true,
+			'fill'   => true,
+		),
+		'line'     => array(
+			'x1'             => true,
+			'y1'             => true,
+			'x2'             => true,
+			'y2'             => true,
+			'stroke'         => true,
+			'stroke-width'   => true,
+			'stroke-linecap' => true,
+		),
+		'polygon'  => array(
+			'd'      => true,
+			'points' => true,
+			'fill'   => true,
+		),
+		'polyline' => array(
+			'points' => true,
+			'fill'   => true,
+			'stroke' => true,
+		),
+		'g'        => array(
+			'fill'      => true,
+			'transform' => true,
+		),
+		'defs'     => array(),
+		'clippath' => array(
+			'id' => true,
+		),
+		'use'      => array(
+			'href'       => true,
+			'xlink:href' => true,
+		),
+	);
+}

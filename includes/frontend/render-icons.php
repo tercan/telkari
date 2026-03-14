@@ -37,6 +37,17 @@ function telkari_enqueue_frontend_css() {
 		TELKARI_VERSION
 	);
 
+	// Enqueue design-1 toggle script when needed.
+	if ( 'design-1' === $design ) {
+		wp_enqueue_script(
+			'telkari-design1-toggle',
+			TELKARI_URL . 'assets/js/design-1-toggle.js',
+			array(),
+			TELKARI_VERSION,
+			true
+		);
+	}
+
 	// Convert px values to rem for CSS custom properties.
 	$icon_size_rem    = round( $settings['icon_size'] / 16, 4 );
 	$icon_spacing_rem = round( $settings['icon_spacing'] / 16, 4 );
@@ -93,7 +104,7 @@ function telkari_render_frontend_icons() {
 
 	?>
 	<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" role="navigation" aria-label="<?php esc_attr_e( 'Social Media Links', 'telkari' ); ?>">
-		<div class="telkari-icons-wrapper"<?php echo $is_design_1 ? ' style="--telkari-item-count:' . (int) $account_count . '"' : ''; ?>>
+		<div class="telkari-icons-wrapper"<?php echo $is_design_1 ? ' style="--telkari-item-count:' . esc_attr( (int) $account_count ) . '"' : ''; ?>>
 			<?php
 			$index = 0;
 			foreach ( $accounts as $account ) :
@@ -117,10 +128,6 @@ function telkari_render_frontend_icons() {
 		<?php endif; ?>
 	</div>
 	<?php
-
-	if ( $is_design_1 ) {
-		telkari_render_design1_inline_js();
-	}
 }
 add_action( 'wp_footer', 'telkari_render_frontend_icons' );
 
@@ -166,9 +173,12 @@ function telkari_render_single_icon( $account, $settings, $index = -1 ) {
 		return;
 	}
 
+	// Allowed attribute keys for the icon link element.
+	$allowed_attrs = array( 'href', 'class', 'target', 'rel', 'title', 'aria-label', 'style' );
+
 	$attrs = array(
-		'href'  => esc_url( $account['url'] ),
-		'class' => 'telkari-icon-link telkari-platform-' . esc_attr( $account['platform'] ),
+		'href'  => $account['url'],
+		'class' => 'telkari-icon-link telkari-platform-' . $account['platform'],
 	);
 
 	if ( '_blank' === $settings['link_target'] ) {
@@ -177,10 +187,10 @@ function telkari_render_single_icon( $account, $settings, $index = -1 ) {
 	}
 
 	if ( $settings['show_tooltip'] ) {
-		$attrs['title']      = esc_attr( $platform['label'] );
-		$attrs['aria-label'] = esc_attr( $platform['label'] );
+		$attrs['title']      = $platform['label'];
+		$attrs['aria-label'] = $platform['label'];
 	} else {
-		$attrs['aria-label'] = esc_attr( $platform['label'] );
+		$attrs['aria-label'] = $platform['label'];
 	}
 
 	// Resolve per-platform background and foreground colors.
@@ -208,39 +218,26 @@ function telkari_render_single_icon( $account, $settings, $index = -1 ) {
 
 	$attrs['style'] = implode( ';', $style_parts );
 
-	$attrs_str = '';
-	foreach ( $attrs as $key => $value ) {
-		$attrs_str .= ' ' . $key . '="' . $value . '"';
-	}
-
 	$svg = telkari_get_svg_icon( $account['platform'] );
 
-	echo '<a' . $attrs_str . '>' . $svg . '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- SVG is from trusted local file, attributes are escaped above.
+	// Build output with late escaping at the echo point.
+	echo '<a';
+	foreach ( $attrs as $key => $value ) {
+		if ( ! in_array( $key, $allowed_attrs, true ) ) {
+			continue;
+		}
+		if ( 'href' === $key ) {
+			echo ' href="' . esc_url( $value ) . '"';
+		} elseif ( 'style' === $key ) {
+			// Style parts are already individually escaped above.
+			echo ' style="' . esc_attr( $value ) . '"';
+		} else {
+			echo ' ' . esc_attr( $key ) . '="' . esc_attr( $value ) . '"';
+		}
+	}
+	echo '>' . wp_kses( $svg, telkari_get_svg_kses_allowed() ) . '</a>';
 }
 
-/**
- * Output inline JavaScript for design-1 click toggle.
- */
-function telkari_render_design1_inline_js() {
-	?>
-	<script>
-	(function(){
-		var c = document.querySelector('.telkari-design-1');
-		if (!c) return;
-		var btn = c.querySelector('.telkari-trigger');
-		if (!btn) return;
-		btn.addEventListener('click', function() {
-			c.classList.toggle('telkari-open');
-		});
-		document.addEventListener('click', function(e) {
-			if (!c.contains(e.target)) {
-				c.classList.remove('telkari-open');
-			}
-		});
-	})();
-	</script>
-	<?php
-}
 
 /**
  * Read and return an SVG icon for a platform.
@@ -290,6 +287,11 @@ function telkari_get_svg_icon( $platform ) {
 	// Add CSS class to the SVG element.
 	$svg = str_replace( '<svg', '<svg class="telkari-icon"', $svg );
 
+	// Sanitize SVG markup with a strict allowlist.
+	$svg = wp_kses( $svg, telkari_get_svg_kses_allowed() );
+
 	$cache[ $platform ] = $svg;
 	return $svg;
 }
+
+

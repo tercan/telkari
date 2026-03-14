@@ -185,3 +185,6 @@ msgstr "Desactive"
 
 msgid "Transparent"
 msgstr "Transparent"
+
+msgid "Demo/Documentation"
+msgstr "Demo/Documentation"

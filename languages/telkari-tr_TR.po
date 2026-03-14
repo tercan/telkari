@@ -188,3 +188,6 @@ msgstr "Kapalı"
 
 msgid "Transparent"
 msgstr "Saydam"
+
+msgid "Demo/Documentation"
+msgstr "Demo/Dokümantasyon"

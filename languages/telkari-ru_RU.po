@@ -185,3 +185,6 @@ msgstr "Vykl"
 
 msgid "Transparent"
 msgstr "Prozrachnyy"
+
+msgid "Demo/Documentation"
+msgstr "Demo/Documentation"

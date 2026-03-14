@@ -3,7 +3,7 @@
  * Plugin Name: Telkari
  * Plugin URI: https://tercan.net/telkari
  * Description: Theme-independent WordPress social media links management plugin.
- * Version: 0.1.1
+ * Version: 0.1.2
  * Requires at least: 5.9
  * Requires PHP: 7.4
  * Author: Tercan Keskin
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TELKARI_VERSION', '0.1.1' );
+define( 'TELKARI_VERSION', '0.1.2' );
 define( 'TELKARI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TELKARI_URL', plugin_dir_url( __FILE__ ) );
 define( 'TELKARI_BASENAME', plugin_basename( __FILE__ ) );
@@ -48,6 +48,28 @@ function telkari_plugin_action_links( $links ) {
 	return $links;
 }
 add_filter( 'plugin_action_links_' . TELKARI_BASENAME, 'telkari_plugin_action_links' );
+
+/**
+ * Add row meta links on the plugins list page (description column).
+ *
+ * @param array  $links Existing meta links.
+ * @param string $file  Plugin file basename.
+ * @return array
+ */
+function telkari_plugin_row_meta( $links, $file ) {
+	if ( TELKARI_BASENAME !== $file ) {
+		return $links;
+	}
+
+	$links[] = sprintf(
+		'<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>',
+		esc_url( 'https://tercan.github.io/telkari/' ),
+		esc_html__( 'Documentation', 'telkari' )
+	);
+
+	return $links;
+}
+add_filter( 'plugin_row_meta', 'telkari_plugin_row_meta', 10, 2 );
 
 // Frontend includes.
 if ( ! is_admin() ) {

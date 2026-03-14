@@ -23,7 +23,7 @@ function telkari_design_selector_render( $settings ) {
 	?>
 	<div class="telkari-design-selector">
 		<?php foreach ( $designs as $design_id => $design ) : ?>
-			<label class="telkari-design-option <?php echo $settings['active_design'] === $design_id ? 'telkari-design-option--active' : ''; ?>">
+			<label class="telkari-design-option <?php echo esc_attr( $settings['active_design'] === $design_id ? 'telkari-design-option--active' : '' ); ?>">
 				<input type="radio"
 					   name="telkari_settings[active_design]"
 					   value="<?php echo esc_attr( $design_id ); ?>"
@@ -31,7 +31,7 @@ function telkari_design_selector_render( $settings ) {
 					   class="telkari-design-radio">
 
 				<div class="telkari-design-preview">
-					<?php echo telkari_get_design_preview_svg( $design_id ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- SVG is hardcoded. ?>
+					<?php echo wp_kses( telkari_get_design_preview_svg( $design_id ), telkari_get_svg_kses_allowed() ); ?>
 				</div>
 
 				<div class="telkari-design-info">
@@ -48,7 +48,7 @@ function telkari_design_selector_render( $settings ) {
 			<div class="telkari-setting-control">
 				<div class="telkari-btn-group" id="telkari-position-group">
 					<?php foreach ( $allowed_positions as $position ) : ?>
-						<label class="telkari-btn-option <?php echo $settings['active_position'] === $position ? 'telkari-btn-option--active' : ''; ?>">
+						<label class="telkari-btn-option <?php echo esc_attr( $settings['active_position'] === $position ? 'telkari-btn-option--active' : '' ); ?>">
 							<input type="radio"
 								   name="telkari_settings[active_position]"
 								   value="<?php echo esc_attr( $position ); ?>"

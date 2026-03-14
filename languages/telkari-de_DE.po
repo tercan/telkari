@@ -185,3 +185,6 @@ msgstr "Aus"
 
 msgid "Transparent"
 msgstr "Transparent"
+
+msgid "Demo/Documentation"
+msgstr "Demo/Documentation"

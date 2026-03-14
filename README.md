@@ -2,7 +2,7 @@
 
 Theme-independent WordPress social media links management plugin. Display your social media accounts anywhere on your site with multiple design layouts, customizable positions, and per-platform brand colors.
 
-**Version:** 0.1.1
+**Version:** 0.1.2
 **Requires WordPress:** 5.9+
 **Requires PHP:** 7.4+
 **License:** GPLv2 or later

@@ -185,3 +185,6 @@ msgstr "Bondho"
 
 msgid "Transparent"
 msgstr "Swachchho"
+
+msgid "Demo/Documentation"
+msgstr "Demo/Documentation"
