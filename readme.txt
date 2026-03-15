@@ -104,12 +104,21 @@ You can access the live demo and documentation at: https://tercan.github.io/telk
 
 == Screenshots ==
 
-1. Design selector with visual previews and position selector
-2. Social accounts management with drag-and-drop reordering
-3. Appearance settings with range sliders and button toggles
-4. Color customization with per-platform color pickers
+1. Orbit design layout in action on a live site, showing the quarter-circle trigger and social icons fanning out in an arc.
+2. Design selection settings page with visual previews of Orbit, Ribbon, and Pillar layouts along with position selector.
+3. Social media accounts management page with drag-and-drop reordering and add account form.
+4. Appearance settings page with icon size and spacing sliders, icon style, link target, tooltip toggles, and per-platform color customization.
 
 == Changelog ==
+
+= 0.1.2 =
+* Moved design-1 toggle inline script to external file loaded via wp_enqueue_script to comply with WordPress plugin directory requirements.
+* SVG icon output is now sanitized through wp_kses with a strict SVG element/attribute allowlist.
+* Design preview SVG output in admin panel also sanitized via wp_kses at echo point.
+* Refactored icon link attribute rendering to use late escaping at every echo point.
+* All ternary CSS class outputs in admin templates wrapped with esc_attr() for proper late escaping.
+* Removed inline JS function (replaced by enqueued external JS file).
+* Removed phpcs:ignore EscapeOutput comments.
 
 = 0.1.1 =
 * Documentation updated: social account management wording now reflects add/delete flow
