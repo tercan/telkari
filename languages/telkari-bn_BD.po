@@ -3,9 +3,9 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Telkari 0.1.1\n"
+"Project-Id-Version: Telkari 0.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-01 00:00+0000\n"
+"POT-Creation-Date: 2026-04-08 01:31+0300\n"
 "PO-Revision-Date: 2026-02-19 18:26\n"
 "Last-Translator: \n"
 "Language-Team: Bengali\n"
@@ -15,176 +15,495 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Telkari"
-msgstr "Telkari"
+#: includes/admin/cta-list-table.php:22 includes/admin/settings-page.php:140
+#: includes/frontend/render-icons.php:170
+msgid "CTA Buttons"
+msgstr ""
 
-msgid "Theme-independent WordPress social media links management plugin."
-msgstr "Theme-swadhin WordPress social media link byabosthapona plugin."
+#: includes/admin/cta-list-table.php:23
+#, fuzzy
+msgid "Add, reorder, and manage your CTA buttons. Drag to reorder."
+msgstr ""
+"Apnar social media account jog korun, punorbinyas korun ebong porichalona "
+"korun. Punorbinyas korte drag korun."
 
-msgid "Settings"
-msgstr "Settings"
+#: includes/admin/cta-list-table.php:30 includes/admin/cta-list-table.php:33
+#, fuzzy
+msgid "CTA list is empty. Add your first CTA button below."
+msgstr ""
+"Ekhono kono social account jog kora hoyni. Niche apnar prothom account jog "
+"korun."
 
-msgid "Design"
-msgstr "Design"
-
-msgid "Position"
-msgstr "Obosthan"
-
-msgid "Social Accounts"
-msgstr "Social account"
-
-msgid "Appearance"
-msgstr "Chehara"
-
-msgid "Documentation"
-msgstr "Documentation"
-
-msgid "Active Design"
-msgstr "Sokriyo design"
-
-msgid "Go to the Design tab to change the active design."
-msgstr "Sokriyo design poriborton korte Design tab e jan."
-
-msgid "Select Position"
-msgstr "Obosthan nirbachon korun"
-
-msgid "Icon Size (px)"
-msgstr "Icon size (px)"
-
-msgid "Icon size in pixels (24-96)."
-msgstr "Icon er size pixel e (24-96)."
-
-msgid "Icon Spacing (px)"
-msgstr "Icon er byabodhan (px)"
-
-msgid "Space between icons in pixels (0-48)."
-msgstr "Icon gulor moddhe byabodhan pixel e (0-48)."
-
-msgid "Icon Style"
-msgstr "Icon style"
-
-msgid "Rounded"
-msgstr "Golakar"
-
-msgid "Square"
-msgstr "Chouko"
-
-msgid "Link Target"
-msgstr "Link target"
-
-msgid "Same Tab"
-msgstr "Eki tab"
-
-msgid "New Tab"
-msgstr "Notun tab"
-
-msgid "Tooltips"
-msgstr "Tooltip"
-
-msgid "Show platform name on hover"
-msgstr "Hover korle platform er naam dekhun"
-
-msgid "Select Platform"
-msgstr "Platform nirbachon korun"
-
-msgid "Are you sure you want to delete this account?"
-msgstr "Apni ki nishchit je ei account ti muche felte chan?"
-
-msgid "Please select a platform and enter a valid URL."
-msgstr "Onugroho kore ekti platform nirbachon korun ebong ekti valid URL din."
-
+#: includes/admin/cta-list-table.php:86 includes/admin/social-list-table.php:75
+#: includes/admin/settings-page.php:120
 msgid "Enabled"
 msgstr "Sokriyo"
 
+#: includes/admin/cta-list-table.php:90 includes/admin/social-list-table.php:79
+#: includes/admin/settings-page.php:111
 msgid "Edit"
 msgstr "Sompadona"
 
+#: includes/admin/cta-list-table.php:94 includes/admin/social-list-table.php:83
+#: includes/admin/settings-page.php:121
 msgid "Delete"
 msgstr "Muchun"
 
-msgid "Ribbon"
-msgstr "Ribbon"
+#: includes/admin/cta-list-table.php:140 includes/admin/settings-page.php:112
+#, fuzzy
+msgid "Add New CTA Button"
+msgstr "Notun account jog korun"
 
-msgid "Horizontal bar at the bottom of the page with icons in a row."
-msgstr "Page er niche onubhomik bar, jekhane icon gulo ek sari te thake."
+#: includes/admin/cta-list-table.php:142 includes/admin/settings-page.php:113
+msgid "Build a CTA button with guided fields and instant preview."
+msgstr ""
 
-msgid "Pillar"
-msgstr "Pillar"
+#: includes/admin/cta-list-table.php:148
+msgid "CTA Type"
+msgstr ""
 
-msgid "Vertical sidebar strip with icons stacked in a column."
-msgstr "Ullombho sidebar strip jekhane icon gulo ekti column e sajano."
+#: includes/admin/cta-list-table.php:150
+msgid "Choose the action you want visitors to take."
+msgstr ""
 
-msgid "Positions:"
-msgstr "Obosthansomuho:"
+#: includes/admin/cta-list-table.php:177
+msgid "Button Label"
+msgstr ""
 
+#: includes/admin/cta-list-table.php:179
+msgid "Optional. Leave empty to use the CTA type label."
+msgstr ""
+
+#: includes/admin/cta-list-table.php:183
+msgid "Destination Value"
+msgstr ""
+
+#: includes/admin/cta-list-table.php:189 includes/admin/settings-page.php:102
+msgid "Choose a CTA type to see the expected format."
+msgstr ""
+
+#: includes/admin/cta-list-table.php:193
+msgid "Resolved Destination"
+msgstr ""
+
+#: includes/admin/cta-list-table.php:197 includes/admin/cta-list-table.php:198
+msgid ""
+"Choose a CTA type and enter a destination to preview the final action URL."
+msgstr ""
+
+#: includes/admin/cta-list-table.php:204
+msgid "WhatsApp Message"
+msgstr ""
+
+#: includes/admin/cta-list-table.php:206
+msgid "Optional. Only used for WhatsApp buttons."
+msgstr ""
+
+#: includes/admin/cta-list-table.php:210
+#, fuzzy
+msgid "Button Color"
+msgstr "Icon er rong"
+
+#: includes/admin/cta-list-table.php:212
+msgid "Optional. Leave empty to use the default CTA color."
+msgstr ""
+
+#: includes/admin/cta-list-table.php:219
+#: includes/admin/social-list-table.php:141
+#: includes/admin/settings-page.php:119
+#, fuzzy
+msgid "Reset Form"
+msgstr "Shob rong reset korun"
+
+#: includes/admin/cta-list-table.php:222
+msgid "Add CTA Button"
+msgstr ""
+
+#: includes/admin/cta-list-table.php:229
+msgid "Live Preview"
+msgstr ""
+
+#: includes/admin/cta-list-table.php:234 includes/admin/cta-list-table.php:235
+msgid "Choose a CTA type"
+msgstr ""
+
+#: includes/admin/cta-list-table.php:238 includes/admin/cta-list-table.php:239
+msgid "The CTA label, value, and color preview appear here."
+msgstr ""
+
+#: includes/admin/cta-list-table.php:245 includes/admin/cta-list-table.php:246
+msgid "Your CTA preview updates as you edit the fields."
+msgstr ""
+
+#: includes/admin/social-list-table.php:22
 msgid "Social Media Accounts"
 msgstr "Social media account"
 
+#: includes/admin/social-list-table.php:23
 msgid "Add, reorder, and manage your social media accounts. Drag to reorder."
-msgstr "Apnar social media account jog korun, punorbinyas korun ebong porichalona korun. Punorbinyas korte drag korun."
+msgstr ""
+"Apnar social media account jog korun, punorbinyas korun ebong porichalona "
+"korun. Punorbinyas korte drag korun."
 
+#: includes/admin/social-list-table.php:30
+#: includes/admin/social-list-table.php:33
 msgid "No social accounts added yet. Add your first account below."
-msgstr "Ekhono kono social account jog kora hoyni. Niche apnar prothom account jog korun."
+msgstr ""
+"Ekhono kono social account jog kora hoyni. Niche apnar prothom account jog "
+"korun."
 
+#: includes/admin/social-list-table.php:114 includes/admin/settings-page.php:92
 msgid "Add New Account"
 msgstr "Notun account jog korun"
 
+#: includes/admin/social-list-table.php:116 includes/admin/settings-page.php:94
+#, fuzzy
+msgid "Select a platform and enter the public profile URL."
+msgstr "Onugroho kore ekti platform nirbachon korun ebong ekti valid URL din."
+
+#: includes/admin/social-list-table.php:123
 msgid "Platform"
 msgstr "Platform"
 
+#: includes/admin/social-list-table.php:125 includes/admin/settings-page.php:89
+msgid "Select Platform"
+msgstr "Platform nirbachon korun"
+
+#: includes/admin/social-list-table.php:135
 msgid "Profile URL"
 msgstr "Profile URL"
 
+#: includes/admin/social-list-table.php:144 includes/admin/settings-page.php:93
 msgid "Add Account"
 msgstr "Account jog korun"
 
-msgid "Bottom Left"
-msgstr "Niche bame"
+#: includes/admin/design-selector.php:47
+msgid "Select Position"
+msgstr "Obosthan nirbachon korun"
 
-msgid "Bottom Right"
-msgstr "Niche dane"
-
-msgid "Bottom Center"
-msgstr "Niche majkhane"
-
-msgid "You do not have permission to access this page."
-msgstr "Ei patai probesh er onumoti apnar nei."
-
-msgid "Security check failed."
-msgstr "Nirapotta jachai byartho hoyeche."
-
-msgid "Social Media Links"
-msgstr "Social media link"
-
+#: includes/admin/design-selector.php:79
 msgid "Orbit"
 msgstr "Orbit"
 
-msgid "Quarter circle trigger in a corner. Icons fan out in an arc on hover or click."
-msgstr "Kone e quarter-circle trigger. Hover ba click e icon gulo arc akare choriye jay."
+#: includes/admin/design-selector.php:80
+msgid ""
+"Quarter circle trigger in a corner. Icons fan out in an arc on hover or "
+"click."
+msgstr ""
+"Kone e quarter-circle trigger. Hover ba click e icon gulo arc akare choriye "
+"jay."
 
-msgid "Icon Colors"
-msgstr "Icon er rong"
+#: includes/admin/design-selector.php:87
+msgid "Ribbon"
+msgstr "Ribbon"
 
-msgid "Override the default brand color for each platform. Leave empty to use the official brand color."
-msgstr "Protiti platform er default brand rong poriborton korun. Official brand rong byabohar korte khali rakhun."
+#: includes/admin/design-selector.php:88
+msgid "Horizontal bar at the bottom of the page with icons in a row."
+msgstr "Page er niche onubhomik bar, jekhane icon gulo ek sari te thake."
 
-msgid "Main Button (Orbit)"
-msgstr "Mul button (Orbit)"
+#: includes/admin/design-selector.php:96
+msgid "Pillar"
+msgstr "Pillar"
 
-msgid "Reset All Colors"
-msgstr "Shob rong reset korun"
+#: includes/admin/design-selector.php:97
+msgid "Vertical sidebar strip with icons stacked in a column."
+msgstr "Ullombho sidebar strip jekhane icon gulo ekti column e sajano."
 
-msgid "Bar Background (Ribbon / Pillar)"
-msgstr "Bar background (Ribbon / Pillar)"
+#: includes/admin/settings-page.php:17 includes/admin/settings-page.php:18
+msgid "Telkari"
+msgstr "Telkari"
 
+#: includes/admin/settings-page.php:90
+msgid "Are you sure you want to delete this account?"
+msgstr "Apni ki nishchit je ei account ti muche felte chan?"
+
+#: includes/admin/settings-page.php:91
+msgid "Please select a platform and enter a valid URL."
+msgstr "Onugroho kore ekti platform nirbachon korun ebong ekti valid URL din."
+
+#: includes/admin/settings-page.php:95
+#, fuzzy
+msgid "Edit Social Account"
+msgstr "Social account"
+
+#: includes/admin/settings-page.php:96
+msgid ""
+"Update the selected social account and save the changes back into the list."
+msgstr ""
+
+#: includes/admin/settings-page.php:97
+#, fuzzy
+msgid "Editing Social Account"
+msgstr "Social account"
+
+#: includes/admin/settings-page.php:98
+#, fuzzy
+msgid "Save Account"
+msgstr "Social account"
+
+#: includes/admin/settings-page.php:99
+msgid "Select CTA Type"
+msgstr ""
+
+#: includes/admin/settings-page.php:100
+#, fuzzy
+msgid "Are you sure you want to delete this CTA button?"
+msgstr "Apni ki nishchit je ei account ti muche felte chan?"
+
+#: includes/admin/settings-page.php:101
+#, fuzzy
+msgid "Please select a CTA type and enter a valid value."
+msgstr "Onugroho kore ekti platform nirbachon korun ebong ekti valid URL din."
+
+#: includes/admin/settings-page.php:103
+msgid "Use international format without spaces, for example 905551112233."
+msgstr ""
+
+#: includes/admin/settings-page.php:104
+msgid ""
+"Phone numbers may include a leading plus sign, for example +905551112233."
+msgstr ""
+
+#: includes/admin/settings-page.php:105
+msgid "Enter a valid email address, for example info@example.com."
+msgstr ""
+
+#: includes/admin/settings-page.php:106
+msgid "Enter a full web address including the protocol."
+msgstr ""
+
+#: includes/admin/settings-page.php:107
+msgid "Use international format without spaces. Example: 905551112233."
+msgstr ""
+
+#: includes/admin/settings-page.php:108
+msgid "Enter a valid phone number. Example: +905551112233."
+msgstr ""
+
+#: includes/admin/settings-page.php:109
+msgid "Enter a valid email address. Example: info@example.com."
+msgstr ""
+
+#: includes/admin/settings-page.php:110
+msgid ""
+"Enter a full address including the protocol. Example: https://example.com/"
+"contact."
+msgstr ""
+
+#: includes/admin/settings-page.php:114
+#, fuzzy
+msgid "Edit CTA Button"
+msgstr "Notun account jog korun"
+
+#: includes/admin/settings-page.php:115
+msgid "Update the selected CTA button and save the changes back into the list."
+msgstr ""
+
+#: includes/admin/settings-page.php:116
+#, fuzzy
+msgid "Editing CTA Button"
+msgstr "Notun account jog korun"
+
+#: includes/admin/settings-page.php:117
+msgid "CTA button added."
+msgstr ""
+
+#: includes/admin/settings-page.php:118
+msgid "CTA button updated."
+msgstr ""
+
+#: includes/admin/settings-page.php:119
+#, fuzzy
+msgid "Save CTA Button"
+msgstr "Notun account jog korun"
+
+#: includes/admin/settings-page.php:120
+msgid "Cancel Edit"
+msgstr ""
+
+#: includes/admin/settings-page.php:138
+msgid "Design"
+msgstr "Design"
+
+#: includes/admin/settings-page.php:139
+msgid "Social Accounts"
+msgstr "Social account"
+
+#: includes/admin/settings-page.php:141
+msgid "Appearance"
+msgstr "Chehara"
+
+#: includes/admin/settings-page.php:156
+msgid "Demo/Documentation"
+msgstr "Demo/Documentation"
+
+#: includes/admin/settings-page.php:241
+msgid "Icon Size (px)"
+msgstr "Icon size (px)"
+
+#: includes/admin/settings-page.php:253
+msgid "Icon size in pixels (24-96)."
+msgstr "Icon er size pixel e (24-96)."
+
+#: includes/admin/settings-page.php:256
+msgid "Icon Spacing (px)"
+msgstr "Icon er byabodhan (px)"
+
+#: includes/admin/settings-page.php:268
+msgid "Space between icons in pixels (0-48)."
+msgstr "Icon gulor moddhe byabodhan pixel e (0-48)."
+
+#: includes/admin/settings-page.php:271
+msgid "Icon Style"
+msgstr "Icon style"
+
+#: includes/admin/settings-page.php:276
+msgid "Rounded"
+msgstr "Golakar"
+
+#: includes/admin/settings-page.php:280
+msgid "Square"
+msgstr "Chouko"
+
+#: includes/admin/settings-page.php:286
+msgid "Link Target"
+msgstr "Link target"
+
+#: includes/admin/settings-page.php:291
+msgid "Same Tab"
+msgstr "Eki tab"
+
+#: includes/admin/settings-page.php:295
+msgid "New Tab"
+msgstr "Notun tab"
+
+#: includes/admin/settings-page.php:301
+msgid "Tooltips"
+msgstr "Tooltip"
+
+#: includes/admin/settings-page.php:306
 msgid "On"
 msgstr "Chalu"
 
+#: includes/admin/settings-page.php:310
 msgid "Off"
 msgstr "Bondho"
 
+#: includes/admin/settings-page.php:317
+msgid "Icon Colors"
+msgstr "Icon er rong"
+
+#: includes/admin/settings-page.php:319
+msgid ""
+"Override the default brand color for each platform. Leave empty to use the "
+"official brand color."
+msgstr ""
+"Protiti platform er default brand rong poriborton korun. Official brand rong "
+"byabohar korte khali rakhun."
+
+#: includes/admin/settings-page.php:332
+msgid "Bar Background (Ribbon / Pillar)"
+msgstr "Bar background (Ribbon / Pillar)"
+
+#: includes/admin/settings-page.php:344
 msgid "Transparent"
 msgstr "Swachchho"
 
-msgid "Demo/Documentation"
-msgstr "Demo/Documentation"
+#: includes/admin/settings-page.php:349
+msgid "Main Button (Orbit)"
+msgstr "Mul button (Orbit)"
+
+#: includes/admin/settings-page.php:374
+msgid "Reset All Colors"
+msgstr "Shob rong reset korun"
+
+#: includes/frontend/render-icons.php:134
+#: includes/frontend/render-icons.php:151
+msgid "Social Media Links"
+msgstr "Social media link"
+
+#: includes/core/options.php:191
+msgid "Bottom Left"
+msgstr "Niche bame"
+
+#: includes/core/options.php:192
+msgid "Bottom Right"
+msgstr "Niche dane"
+
+#: includes/core/options.php:193
+msgid "Bottom Center"
+msgstr "Niche majkhane"
+
+#: includes/core/cta-buttons.php:20
+msgid "WhatsApp"
+msgstr ""
+
+#: includes/core/cta-buttons.php:21
+msgid "Direct message with pre-filled text."
+msgstr ""
+
+#: includes/core/cta-buttons.php:22 includes/core/cta-buttons.php:29
+#: includes/core/cta-buttons.php:36 includes/core/cta-buttons.php:43
+#, php-format
+msgid "Example: %s"
+msgstr ""
+
+#: includes/core/cta-buttons.php:27
+msgid "Phone"
+msgstr ""
+
+#: includes/core/cta-buttons.php:28
+msgid "Single tap to call."
+msgstr ""
+
+#: includes/core/cta-buttons.php:34
+msgid "Email"
+msgstr ""
+
+#: includes/core/cta-buttons.php:35
+msgid "Opens email client."
+msgstr ""
+
+#: includes/core/cta-buttons.php:41
+msgid "Custom URL"
+msgstr ""
+
+#: includes/core/cta-buttons.php:42
+msgid "Redirect to any webpage."
+msgstr ""
+
+#: includes/core/cta-buttons.php:63
+msgid "CTA"
+msgstr ""
+
+#: telkari.php:47
+msgid "Settings"
+msgstr "Settings"
+
+#: telkari.php:69
+msgid "Documentation"
+msgstr "Documentation"
+
+#~ msgid "Theme-independent WordPress social media links management plugin."
+#~ msgstr "Theme-swadhin WordPress social media link byabosthapona plugin."
+
+#~ msgid "Position"
+#~ msgstr "Obosthan"
+
+#~ msgid "Active Design"
+#~ msgstr "Sokriyo design"
+
+#~ msgid "Go to the Design tab to change the active design."
+#~ msgstr "Sokriyo design poriborton korte Design tab e jan."
+
+#~ msgid "Show platform name on hover"
+#~ msgstr "Hover korle platform er naam dekhun"
+
+#~ msgid "Positions:"
+#~ msgstr "Obosthansomuho:"
+
+#~ msgid "You do not have permission to access this page."
+#~ msgstr "Ei patai probesh er onumoti apnar nei."
+
+#~ msgid "Security check failed."
+#~ msgstr "Nirapotta jachai byartho hoyeche."

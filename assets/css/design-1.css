@@ -10,6 +10,14 @@
 .telkari-container.telkari-design-1 {
 	position: fixed;
 	z-index: 9999;
+	--telkari-design-1-icon-size: var(--telkari-icon-size, 2.5rem);
+	--telkari-design-1-icon-spacing: var(--telkari-icon-spacing, 0.5rem);
+}
+
+.telkari-design-1 .telkari-design-shell {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
 }
 
 /* Positions */
@@ -23,10 +31,45 @@
 	left: 0;
 }
 
+.telkari-design-1.telkari-position-bottom-right .telkari-design-shell {
+	align-items: flex-end;
+}
+
+.telkari-design-1.telkari-position-bottom-left .telkari-design-shell {
+	align-items: flex-start;
+}
+
+.telkari-design-1:not(.telkari-has-socials) .telkari-design-shell {
+	padding: 1rem;
+}
+
+.telkari-design-1 .telkari-social-group {
+	position: relative;
+	width: var(--telkari-trigger-size, 3.75rem);
+	height: var(--telkari-trigger-size, 3.75rem);
+}
+
+.telkari-design-1 .telkari-cta-wrapper {
+	flex-direction: column;
+	padding: 0 0.5rem;
+}
+
+.telkari-design-1.telkari-position-bottom-right .telkari-cta-wrapper {
+	align-items: flex-end;
+}
+
+.telkari-design-1.telkari-position-bottom-left .telkari-cta-wrapper {
+	align-items: flex-start;
+}
+
+.telkari-design-1 .telkari-cta-link {
+	min-width: 9.5rem;
+}
+
 /* Trigger button - quarter circle */
 .telkari-design-1 .telkari-trigger {
-	width: calc(var(--telkari-icon-size, 2.5rem) * 1.5);
-	height: calc(var(--telkari-icon-size, 2.5rem) * 1.5);
+	width: var(--telkari-trigger-size, 3.75rem);
+	height: var(--telkari-trigger-size, 3.75rem);
 	background-color: var(--telkari-trigger-bg, #1e293b);
 	border: none;
 	cursor: pointer;
@@ -66,12 +109,12 @@
 
 /* Quarter circle shape per position */
 .telkari-design-1.telkari-position-bottom-right .telkari-trigger {
-	border-radius: 100% 0 0 0;
+	border-radius: 5rem 0 0 0;
 	margin-left: auto;
 }
 
 .telkari-design-1.telkari-position-bottom-left .telkari-trigger {
-	border-radius: 0 100% 0 0;
+	border-radius: 0 5rem 0 0;
 	margin-right: auto;
 }
 
@@ -93,8 +136,9 @@
 
 /* Icon links - start at trigger corner, fly out to arc positions */
 .telkari-design-1 .telkari-icon-link {
-	--telkari-arc-radius: calc((var(--telkari-icon-size, 2.5rem) + var(--telkari-icon-spacing, 0.5rem)) * var(--telkari-item-count) * 0.7 + var(--telkari-icon-size, 2.5rem));
-	--telkari-angle-pad: calc(1rem + var(--telkari-icon-size, 2.5rem) / 2);
+	--telkari-arc-radius-base: calc((var(--telkari-design-1-icon-size) + var(--telkari-design-1-icon-spacing)) * var(--telkari-item-count) * 0.7 + var(--telkari-design-1-icon-size));
+	--telkari-arc-radius: min(var(--telkari-arc-radius-base), calc(100vw - var(--telkari-trigger-size, 3.75rem) - 1rem), calc(100vh - var(--telkari-trigger-size, 3.75rem) - 1rem));
+	--telkari-angle-pad: calc(1rem + var(--telkari-design-1-icon-size) / 2);
 	--telkari-angle-min: calc(atan2(var(--telkari-angle-pad), var(--telkari-arc-radius)));
 	--telkari-angle-max: calc(90deg - var(--telkari-angle-min));
 	--telkari-angle: calc(var(--telkari-angle-min) + (var(--telkari-angle-max) - var(--telkari-angle-min)) * var(--telkari-item-index) / max(var(--telkari-item-count) - 1, 1));
@@ -102,8 +146,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: var(--telkari-icon-size, 2.5rem);
-	height: var(--telkari-icon-size, 2.5rem);
+	width: var(--telkari-design-1-icon-size);
+	height: var(--telkari-design-1-icon-size);
 	background-color: var(--telkari-bg, #1e293b);
 	color: var(--telkari-fg, #fff);
 	text-decoration: none;
@@ -134,8 +178,8 @@
 .telkari-design-1.telkari-position-bottom-right.telkari-open .telkari-icon-link {
 	opacity: 1;
 	transform: translate(
-			calc(-1 * cos(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-icon-size, 2.5rem) / 2),
-			calc(-1 * sin(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-icon-size, 2.5rem) / 2)
+			calc(-1 * cos(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-design-1-icon-size) / 2),
+			calc(-1 * sin(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-design-1-icon-size) / 2)
 		)
 		scale(1);
 }
@@ -143,8 +187,8 @@
 .telkari-design-1.telkari-position-bottom-left.telkari-open .telkari-icon-link {
 	opacity: 1;
 	transform: translate(
-			calc(cos(var(--telkari-angle)) * var(--telkari-arc-radius) - var(--telkari-icon-size, 2.5rem) / 2),
-			calc(-1 * sin(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-icon-size, 2.5rem) / 2)
+			calc(cos(var(--telkari-angle)) * var(--telkari-arc-radius) - var(--telkari-design-1-icon-size) / 2),
+			calc(-1 * sin(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-design-1-icon-size) / 2)
 		)
 		scale(1);
 }
@@ -152,16 +196,16 @@
 /* Hover: scale in place without shifting position */
 .telkari-design-1.telkari-position-bottom-right.telkari-open .telkari-icon-link:hover {
 	transform: translate(
-			calc(-1 * cos(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-icon-size, 2.5rem) / 2),
-			calc(-1 * sin(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-icon-size, 2.5rem) / 2)
+			calc(-1 * cos(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-design-1-icon-size) / 2),
+			calc(-1 * sin(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-design-1-icon-size) / 2)
 		)
 		scale(1.15);
 }
 
 .telkari-design-1.telkari-position-bottom-left.telkari-open .telkari-icon-link:hover {
 	transform: translate(
-			calc(cos(var(--telkari-angle)) * var(--telkari-arc-radius) - var(--telkari-icon-size, 2.5rem) / 2),
-			calc(-1 * sin(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-icon-size, 2.5rem) / 2)
+			calc(cos(var(--telkari-angle)) * var(--telkari-arc-radius) - var(--telkari-design-1-icon-size) / 2),
+			calc(-1 * sin(var(--telkari-angle)) * var(--telkari-arc-radius) + var(--telkari-design-1-icon-size) / 2)
 		)
 		scale(1.15);
 }
@@ -220,4 +264,39 @@
 
 .telkari-design-1.telkari-position-bottom-left.telkari-has-tooltips .telkari-icon-link::after {
 	left: calc(100% + 0.5rem);
+}
+
+@media (max-width: 48rem) {
+	.telkari-container.telkari-design-1 {
+		--telkari-design-1-icon-size: var(--telkari-mobile-icon-size);
+		--telkari-design-1-icon-spacing: var(--telkari-mobile-icon-spacing);
+	}
+
+	.telkari-design-1 .telkari-design-shell {
+		gap: var(--telkari-mobile-group-gap);
+	}
+
+	.telkari-design-1:not(.telkari-has-socials) .telkari-design-shell {
+		padding: 0.75rem;
+	}
+
+	.telkari-design-1 .telkari-cta-wrapper {
+		align-items: stretch;
+		gap: var(--telkari-mobile-icon-spacing);
+		padding: 0 0.375rem 0.375rem;
+		max-width: calc(100vw - 1rem);
+		width: var(--telkari-mobile-cta-stack-width);
+	}
+
+	.telkari-design-1 .telkari-cta-link {
+		min-width: 0;
+		max-width: none;
+		width: 100%;
+	}
+}
+
+@media (max-width: 36rem) {
+	.telkari-design-1 .telkari-cta-wrapper {
+		width: min(7.5rem, calc(100vw - 1rem));
+	}
 }

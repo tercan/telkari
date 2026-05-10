@@ -4,9 +4,26 @@
  * @package Telkari
  */
 
-/* ── General ── */
+:root {
+	--telkari-admin-surface: #ffffff;
+	--telkari-admin-surface-muted: #f6f7f7;
+	--telkari-admin-border: #dcdcde;
+	--telkari-admin-border-strong: #c3c4c7;
+	--telkari-admin-text: #1e1e1e;
+	--telkari-admin-text-muted: #50575e;
+	--telkari-admin-accent: #003999;
+	--telkari-admin-accent-strong: #002b73;
+	--telkari-admin-accent-soft: #e7edf8;
+	--telkari-admin-accent-border-soft: rgba(0, 57, 153, 0.24);
+	--telkari-admin-accent-border-strong: rgba(0, 57, 153, 0.28);
+	--telkari-admin-accent-shadow: rgba(0, 57, 153, 0.18);
+	--telkari-admin-error: #d63638;
+	--telkari-admin-error-soft: #fbeaea;
+	--telkari-admin-success: #00a32a;
+	--telkari-admin-success-soft: #edf9f0;
+}
 
-.toplevel_page_telkari-settings {}
+/* ── General ── */
 
 .toplevel_page_telkari-settings #wpcontent {
     padding-left: 0;
@@ -17,7 +34,10 @@
 }
 
 .toplevel_page_telkari-settings .wrap .telkari-admin-header {
+	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
     background: #003999;
     padding: 2rem;
     color: #fff;
@@ -44,7 +64,7 @@
 
 .toplevel_page_telkari-settings .wrap .telkari-name .telkari-icon {
 	background-color: #fff;
-	border-radius: .5rem;
+	border-radius: 0.25rem;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -93,6 +113,53 @@
     border-bottom-width: 1px;
 }
 
+.telkari-settings-panel--appearance {
+	display: grid;
+	max-width: none;
+	gap: 1rem;
+}
+
+.telkari-settings-row {
+	display: grid;
+	width: 100%;
+	min-width: 0;
+	gap: 1rem;
+	align-items: stretch;
+}
+
+.telkari-settings-row--two-columns {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.telkari-settings-row--three-columns {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.telkari-settings-row .telkari-setting-card {
+	min-width: 0;
+	margin: 0;
+	border-bottom-width: 1px;
+}
+
+.telkari-settings-row .telkari-setting-control,
+.telkari-settings-row .telkari-range-field {
+	max-width: 100%;
+	min-width: 0;
+}
+
+.telkari-settings-row .telkari-btn-group {
+	max-width: 100%;
+	min-width: 0;
+	display: flex;
+	width: 100%;
+}
+
+.telkari-settings-row .telkari-btn-option {
+	flex: 1 1 0;
+	min-width: 0;
+	text-align: center;
+}
+
 .telkari-setting-label {
 	display: block;
 	font-size: 0.8125rem;
@@ -112,17 +179,6 @@
 	font-size: 0.875rem;
 	font-weight: 600;
 	margin: 1.5rem 0 0.5rem;
-}
-
-.telkari-badge {
-	display: inline-block;
-	padding: 0.25rem 0.625rem;
-	font-size: 0.8125rem;
-	font-weight: 600;
-	background: #f0f0f1;
-	border: 0.0625rem solid #dcdcde;
-	border-radius: 0.125rem;
-	color: #1e1e1e;
 }
 
 /* ── Design Selector ── */
@@ -145,12 +201,12 @@
 }
 
 .telkari-design-option:hover {
-	border-color: #2271b1;
+	border-color: var(--telkari-admin-accent);
 }
 
 .telkari-design-option--active {
-	border-color: #2271b1;
-	box-shadow: 0 0 0 0.0625rem #2271b1;
+	border-color: var(--telkari-admin-accent);
+	box-shadow: 0 0 0 0.0625rem var(--telkari-admin-accent);
 }
 
 .telkari-design-radio {
@@ -181,34 +237,33 @@
 	font-size: 0.8125rem;
 }
 
-.telkari-design-positions {
-	margin: 0;
-	color: #646970;
-	font-size: 0.75rem;
-}
-
-/* ── Social Accounts List ── */
-
-.telkari-social-accounts {
-	max-width: 50rem;
-}
+/* ── Collection Builder Shared ── */
 
 .telkari-sortable-list {
 	margin: 1rem 0;
 }
 
-.telkari-account-row {
-	display: flex;
-	align-items: center;
-	gap: 0.75rem;
-	padding: 0.625rem 0.75rem;
-	background: #fff;
-	border: 0.0625rem solid #dcdcde;
-	border-radius: 0.125rem;
-	margin-bottom: 0.25rem;
+.telkari-account-row,
+.telkari-cta-row {
+	transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
-.telkari-account-row.sortable-ghost {
+.telkari-row-flash {
+	animation: telkari-row-flash 1.5s ease;
+}
+
+@keyframes telkari-row-flash {
+	0% {
+		box-shadow: inset 0 0 0 0.0625rem var(--telkari-admin-success), 0 0 0 0.125rem var(--telkari-admin-success-soft);
+	}
+
+	100% {
+		box-shadow: inset 0 0 0 0.0625rem transparent, 0 0 0 0 transparent;
+	}
+}
+
+.telkari-account-row.sortable-ghost,
+.telkari-cta-row.sortable-ghost {
 	opacity: 0.4;
 }
 
@@ -233,7 +288,8 @@
 	font-size: 0.875rem;
 }
 
-.telkari-account-url {
+.telkari-account-url,
+.telkari-cta-message {
 	font-size: 0.75rem;
 	color: #646970;
 	overflow: hidden;
@@ -263,20 +319,6 @@
 	border-radius: 0.125rem;
 }
 
-/* ── Add Account Form ── */
-
-.telkari-add-account {
-	margin-top: 1.5rem;
-	padding: 1rem;
-	background: #f6f7f7;
-	border-radius: 0.125rem;
-}
-
-.telkari-add-account h3 {
-	margin-top: 0;
-	font-size: 0.875rem;
-}
-
 .telkari-add-form {
 	display: flex;
 	flex-wrap: wrap;
@@ -296,8 +338,90 @@
 }
 
 .telkari-add-form-row select,
-.telkari-add-form-row input[type="url"] {
+.telkari-add-form-row input[type="url"],
+.telkari-add-form-row input[type="text"],
+.telkari-add-form-row textarea {
 	min-width: 14rem;
+}
+
+.telkari-add-form-row textarea {
+	min-height: 5.5rem;
+}
+
+.telkari-add-form-row--hidden {
+	display: none;
+}
+
+.telkari-add-form-row--wide {
+	grid-column: 1 / -1;
+}
+
+.telkari-cta-builder input[aria-invalid="true"],
+.telkari-cta-builder textarea[aria-invalid="true"] {
+	border-color: var(--telkari-admin-error);
+	box-shadow: 0 0 0 0.0625rem var(--telkari-admin-error);
+}
+
+.telkari-cta-builder-feedback {
+	display: inline-flex;
+	align-items: center;
+	margin: 0 0 0.75rem;
+	padding: 0.3125rem 0.625rem;
+	background: var(--telkari-admin-success-soft);
+	border: 0.0625rem solid var(--telkari-admin-success);
+	border-radius: 0.125rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+	line-height: 1.4;
+	color: var(--telkari-admin-success);
+}
+
+.telkari-cta-builder-feedback[hidden] {
+	display: none;
+}
+
+.telkari-field-error {
+	display: block;
+	margin-top: 0.25rem;
+	font-size: 0.75rem;
+	line-height: 1.5;
+	color: var(--telkari-admin-error);
+}
+
+.telkari-field-error[hidden] {
+	display: none;
+}
+
+.telkari-cta-builder-secondary-action {
+	background: var(--telkari-admin-surface);
+	border-color: var(--telkari-admin-border);
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-cta-builder-secondary-action:hover {
+	background: var(--telkari-admin-surface-muted);
+	border-color: var(--telkari-admin-border-strong);
+	color: var(--telkari-admin-text);
+}
+
+.telkari-cta-builder[data-mode="edit"] .telkari-cta-builder-secondary-action {
+	border-color: var(--telkari-admin-error);
+	color: var(--telkari-admin-error);
+}
+
+.telkari-cta-builder[data-mode="edit"] .telkari-cta-builder-secondary-action:hover {
+	background: var(--telkari-admin-error-soft);
+	border-color: var(--telkari-admin-error);
+	color: var(--telkari-admin-error);
+}
+
+.telkari-cta-builder-actions .button[disabled] {
+	opacity: 0.65;
+	cursor: not-allowed;
+}
+
+.telkari-cta-builder-grid .wp-picker-container {
+	max-width: 100%;
 }
 
 /* ── Range Slider ── */
@@ -325,27 +449,27 @@
 	appearance: none;
 	width: 1rem;
 	height: 1rem;
-	background: #2271b1;
+	background: var(--telkari-admin-accent);
 	border: none;
-	border-radius: 50%;
+	border-radius: 0.25rem;
 	cursor: pointer;
 }
 
 .telkari-range-input::-moz-range-thumb {
 	width: 1rem;
 	height: 1rem;
-	background: #2271b1;
+	background: var(--telkari-admin-accent);
 	border: none;
-	border-radius: 50%;
+	border-radius: 0.25rem;
 	cursor: pointer;
 }
 
 .telkari-range-input:hover::-webkit-slider-thumb {
-	background: #135e96;
+	background: var(--telkari-admin-accent-strong);
 }
 
 .telkari-range-input:hover::-moz-range-thumb {
-	background: #135e96;
+	background: var(--telkari-admin-accent-strong);
 }
 
 .telkari-range-value {
@@ -361,11 +485,10 @@
 .telkari-btn-group {
 	display: inline-flex;
 	border: 0.0625rem solid #dcdcde;
+	border-color: var(--telkari-admin-accent);
 	border-radius: 0.125rem;
 	overflow: hidden;
-    border-color: #2271b1;
-    border-radius: .125rem;
-    box-shadow: 0 0 .125rem #2271b1;
+	box-shadow: 0 0 0.125rem var(--telkari-admin-accent);
 }
 
 
@@ -395,17 +518,47 @@
 }
 
 .telkari-btn-option:hover {
-	background: #f6f7f7;
+	background: var(--telkari-admin-accent-soft);
+	color: var(--telkari-admin-accent-strong);
 }
 
 .telkari-btn-option--active {
-	background: #2271b1;
+	background: var(--telkari-admin-accent);
 	color: #fff;
-	border-color: #2271b1;
+	border-color: var(--telkari-admin-accent);
 }
 
 .telkari-btn-option--active:hover {
-	background: #135e96;
+	background: var(--telkari-admin-accent-strong);
+}
+
+.toplevel_page_telkari-settings .wrap .button.button-primary {
+	background: var(--telkari-admin-accent);
+	border-color: var(--telkari-admin-accent);
+	color: var(--telkari-admin-surface);
+	box-shadow: none;
+	text-shadow: none;
+}
+
+.toplevel_page_telkari-settings .wrap .button.button-primary:hover,
+.toplevel_page_telkari-settings .wrap .button.button-primary:focus {
+	background: var(--telkari-admin-accent-strong);
+	border-color: var(--telkari-admin-accent-strong);
+	color: var(--telkari-admin-surface);
+	box-shadow: 0 0 0 0.0625rem var(--telkari-admin-accent-border-soft);
+}
+
+.toplevel_page_telkari-settings .wrap .button.button-primary:focus-visible {
+	outline: 0.125rem solid var(--telkari-admin-accent);
+	outline-offset: 0.125rem;
+}
+
+.toplevel_page_telkari-settings .wrap .button.button-primary:disabled,
+.toplevel_page_telkari-settings .wrap .button.button-primary[disabled] {
+	background: var(--telkari-admin-accent-soft);
+	border-color: var(--telkari-admin-accent-border-soft);
+	color: var(--telkari-admin-accent-strong);
+	box-shadow: none;
 }
 
 /* ── Color Grid ── */
@@ -444,4 +597,1503 @@
 	font-weight: 400 !important;
 	margin-top: 0.375rem;
 	cursor: pointer;
+}
+
+/* ── CTA Reference Refresh ── */
+
+.toplevel_page_telkari-settings {
+	--telkari-cta-workspace-bg: #f8fafb;
+	--telkari-cta-panel-bg: #ffffff;
+	--telkari-cta-panel-muted: #f4f7f9;
+	--telkari-cta-border-soft: rgba(183, 196, 204, 0.55);
+	--telkari-cta-border-strong: #b7c4cc;
+	--telkari-cta-shadow-soft: rgba(27, 42, 56, 0.06);
+	--telkari-cta-shadow-strong: rgba(27, 42, 56, 0.09);
+	--telkari-cta-tab-text: #424a54;
+	--telkari-cta-tab-active: var(--telkari-admin-accent);
+	--telkari-cta-tab-line: var(--telkari-admin-accent);
+	--telkari-cta-switch-border: rgba(53, 181, 98, 0.45);
+	--telkari-cta-switch-shadow: rgba(22, 31, 39, 0.18);
+	--telkari-cta-switch-off-bg: #bcc7d0;
+	--telkari-cta-switch-off-border: #8796a2;
+	--telkari-cta-switch-off-thumb: #4d5a65;
+	--telkari-cta-phone: #0f766e;
+	--telkari-cta-phone-soft: #d6f0ec;
+	--telkari-cta-email: #2563eb;
+	--telkari-cta-email-soft: #dbe8ff;
+	--telkari-cta-whatsapp: #25d366;
+	--telkari-cta-whatsapp-soft: #daf6e5;
+	--telkari-cta-url: #1e293b;
+	--telkari-cta-url-soft: #e8ebf0;
+	--telkari-cta-preview-strip: rgba(0, 57, 153, 0.9);
+	--telkari-cta-preview-line: #dde4ea;
+	--telkari-cta-dot-red: #e88c84;
+	--telkari-cta-dot-yellow: #e6ca63;
+	--telkari-cta-dot-green: #74c97f;
+	--telkari-platform-instagram: #e4405f;
+	--telkari-platform-instagram-soft: rgba(228, 64, 95, 0.12);
+	--telkari-platform-youtube: #ff0000;
+	--telkari-platform-youtube-soft: rgba(255, 0, 0, 0.1);
+	--telkari-platform-facebook: #1877f2;
+	--telkari-platform-facebook-soft: rgba(24, 119, 242, 0.12);
+	--telkari-platform-x: #111827;
+	--telkari-platform-x-soft: rgba(17, 24, 39, 0.1);
+	--telkari-platform-linkedin: #0a66c2;
+	--telkari-platform-linkedin-soft: rgba(10, 102, 194, 0.12);
+	--telkari-platform-tiktok: #111827;
+	--telkari-platform-tiktok-soft: rgba(17, 24, 39, 0.1);
+	--telkari-platform-github: #181717;
+	--telkari-platform-github-soft: rgba(24, 23, 23, 0.1);
+	--telkari-platform-pinterest: #bd081c;
+	--telkari-platform-pinterest-soft: rgba(189, 8, 28, 0.12);
+	--telkari-platform-telegram: #26a5e4;
+	--telkari-platform-telegram-soft: rgba(38, 165, 228, 0.12);
+	--telkari-platform-whatsapp: #25d366;
+	--telkari-platform-whatsapp-soft: rgba(37, 211, 102, 0.12);
+	--telkari-platform-discord: #5865f2;
+	--telkari-platform-discord-soft: rgba(88, 101, 242, 0.12);
+	--telkari-platform-twitch: #9146ff;
+	--telkari-platform-twitch-soft: rgba(145, 70, 255, 0.12);
+	--telkari-platform-spotify: #1db954;
+	--telkari-platform-spotify-soft: rgba(29, 185, 84, 0.12);
+}
+
+.toplevel_page_telkari-settings .wrap .telkari-admin-tabs {
+	display: flex;
+	gap: 1.1875rem;
+	align-items: center;
+	min-height: 3rem;
+	margin: 0 0 1.25rem;
+	padding: 0 1rem;
+	border-bottom: 0.0625rem solid var(--telkari-cta-border-soft);
+	max-width: 67.5rem;
+    box-sizing: border-box;
+    margin-left: 2rem;
+}
+
+.toplevel_page_telkari-settings .wrap .telkari-admin-tab {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: transparent;
+	box-shadow: none;
+	color: var(--telkari-cta-tab-text);
+	font-size: 0.90625rem;
+	font-weight: 400;
+	line-height: 1;
+	transition: color 0.15s ease;
+}
+
+.toplevel_page_telkari-settings .wrap .telkari-admin-tab:hover {
+	background: transparent;
+	color: var(--telkari-admin-accent-strong);
+}
+
+.toplevel_page_telkari-settings .wrap .telkari-admin-tab:focus-visible {
+	outline: 0.125rem solid var(--telkari-admin-accent);
+	outline-offset: 0.125rem;
+}
+
+.toplevel_page_telkari-settings .wrap .telkari-admin-tab--active,
+.toplevel_page_telkari-settings .wrap .telkari-admin-tab.nav-tab-active {
+	background: transparent;
+	color: var(--telkari-cta-tab-active);
+	font-weight: 500;
+}
+
+.toplevel_page_telkari-settings .wrap .telkari-admin-tab--active::after,
+.toplevel_page_telkari-settings .wrap .telkari-admin-tab.nav-tab-active::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: -0.03125rem;
+	left: 0;
+	height: 0.125rem;
+	background: var(--telkari-cta-tab-line);
+}
+
+.telkari-admin-workspace {
+	max-width: 67.5rem;
+	padding: 0.875rem 1rem 1rem;
+	border: 0.0625rem solid var(--telkari-admin-border);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-workspace-bg);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 1rem 2rem var(--telkari-cta-shadow-soft);
+}
+
+.telkari-cta-panel-header {
+	margin-bottom: 1rem;
+}
+
+.telkari-cta-panel-header h2 {
+	margin: 0;
+	font-size: 1.5rem;
+	line-height: 1.1;
+}
+
+.telkari-cta-panel-header .description {
+	margin: 0.375rem 0 0;
+	max-width: 34rem;
+}
+
+.telkari-cta-content-shell {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 17rem;
+	gap: 1rem;
+	align-items: start;
+}
+
+.telkari-cta-main-panel {
+	min-width: 0;
+}
+
+.telkari-cta-list-section {
+	padding: 0.875rem 1rem 1rem;
+	border: 0.0625rem solid var(--telkari-admin-border);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-panel-bg);
+	box-shadow: 0 0.75rem 1.5rem var(--telkari-cta-shadow-soft);
+}
+
+.telkari-admin-workspace .telkari-sortable-list {
+	margin: 0;
+}
+
+.telkari-cta-list {
+	display: grid;
+	gap: 0.625rem;
+}
+
+.telkari-cta-list .telkari-empty-state {
+	padding: 1.25rem 1rem;
+	border: 0.0625rem dashed var(--telkari-cta-border-strong);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-panel-muted);
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-cta-list .telkari-cta-row {
+	display: grid;
+	grid-template-columns: 1rem 2.5rem minmax(0, 1fr) auto;
+	gap: 0.5rem;
+	align-items: center;
+	min-height: 2.75rem;
+	padding: 0.625rem 0.75rem 0.625rem 0.375rem;
+	border: 0.0625rem solid var(--telkari-cta-border-soft);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-panel-bg);
+	box-shadow: 0 1px 2px var(--telkari-cta-shadow-soft);
+}
+
+.telkari-cta-list .telkari-cta-row .telkari-drag-handle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #c2c8cf;
+	cursor: grab;
+}
+
+.telkari-cta-list .telkari-cta-row .telkari-drag-handle:active {
+	cursor: grabbing;
+}
+
+.telkari-cta-row-icon,
+.telkari-cta-type-card-icon,
+.telkari-account-row-icon,
+.telkari-account-platform-card-icon,
+.telkari-account-platform-summary-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	border: 0.0625rem solid transparent;
+	border-radius: 0.125rem;
+}
+
+.telkari-cta-row-icon .telkari-cta-admin-icon-svg,
+.telkari-cta-type-card-icon .telkari-cta-admin-icon-svg,
+.telkari-cta-type-summary-icon .telkari-cta-admin-icon-svg,
+.telkari-cta-preview-button-icon .telkari-cta-admin-icon-svg {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+.telkari-account-row-icon-glyph,
+.telkari-account-platform-card-icon-glyph,
+.telkari-account-platform-summary-icon-glyph {
+	display: block;
+	width: 1.25rem;
+	height: 1.25rem;
+	background: currentColor;
+	-webkit-mask: var(--telkari-account-platform-icon) center / contain no-repeat;
+	mask: var(--telkari-account-platform-icon) center / contain no-repeat;
+}
+
+.telkari-cta-row-icon--phone,
+.telkari-cta-type-card-icon.telkari-cta-row-icon--phone {
+	color: var(--telkari-cta-phone);
+	background: var(--telkari-cta-phone-soft);
+}
+
+.telkari-cta-row-icon--email,
+.telkari-cta-type-card-icon.telkari-cta-row-icon--email {
+	color: var(--telkari-cta-email);
+	background: var(--telkari-cta-email-soft);
+}
+
+.telkari-cta-row-icon--whatsapp,
+.telkari-cta-type-card-icon.telkari-cta-row-icon--whatsapp {
+	color: var(--telkari-cta-whatsapp);
+	background: var(--telkari-cta-whatsapp-soft);
+}
+
+.telkari-cta-row-icon--url,
+.telkari-cta-type-card-icon.telkari-cta-row-icon--url {
+	color: var(--telkari-cta-url);
+	background: var(--telkari-cta-url-soft);
+}
+
+.telkari-cta-list .telkari-account-info {
+	gap: 0.125rem;
+}
+
+.telkari-cta-heading {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+}
+
+.telkari-cta-list .telkari-account-platform {
+	font-size: 0.96875rem;
+	line-height: 1.1;
+}
+
+.telkari-cta-list .telkari-account-url,
+.telkari-cta-list .telkari-cta-message {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.telkari-cta-list .telkari-account-url {
+	font-size: 0.875rem;
+	color: var(--telkari-admin-text);
+}
+
+.telkari-cta-list .telkari-cta-message {
+	font-size: 0.75rem;
+	line-height: 1.4;
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-cta-row .telkari-account-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.375rem;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+}
+
+.telkari-cta-toggle {
+	cursor: pointer;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.625rem;
+	height: 1.75rem;
+	margin-right: 0.25rem;
+}
+
+.telkari-cta-toggle input {
+	position: absolute;
+	inset: 0;
+	margin: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.telkari-cta-toggle-track {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	box-sizing: border-box;
+	width: 2.3125rem;
+	height: 1.3125rem;
+	padding: 0.125rem;
+	border: 0.0625rem solid var(--telkari-cta-switch-off-border);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-switch-off-bg);
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.telkari-cta-toggle-thumb {
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-switch-off-thumb);
+	box-shadow: 0 1px 2px var(--telkari-cta-switch-shadow);
+	transform: translateX(0);
+	transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.telkari-cta-toggle input:checked + .telkari-cta-toggle-track {
+	border-color: var(--telkari-cta-switch-border);
+	background: var(--telkari-admin-success);
+}
+
+.telkari-cta-toggle input:checked + .telkari-cta-toggle-track .telkari-cta-toggle-thumb {
+	background: var(--telkari-admin-surface);
+	transform: translateX(0.9375rem);
+}
+
+.telkari-cta-toggle input:focus-visible + .telkari-cta-toggle-track {
+	outline: 0.125rem solid var(--telkari-admin-accent);
+	outline-offset: 0.125rem;
+}
+
+.telkari-cta-action-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2rem;
+	padding: 0;
+    width: 42px;
+    height: 22px;
+    border: 1px solid;
+	border-radius: 0.125rem;
+	background: transparent;
+	box-shadow: none;
+	color: var(--telkari-admin-text-muted);
+	cursor: pointer;
+	transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.telkari-cta-action-button .dashicons {
+	width: 1rem;
+	height: 1rem;
+	margin: 0;
+	font-size: 1rem;
+	line-height: 1;
+}
+
+.telkari-cta-action-button--edit {
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-cta-action-button--edit:hover,
+.telkari-edit-cta--active:hover,
+.telkari-edit-account--active:hover {
+	color: var(--telkari-admin-surface);
+	background: var(--telkari-admin-accent);
+}
+
+.telkari-cta-action-button--delete {
+	color: var(--telkari-admin-error);
+}
+
+.telkari-cta-action-button--delete:hover {
+	color: var(--telkari-admin-surface);
+	background: var(--telkari-admin-error);
+}
+
+.telkari-cta-row--disabled {
+	border-color: var(--telkari-admin-border-strong);
+	background: var(--telkari-cta-panel-muted);
+}
+
+.telkari-cta-row--disabled .telkari-account-platform,
+.telkari-cta-row--disabled .telkari-account-url,
+.telkari-cta-row--disabled .telkari-cta-message {
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-cta-row--disabled .telkari-cta-row-icon {
+	opacity: 0.72;
+}
+
+.telkari-cta-row--editing {
+	border-color: var(--telkari-admin-accent);
+	background: var(--telkari-admin-accent-soft);
+	box-shadow: inset 0 0 0 0.0625rem var(--telkari-admin-accent), 0 1px 2px var(--telkari-cta-shadow-soft);
+}
+
+.telkari-cta-row--disabled.telkari-cta-row--editing {
+	background: var(--telkari-admin-accent-soft);
+}
+
+.telkari-edit-cta--active,
+.telkari-edit-account--active {
+	color: var(--telkari-admin-accent-strong);
+}
+
+.telkari-cta-action-button:focus-visible {
+	outline: 0.125rem solid var(--telkari-admin-accent);
+	outline-offset: 0.125rem;
+}
+
+.telkari-add-cta {
+	margin-top: 1rem;
+	padding: 0;
+	background: transparent;
+}
+
+.telkari-cta-builder {
+	margin-top: 0;
+	padding: 1rem;
+	border: 0.0625rem solid var(--telkari-admin-border);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-panel-bg);
+	box-shadow: 0 0.75rem 1.5rem var(--telkari-cta-shadow-soft);
+}
+
+.telkari-cta-builder-header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.telkari-cta-builder-header h3 {
+	margin: 0;
+	font-size: 1rem;
+}
+
+.telkari-cta-type-selector {
+	margin: 0 0 1.25rem;
+	padding: 0;
+	border: none;
+}
+
+.telkari-cta-type-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.75rem;
+	margin-top: 0.75rem;
+}
+
+.telkari-cta-type-card {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	cursor: pointer;
+}
+
+.telkari-cta-type-input {
+	position: absolute;
+	inset: 0;
+	margin: 0;
+	opacity: 0;
+}
+
+.telkari-cta-type-card-body {
+	display: grid;
+	grid-template-columns: 2.625rem minmax(0, 1fr);
+	gap: 0.625rem;
+	align-items: center;
+	min-height: 2rem;
+	padding: 0.875rem 0.75rem;
+	border: 0.0625rem solid var(--telkari-cta-border-soft);
+	border-radius: 0.125rem;
+	background: var(--telkari-admin-surface);
+	box-shadow: 0 1px 2px var(--telkari-cta-shadow-soft);
+	transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.telkari-cta-type-card-content {
+	display: grid;
+	gap: 0.1875rem;
+	min-width: 0;
+}
+
+.telkari-cta-type-card-title {
+	font-size: 0.875rem;
+	line-height: 1.2;
+	color: var(--telkari-admin-text);
+}
+
+.telkari-cta-type-card-description {
+	font-size: 0.75rem;
+	line-height: 1.45;
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-cta-type-card:hover .telkari-cta-type-card-body {
+	border-color: var(--telkari-admin-accent);
+	background: var(--telkari-admin-accent-soft);
+}
+
+.telkari-cta-type-input:checked + .telkari-cta-type-card-body {
+	border-color: var(--telkari-cta-tab-line);
+	background: var(--telkari-admin-accent-soft);
+	box-shadow: inset 0 0 0 0.0625rem var(--telkari-admin-accent-shadow), 0 1px 2px var(--telkari-cta-shadow-soft);
+}
+
+.telkari-cta-type-input:focus-visible + .telkari-cta-type-card-body {
+	outline: 0.125rem solid var(--telkari-admin-accent);
+	outline-offset: 0.125rem;
+}
+
+.telkari-cta-type-summary {
+	display: grid;
+	grid-template-columns: 2.25rem minmax(0, 1fr) auto;
+	gap: 0.75rem;
+	align-items: center;
+	margin-top: 0.75rem;
+	padding: 0.75rem;
+	border: 0.0625rem solid var(--telkari-cta-border-soft);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-panel-muted);
+}
+
+.telkari-cta-type-summary[hidden] {
+	display: none;
+}
+
+.telkari-cta-type-summary-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	border: 0.0625rem solid transparent;
+	border-radius: 0.125rem;
+}
+
+.telkari-cta-type-summary-copy {
+	display: grid;
+	gap: 0.1875rem;
+	min-width: 0;
+}
+
+.telkari-cta-type-summary-label {
+	font-size: 0.875rem;
+	line-height: 1.2;
+	color: var(--telkari-admin-text);
+}
+
+.telkari-cta-type-summary-description,
+.telkari-cta-type-summary-example {
+	font-size: 0.75rem;
+	line-height: 1.45;
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-cta-type-summary-example {
+	overflow-wrap: anywhere;
+}
+
+.telkari-cta-type-summary-swatch {
+	width: 1rem;
+	height: 1rem;
+	border: 0.0625rem solid rgba(0, 0, 0, 0.08);
+	border-radius: 0.125rem;
+}
+
+.telkari-cta-builder-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+	align-items: start;
+}
+
+.telkari-cta-builder .regular-text,
+.telkari-cta-builder textarea {
+	width: 100%;
+	min-width: 0;
+	border: 0.0625rem solid var(--telkari-admin-border);
+	border-radius: 0.125rem;
+	background: var(--telkari-admin-surface);
+}
+
+.telkari-cta-builder .regular-text {
+	min-height: 2.25rem;
+	padding: 0 0.875rem;
+}
+
+.telkari-cta-builder textarea {
+	min-height: 5.5rem;
+	padding: 0.625rem 0.875rem;
+	resize: vertical;
+}
+
+.telkari-cta-builder .regular-text::placeholder,
+.telkari-cta-builder textarea::placeholder {
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-cta-color-picker-wrap .wp-picker-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 0.5rem;
+	max-width: 100%;
+	width: 100%;
+}
+
+.telkari-cta-color-picker-wrap .wp-color-result.button {
+	display: inline-flex;
+	align-items: stretch;
+	justify-content: flex-start;
+	width: 9rem;
+	min-height: 2rem;
+	margin: 0;
+	padding: 0 0 0 2rem;
+	border: 0.0625rem solid var(--telkari-admin-border);
+	border-radius: 0.125rem;
+	background: var(--telkari-admin-surface);
+	box-shadow: none;
+	overflow: hidden;
+}
+
+.telkari-cta-color-picker-wrap .wp-color-result.button:hover,
+.telkari-cta-color-picker-wrap .wp-color-result.button:focus {
+	border-color: var(--telkari-admin-border-strong);
+	background: var(--telkari-admin-surface-muted);
+	box-shadow: none;
+}
+
+.telkari-cta-color-picker-wrap .wp-color-result-text {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	min-height: 2rem;
+	padding: 0 0.75rem;
+	border-left: 0.0625rem solid var(--telkari-admin-border);
+	background: var(--telkari-admin-surface);
+	color: var(--telkari-admin-text);
+	font-size: 0.875rem;
+	line-height: 1;
+	text-align: left;
+}
+
+.telkari-cta-color-picker-wrap .wp-picker-input-wrap {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.telkari-cta-color-picker-wrap .wp-picker-input-wrap.hidden {
+	display: none;
+}
+
+.telkari-cta-color-picker-wrap .wp-picker-input-wrap label {
+	margin: 0 !important;
+}
+
+.telkari-cta-color-picker-wrap .wp-picker-input-wrap .button {
+	min-height: 2rem;
+	margin: 0;
+	padding: 0 0.75rem;
+	border: 0.0625rem solid var(--telkari-admin-border);
+	border-radius: 0.125rem;
+	background: var(--telkari-admin-surface);
+	box-shadow: none;
+	line-height: 2rem;
+}
+
+.telkari-cta-color-picker-wrap .wp-picker-input-wrap .button:hover,
+.telkari-cta-color-picker-wrap .wp-picker-input-wrap .button:focus {
+	border-color: var(--telkari-admin-border-strong);
+	background: var(--telkari-admin-surface-muted);
+	box-shadow: none;
+}
+
+.telkari-cta-color-picker-wrap input[type="text"].wp-color-picker {
+	width: 6rem;
+	min-height: 2rem;
+	padding: 0 0.75rem;
+	font-size: 0.875rem;
+}
+
+.telkari-cta-color-picker-wrap .wp-color-result.button[data-color-source="default"] {
+	border-color: var(--telkari-admin-accent-border-soft);
+}
+
+.telkari-cta-color-picker-wrap .wp-color-result.button[data-color-source="custom"] {
+	border-color: var(--telkari-admin-accent);
+}
+
+.telkari-cta-color-picker-wrap .wp-color-result.button[data-color-source="empty"] {
+	background: var(--telkari-admin-surface);
+}
+
+.telkari-cta-color-picker-wrap .iris-picker {
+	margin-top: 0.25rem;
+	border-color: var(--telkari-admin-border);
+	box-shadow: 0 0.75rem 1.5rem var(--telkari-cta-shadow-soft);
+}
+
+.telkari-cta-color-state {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 0.5rem;
+	padding: 0.375rem 0.5rem;
+	border: 0.0625rem solid var(--telkari-cta-border-soft);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-panel-muted);
+	width: 8rem;
+}
+
+.telkari-cta-color-state[hidden] {
+	display: none;
+}
+
+.telkari-cta-color-state[data-color-source="custom"] {
+	border-color: var(--telkari-admin-accent-border-strong);
+}
+
+.telkari-cta-color-state-swatch {
+	width: 0.875rem;
+	height: 0.875rem;
+	border: 0.0625rem solid rgba(0, 0, 0, 0.08);
+	border-radius: 0.125rem;
+}
+
+.telkari-cta-color-state-value {
+	font-family: Consolas, Monaco, monospace;
+	font-size: 0.75rem;
+	line-height: 1;
+	color: var(--telkari-admin-text);
+}
+
+.telkari-cta-builder-footer {
+	margin-top: 1.25rem;
+	padding-top: 1rem;
+	border-top: 0.0625rem solid var(--telkari-cta-border-soft);
+}
+
+.telkari-cta-builder-actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 0.5rem;
+}
+
+.telkari-cta-preview-panel {
+	align-self: start;
+}
+
+.telkari-cta-preview-card {
+	padding: 0.875rem 0.9375rem 0.75rem;
+	border: 0.0625rem solid rgba(215, 221, 226, 0.88);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-panel-bg);
+	box-shadow: 0 0.75rem 1.5rem var(--telkari-cta-shadow-soft);
+}
+
+.telkari-cta-preview-browser {
+	position: relative;
+	min-height: 7.75rem;
+	overflow: hidden;
+	border: 0.0625rem solid var(--telkari-cta-border-soft);
+	border-radius: 0.125rem;
+	background: var(--telkari-admin-surface);
+	box-shadow: 0 0.5rem 1.25rem var(--telkari-cta-shadow-strong);
+}
+
+.telkari-cta-preview-browser::before {
+	content: "";
+	position: absolute;
+	inset: 1.75rem auto 0 0;
+	width: 0.6875rem;
+	background: var(--telkari-cta-preview-strip);
+}
+
+.telkari-cta-preview-browser-header {
+	display: flex;
+	gap: 0.3125rem;
+	align-items: center;
+	height: 1.75rem;
+	padding: 0 0.5rem;
+	border-bottom: 0.0625rem solid var(--telkari-cta-border-soft);
+	background: rgba(240, 243, 246, 0.92);
+}
+
+.telkari-cta-preview-browser-dot {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 0.125rem;
+}
+
+.telkari-cta-preview-browser-dot--red {
+	background: var(--telkari-cta-dot-red);
+}
+
+.telkari-cta-preview-browser-dot--yellow {
+	background: var(--telkari-cta-dot-yellow);
+}
+
+.telkari-cta-preview-browser-dot--green {
+	background: var(--telkari-cta-dot-green);
+}
+
+.telkari-cta-preview-browser-body {
+	padding: 0.625rem 0.75rem 0.75rem 1.375rem;
+}
+
+.telkari-cta-preview-line {
+	height: 0.4375rem;
+	margin: 0 0 0.375rem;
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-preview-line);
+}
+
+.telkari-cta-preview-line--wide {
+	width: 4.625rem;
+}
+
+.telkari-cta-preview-line--full {
+	width: 6.5rem;
+}
+
+.telkari-cta-preview-line--medium {
+	width: 5.625rem;
+}
+
+.telkari-cta-preview-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4375rem;
+	min-height: 1.875rem;
+	margin-top: 0.5rem;
+	padding: 0 0.875rem;
+	border: 0.0625rem solid var(--telkari-admin-accent);
+	border-radius: 0.125rem;
+	background: var(--telkari-admin-accent);
+	color: var(--telkari-admin-surface);
+	box-shadow: none;
+	cursor: default;
+	opacity: 1;
+}
+
+.telkari-cta-preview-button:disabled {
+	opacity: 1;
+}
+
+.telkari-cta-preview-button--empty {
+	border-color: var(--telkari-cta-border-soft);
+	background: var(--telkari-admin-surface-muted);
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-cta-preview-button-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 0.875rem;
+	height: 0.875rem;
+}
+
+.telkari-cta-preview-button #telkari-cta-preview-label {
+	font-size: 0.875rem;
+	font-weight: 600;
+	line-height: 1;
+}
+
+.telkari-cta-preview-content {
+	margin-top: 0.625rem;
+}
+
+.telkari-cta-preview-eyebrow {
+	margin: 0;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-cta-preview-value {
+	margin: 0.25rem 0 0;
+	color: var(--telkari-admin-text);
+	font-size: 0.8125rem;
+	line-height: 1.35;
+	word-break: break-word;
+}
+
+.telkari-cta-preview-content .telkari-setting-description {
+	margin-top: 0.25rem;
+}
+
+.telkari-account-panel-header {
+	margin-bottom: 1rem;
+}
+
+.telkari-account-panel-header h2 {
+	margin: 0;
+	font-size: 1.5rem;
+	line-height: 1.1;
+}
+
+.telkari-account-panel-header .description {
+	margin: 0.375rem 0 0;
+	max-width: 34rem;
+}
+
+.telkari-account-content-shell {
+	display: block;
+}
+
+.telkari-account-main-panel {
+	min-width: 0;
+}
+
+.telkari-account-list-section {
+	padding: 0.875rem 1rem 1rem;
+	border: 0.0625rem solid var(--telkari-admin-border);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-panel-bg);
+	box-shadow: 0 0.75rem 1.5rem var(--telkari-cta-shadow-soft);
+}
+
+.telkari-account-list {
+	display: grid;
+	gap: 0.625rem;
+}
+
+.telkari-account-list .telkari-empty-state {
+	padding: 1.25rem 1rem;
+	border: 0.0625rem dashed var(--telkari-cta-border-strong);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-panel-muted);
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-account-list .telkari-account-row {
+	display: grid;
+	grid-template-columns: 1rem 2.5rem minmax(0, 1fr) auto;
+	gap: 0.5rem;
+	align-items: center;
+	min-height: 2.75rem;
+	padding: 0.625rem 0.75rem 0.625rem 0.375rem;
+	border: 0.0625rem solid var(--telkari-cta-border-soft);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-panel-bg);
+	box-shadow: 0 1px 2px var(--telkari-cta-shadow-soft);
+}
+
+.telkari-account-list .telkari-account-row .telkari-drag-handle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #c2c8cf;
+	cursor: grab;
+}
+
+.telkari-account-list .telkari-account-row .telkari-drag-handle:active {
+	cursor: grabbing;
+}
+
+.telkari-account-list .telkari-account-info {
+	gap: 0.125rem;
+}
+
+.telkari-account-list .telkari-account-platform {
+	font-size: 0.96875rem;
+	line-height: 1.1;
+}
+
+.telkari-account-list .telkari-account-url {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 0.875rem;
+	color: var(--telkari-admin-text);
+}
+
+.telkari-account-row .telkari-account-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.375rem;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+}
+
+.telkari-account-row--disabled {
+	border-color: var(--telkari-admin-border-strong);
+	background: var(--telkari-cta-panel-muted);
+}
+
+.telkari-account-row--disabled .telkari-account-platform,
+.telkari-account-row--disabled .telkari-account-url {
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-account-row--disabled .telkari-account-row-icon {
+	opacity: 0.72;
+}
+
+.telkari-account-row--editing {
+	border-color: var(--telkari-admin-accent);
+	background: var(--telkari-admin-accent-soft);
+	box-shadow: inset 0 0 0 0.0625rem var(--telkari-admin-accent), 0 1px 2px var(--telkari-cta-shadow-soft);
+}
+
+.telkari-account-row--disabled.telkari-account-row--editing {
+	background: var(--telkari-admin-accent-soft);
+}
+
+.telkari-add-account {
+	margin-top: 1rem;
+	padding: 0;
+	background: transparent;
+}
+
+.telkari-account-builder {
+	margin-top: 0;
+	padding: 1rem;
+	border: 0.0625rem solid var(--telkari-admin-border);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-panel-bg);
+	box-shadow: 0 0.75rem 1.5rem var(--telkari-cta-shadow-soft);
+}
+
+.telkari-account-builder[data-mode="edit"] {
+	border-color: var(--telkari-admin-accent);
+	box-shadow: inset 0 0 0 0.0625rem var(--telkari-admin-accent), 0 0.75rem 1.5rem var(--telkari-cta-shadow-soft);
+}
+
+.telkari-account-builder[data-mode="edit"] .telkari-cta-builder-secondary-action {
+	border-color: var(--telkari-admin-error);
+	color: var(--telkari-admin-error);
+}
+
+.telkari-account-builder[data-mode="edit"] .telkari-cta-builder-secondary-action:hover {
+	background: var(--telkari-admin-error-soft);
+	border-color: var(--telkari-admin-error);
+	color: var(--telkari-admin-error);
+}
+
+.telkari-account-builder-header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.telkari-account-builder-header h3 {
+	margin: 0;
+	font-size: 1rem;
+}
+
+.telkari-account-builder-status {
+	display: inline-flex;
+	align-items: center;
+	margin: 0 0 0.5rem;
+	padding: 0.25rem 0.5rem;
+	background: var(--telkari-admin-surface);
+	border: 0.0625rem solid var(--telkari-admin-accent);
+	border-radius: 0.125rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+	line-height: 1.4;
+	color: var(--telkari-admin-accent-strong);
+}
+
+.telkari-account-builder-status[hidden] {
+	display: none;
+}
+
+.telkari-account-platform-selector {
+	margin: 0 0 1.25rem;
+	padding: 0;
+	border: none;
+}
+
+.telkari-account-platform-selector[aria-invalid="true"] .telkari-account-platform-card-body,
+.telkari-account-platform-selector--invalid .telkari-account-platform-card-body {
+	border-color: rgba(177, 57, 48, 0.35);
+}
+
+.telkari-account-platform-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.75rem;
+	margin-top: 0.75rem;
+}
+
+.telkari-account-platform-card {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	cursor: pointer;
+}
+
+.telkari-account-platform-input {
+	position: absolute;
+	inset: 0;
+	margin: 0;
+	opacity: 0;
+}
+
+.telkari-account-platform-card-body {
+	display: grid;
+	grid-template-columns: 2.625rem minmax(0, 1fr);
+	gap: 0.625rem;
+	align-items: center;
+	min-height: 2rem;
+	padding: 0.875rem 0.75rem;
+	border: 0.0625rem solid var(--telkari-cta-border-soft);
+	border-radius: 0.125rem;
+	background: var(--telkari-admin-surface);
+	box-shadow: 0 1px 2px var(--telkari-cta-shadow-soft);
+	transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.telkari-account-platform-card-title {
+	font-size: 0.875rem;
+	line-height: 1.2;
+	color: var(--telkari-admin-text);
+}
+
+.telkari-account-platform-card:hover .telkari-account-platform-card-body {
+	border-color: var(--telkari-admin-accent);
+	background: var(--telkari-admin-accent-soft);
+}
+
+.telkari-account-platform-input:checked + .telkari-account-platform-card-body {
+	border-color: var(--telkari-cta-tab-line);
+	background: var(--telkari-admin-accent-soft);
+	box-shadow: inset 0 0 0 0.0625rem var(--telkari-admin-accent-shadow), 0 1px 2px var(--telkari-cta-shadow-soft);
+}
+
+.telkari-account-platform-input:focus-visible + .telkari-account-platform-card-body {
+	outline: 0.125rem solid var(--telkari-admin-accent);
+	outline-offset: 0.125rem;
+}
+
+.telkari-account-platform-summary {
+	display: grid;
+	grid-template-columns: 2.25rem minmax(0, 1fr);
+	gap: 0.75rem;
+	align-items: center;
+	margin-top: 0.75rem;
+	padding: 0.75rem;
+	border: 0.0625rem solid var(--telkari-cta-border-soft);
+	border-radius: 0.125rem;
+	background: var(--telkari-cta-panel-muted);
+}
+
+.telkari-account-platform-summary[hidden] {
+	display: none;
+}
+
+.telkari-account-platform-summary-copy {
+	display: grid;
+	gap: 0.1875rem;
+	min-width: 0;
+}
+
+.telkari-account-platform-summary-label {
+	font-size: 0.875rem;
+	line-height: 1.2;
+	color: var(--telkari-admin-text);
+}
+
+.telkari-account-platform-summary-example {
+	font-size: 0.75rem;
+	line-height: 1.45;
+	color: var(--telkari-admin-text-muted);
+	overflow-wrap: anywhere;
+}
+
+.telkari-account-builder-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	align-items: start;
+}
+
+.telkari-account-builder .regular-text {
+	width: 100%;
+	min-width: 0;
+	min-height: 2.25rem;
+	padding: 0 0.875rem;
+	border: 0.0625rem solid var(--telkari-admin-border);
+	border-radius: 0.125rem;
+	background: var(--telkari-admin-surface);
+}
+
+.telkari-account-builder .regular-text::placeholder {
+	color: var(--telkari-admin-text-muted);
+}
+
+.telkari-account-row-icon--default,
+.telkari-account-platform-card-icon.telkari-account-row-icon--default,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--default {
+	color: var(--telkari-admin-text-muted);
+	background: var(--telkari-cta-panel-muted);
+	--telkari-account-platform-icon: none;
+}
+
+.telkari-account-row-icon--instagram,
+.telkari-account-platform-card-icon.telkari-account-row-icon--instagram,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--instagram {
+	color: var(--telkari-platform-instagram);
+	background: var(--telkari-platform-instagram-soft);
+	--telkari-account-platform-icon: url('../icons/instagram.svg');
+}
+
+.telkari-account-row-icon--youtube,
+.telkari-account-platform-card-icon.telkari-account-row-icon--youtube,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--youtube {
+	color: var(--telkari-platform-youtube);
+	background: var(--telkari-platform-youtube-soft);
+	--telkari-account-platform-icon: url('../icons/youtube.svg');
+}
+
+.telkari-account-row-icon--facebook,
+.telkari-account-platform-card-icon.telkari-account-row-icon--facebook,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--facebook {
+	color: var(--telkari-platform-facebook);
+	background: var(--telkari-platform-facebook-soft);
+	--telkari-account-platform-icon: url('../icons/facebook.svg');
+}
+
+.telkari-account-row-icon--x,
+.telkari-account-platform-card-icon.telkari-account-row-icon--x,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--x {
+	color: var(--telkari-platform-x);
+	background: var(--telkari-platform-x-soft);
+	--telkari-account-platform-icon: url('../icons/x-twitter.svg');
+}
+
+.telkari-account-row-icon--linkedin,
+.telkari-account-platform-card-icon.telkari-account-row-icon--linkedin,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--linkedin {
+	color: var(--telkari-platform-linkedin);
+	background: var(--telkari-platform-linkedin-soft);
+	--telkari-account-platform-icon: url('../icons/linkedin.svg');
+}
+
+.telkari-account-row-icon--tiktok,
+.telkari-account-platform-card-icon.telkari-account-row-icon--tiktok,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--tiktok {
+	color: var(--telkari-platform-tiktok);
+	background: var(--telkari-platform-tiktok-soft);
+	--telkari-account-platform-icon: url('../icons/tiktok.svg');
+}
+
+.telkari-account-row-icon--github,
+.telkari-account-platform-card-icon.telkari-account-row-icon--github,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--github {
+	color: var(--telkari-platform-github);
+	background: var(--telkari-platform-github-soft);
+	--telkari-account-platform-icon: url('../icons/github.svg');
+}
+
+.telkari-account-row-icon--pinterest,
+.telkari-account-platform-card-icon.telkari-account-row-icon--pinterest,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--pinterest {
+	color: var(--telkari-platform-pinterest);
+	background: var(--telkari-platform-pinterest-soft);
+	--telkari-account-platform-icon: url('../icons/pinterest.svg');
+}
+
+.telkari-account-row-icon--telegram,
+.telkari-account-platform-card-icon.telkari-account-row-icon--telegram,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--telegram {
+	color: var(--telkari-platform-telegram);
+	background: var(--telkari-platform-telegram-soft);
+	--telkari-account-platform-icon: url('../icons/telegram.svg');
+}
+
+.telkari-account-row-icon--whatsapp,
+.telkari-account-platform-card-icon.telkari-account-row-icon--whatsapp,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--whatsapp {
+	color: var(--telkari-platform-whatsapp);
+	background: var(--telkari-platform-whatsapp-soft);
+	--telkari-account-platform-icon: url('../icons/whatsapp.svg');
+}
+
+.telkari-account-row-icon--discord,
+.telkari-account-platform-card-icon.telkari-account-row-icon--discord,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--discord {
+	color: var(--telkari-platform-discord);
+	background: var(--telkari-platform-discord-soft);
+	--telkari-account-platform-icon: url('../icons/discord.svg');
+}
+
+.telkari-account-row-icon--twitch,
+.telkari-account-platform-card-icon.telkari-account-row-icon--twitch,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--twitch {
+	color: var(--telkari-platform-twitch);
+	background: var(--telkari-platform-twitch-soft);
+	--telkari-account-platform-icon: url('../icons/twitch.svg');
+}
+
+.telkari-account-row-icon--spotify,
+.telkari-account-platform-card-icon.telkari-account-row-icon--spotify,
+.telkari-account-platform-summary-icon.telkari-account-row-icon--spotify {
+	color: var(--telkari-platform-spotify);
+	background: var(--telkari-platform-spotify-soft);
+	--telkari-account-platform-icon: url('../icons/spotify.svg');
+}
+
+@media (max-width: 75rem) {
+	.telkari-cta-content-shell {
+		grid-template-columns: minmax(0, 1fr) 15rem;
+	}
+}
+
+@media (max-width: 62rem) {
+	.toplevel_page_telkari-settings .wrap .telkari-admin-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.telkari-cta-content-shell {
+		grid-template-columns: 1fr;
+	}
+
+	.telkari-cta-preview-panel {
+		order: -1;
+	}
+
+	.telkari-cta-preview-card {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+	}
+
+	.telkari-cta-preview-browser {
+		flex: 0 0 14rem;
+	}
+}
+
+@media (max-width: 48rem) {
+	.toplevel_page_telkari-settings .wrap .telkari-admin-tabs {
+		overflow-x: auto;
+	}
+
+	.telkari-settings-row--two-columns,
+	.telkari-settings-row--three-columns {
+		grid-template-columns: 1fr;
+	}
+
+	.telkari-cta-type-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.telkari-account-platform-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.telkari-cta-builder-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.telkari-cta-builder-actions {
+		justify-content: stretch;
+	}
+
+	.telkari-cta-builder-actions .button,
+	.telkari-account-builder-actions .button {
+		width: 100%;
+	}
+
+	.telkari-cta-type-summary {
+		grid-template-columns: 2.25rem minmax(0, 1fr);
+	}
+
+	.telkari-cta-type-summary-swatch {
+		grid-column: 2;
+	}
+
+	.telkari-cta-row {
+		grid-template-columns: 1rem 2.25rem minmax(0, 1fr);
+		grid-template-areas:
+			"drag icon content"
+			"drag controls controls";
+		row-gap: 0.5rem;
+		align-items: start;
+	}
+
+	.telkari-cta-row .telkari-drag-handle {
+		grid-area: drag;
+		min-height: 2.25rem;
+	}
+
+	.telkari-cta-row .telkari-cta-row-icon {
+		grid-area: icon;
+	}
+
+	.telkari-cta-row .telkari-account-info {
+		grid-area: content;
+	}
+
+	.telkari-cta-row .telkari-account-actions {
+		grid-area: controls;
+		justify-content: flex-start;
+		padding-left: 2.75rem;
+	}
+
+	.telkari-account-list .telkari-account-row {
+		grid-template-columns: 1rem 2.25rem minmax(0, 1fr);
+		grid-template-areas:
+			"drag icon content"
+			"drag controls controls";
+		row-gap: 0.5rem;
+		align-items: start;
+	}
+
+	.telkari-account-list .telkari-account-row .telkari-drag-handle {
+		grid-area: drag;
+		min-height: 2.25rem;
+	}
+
+	.telkari-account-list .telkari-account-row .telkari-account-row-icon {
+		grid-area: icon;
+	}
+
+	.telkari-account-list .telkari-account-row .telkari-account-info {
+		grid-area: content;
+	}
+
+	.telkari-account-list .telkari-account-row .telkari-account-actions {
+		grid-area: controls;
+		justify-content: flex-start;
+		padding-left: 2.75rem;
+	}
+}
+
+@media (max-width: 36rem) {
+	.toplevel_page_telkari-settings .wrap .telkari-admin-tabs,
+	.toplevel_page_telkari-settings .wrap form {
+		padding-right: 1rem;
+		padding-left: 1rem;
+	}
+
+	.telkari-admin-workspace,
+	.telkari-cta-list-section,
+	.telkari-cta-builder,
+	.telkari-account-list-section,
+	.telkari-account-builder {
+		padding-right: 0.75rem;
+		padding-left: 0.75rem;
+	}
+
+	.telkari-cta-preview-card {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.telkari-cta-preview-browser {
+		width: 100%;
+		flex-basis: auto;
+	}
 }

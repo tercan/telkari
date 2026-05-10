@@ -19,16 +19,17 @@ function telkari_design_selector_render( $settings ) {
 
 	$position_labels   = telkari_get_position_labels();
 	$allowed_positions = telkari_get_allowed_positions( $settings['active_design'] );
+	$cta_position      = isset( $settings['cta_position'] ) ? $settings['cta_position'] : $settings['active_position'];
 
 	?>
 	<div class="telkari-design-selector">
 		<?php foreach ( $designs as $design_id => $design ) : ?>
 			<label class="telkari-design-option <?php echo esc_attr( $settings['active_design'] === $design_id ? 'telkari-design-option--active' : '' ); ?>">
 				<input type="radio"
-					   name="telkari_settings[active_design]"
-					   value="<?php echo esc_attr( $design_id ); ?>"
-					   <?php checked( $settings['active_design'], $design_id ); ?>
-					   class="telkari-design-radio">
+						name="telkari_settings[active_design]"
+						value="<?php echo esc_attr( $design_id ); ?>"
+						<?php checked( $settings['active_design'], $design_id ); ?>
+						class="telkari-design-radio">
 
 				<div class="telkari-design-preview">
 					<?php echo wp_kses( telkari_get_design_preview_svg( $design_id ), telkari_get_svg_kses_allowed() ); ?>
@@ -42,20 +43,39 @@ function telkari_design_selector_render( $settings ) {
 		<?php endforeach; ?>
 	</div>
 
-	<div class="telkari-settings-panel" style="margin-top:1.5rem;">
-		<div class="telkari-setting-card">
-			<span class="telkari-setting-label"><?php esc_html_e( 'Select Position', 'telkari' ); ?></span>
-			<div class="telkari-setting-control">
-				<div class="telkari-btn-group" id="telkari-position-group">
-					<?php foreach ( $allowed_positions as $position ) : ?>
-						<label class="telkari-btn-option <?php echo esc_attr( $settings['active_position'] === $position ? 'telkari-btn-option--active' : '' ); ?>">
-							<input type="radio"
-								   name="telkari_settings[active_position]"
-								   value="<?php echo esc_attr( $position ); ?>"
-								   <?php checked( $settings['active_position'], $position ); ?>>
-							<?php echo esc_html( $position_labels[ $position ] ?? $position ); ?>
-						</label>
-					<?php endforeach; ?>
+	<div class="telkari-settings-panel telkari-settings-panel--appearance" style="margin-top:1.5rem;">
+		<div class="telkari-settings-row telkari-settings-row--two-columns">
+			<div class="telkari-setting-card">
+				<span class="telkari-setting-label"><?php esc_html_e( 'Social Accounts', 'telkari' ); ?></span>
+				<div class="telkari-setting-control">
+					<div class="telkari-btn-group telkari-position-group" id="telkari-social-position-group" data-setting-name="telkari_settings[active_position]">
+						<?php foreach ( $allowed_positions as $position ) : ?>
+							<label class="telkari-btn-option <?php echo esc_attr( $settings['active_position'] === $position ? 'telkari-btn-option--active' : '' ); ?>">
+								<input type="radio"
+										name="telkari_settings[active_position]"
+										value="<?php echo esc_attr( $position ); ?>"
+										<?php checked( $settings['active_position'], $position ); ?>>
+								<?php echo esc_html( $position_labels[ $position ] ?? $position ); ?>
+							</label>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+
+			<div class="telkari-setting-card">
+				<span class="telkari-setting-label"><?php esc_html_e( 'CTA Buttons', 'telkari' ); ?></span>
+				<div class="telkari-setting-control">
+					<div class="telkari-btn-group telkari-position-group" id="telkari-cta-position-group" data-setting-name="telkari_settings[cta_position]">
+						<?php foreach ( $allowed_positions as $position ) : ?>
+							<label class="telkari-btn-option <?php echo esc_attr( $cta_position === $position ? 'telkari-btn-option--active' : '' ); ?>">
+								<input type="radio"
+										name="telkari_settings[cta_position]"
+										value="<?php echo esc_attr( $position ); ?>"
+										<?php checked( $cta_position, $position ); ?>>
+								<?php echo esc_html( $position_labels[ $position ] ?? $position ); ?>
+							</label>
+						<?php endforeach; ?>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -63,7 +83,7 @@ function telkari_design_selector_render( $settings ) {
 
 	<?php
 	// Preserve other settings as hidden fields.
-	telkari_render_hidden_settings( $settings, array( 'active_design', 'active_position' ) );
+	telkari_render_hidden_settings( $settings, array( 'active_design', 'active_position', 'cta_position' ) );
 }
 
 /**

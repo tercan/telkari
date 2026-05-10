@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<ruleset name="Telkari">
+	<description>WordPress Coding Standards ruleset for the Telkari plugin.</description>
+
+	<arg name="basepath" value="."/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+
+	<config name="minimum_supported_wp_version" value="5.9"/>
+	<config name="testVersion" value="7.4-"/>
+
+	<file>telkari.php</file>
+	<file>uninstall.php</file>
+	<file>includes</file>
+
+	<exclude-pattern>assets/*</exclude-pattern>
+	<exclude-pattern>docs/*</exclude-pattern>
+
+	<rule ref="WordPress-Core"/>
+	<rule ref="WordPress-Docs"/>
+	<rule ref="WordPress-Extra"/>
+</ruleset>

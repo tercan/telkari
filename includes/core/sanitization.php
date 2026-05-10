@@ -30,6 +30,11 @@ function telkari_sanitize_settings( $input ) {
 		$sanitized['active_design']
 	);
 
+	$sanitized['cta_position'] = telkari_sanitize_position(
+		isset( $input['cta_position'] ) ? $input['cta_position'] : $defaults['cta_position'],
+		$sanitized['active_design']
+	);
+
 	// Icon size (24-96).
 	$sanitized['icon_size'] = isset( $input['icon_size'] )
 		? min( 96, max( 24, absint( $input['icon_size'] ) ) )
@@ -72,12 +77,19 @@ function telkari_sanitize_settings( $input ) {
 		}
 	}
 
+	// CTA buttons.
+	$sanitized['cta_buttons'] = isset( $input['cta_buttons'] ) && is_array( $input['cta_buttons'] )
+		? telkari_sanitize_cta_buttons( $input['cta_buttons'] )
+		: array();
+
 	// Social accounts.
 	$sanitized['social_accounts'] = isset( $input['social_accounts'] ) && is_array( $input['social_accounts'] )
 		? telkari_sanitize_social_accounts( $input['social_accounts'] )
 		: array();
 
-	return $sanitized;
+	$sanitized['schema_version'] = telkari_get_settings_schema_version();
+
+	return telkari_normalize_settings( $sanitized );
 }
 
 /**
@@ -115,16 +127,7 @@ function telkari_sanitize_position( $position, $design ) {
  * @return array
  */
 function telkari_sanitize_social_accounts( $accounts ) {
-	$sanitized = array();
-
-	foreach ( $accounts as $account ) {
-		$clean = telkari_sanitize_single_account( $account );
-		if ( $clean ) {
-			$sanitized[] = $clean;
-		}
-	}
-
-	return $sanitized;
+	return telkari_sanitize_collection_items( $accounts, 'telkari_sanitize_single_account' );
 }
 
 /**

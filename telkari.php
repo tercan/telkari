@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Telkari
  * Plugin URI: https://tercan.net/telkari
- * Description: Theme-independent WordPress social media links management plugin.
- * Version: 0.1.2
+ * Description: Theme-independent WordPress floating social media links and CTA buttons plugin.
+ * Version: 0.2.0
  * Requires at least: 5.9
  * Requires PHP: 7.4
  * Author: Tercan Keskin
@@ -12,19 +12,23 @@
  * Domain Path: /languages
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * @package Telkari
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TELKARI_VERSION', '0.1.2' );
+define( 'TELKARI_VERSION', '0.2.0' );
 define( 'TELKARI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TELKARI_URL', plugin_dir_url( __FILE__ ) );
 define( 'TELKARI_BASENAME', plugin_basename( __FILE__ ) );
 
 // Core includes (always loaded).
 require_once TELKARI_PATH . 'includes/core/options.php';
+require_once TELKARI_PATH . 'includes/core/item-helpers.php';
+require_once TELKARI_PATH . 'includes/core/cta-buttons.php';
 require_once TELKARI_PATH . 'includes/core/sanitization.php';
 
 // Admin includes.

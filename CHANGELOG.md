@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.2.0] - 2026-05-10 15:59
+
+### Added
+
+- Added CTA button management with WhatsApp, phone, email, and custom URL button types.
+- Added per-button CTA labels, destinations, optional WhatsApp messages, custom colors, sorting, enable/disable toggles, and live preview support.
+- Added independent CTA placement support so CTA buttons can be positioned separately from social accounts.
+- Added shared frontend CSS for CTA buttons and responsive mobile sizing across Orbit, Ribbon, and Pillar designs.
+- Added WordPress Coding Standards configuration for future validation.
+
+### Changed
+
+- Refreshed the admin interface for Design, Social Accounts, CTA Buttons, and Appearance with a shared workspace layout.
+- Updated Social Accounts management to use the same compact row, icon-only action, and builder patterns as CTA Buttons.
+- Updated admin accent colors to use the Telkari corporate color system.
+- Improved mobile layouts for CTA buttons and social icons across all frontend designs.
+- Updated translations and localization templates for the expanded admin and CTA feature set.
+
+### Fixed
+
+- Fixed CTA color picker synchronization with selected CTA types and default colors.
+- Fixed CTA builder button text fallback when localized strings are unavailable.
+- Fixed WhatsApp CTA icon rendering to use the correct icon path.
+- Fixed mobile CTA button width consistency.
+
 ## [0.1.2] - 2026-03-14 02:24
 
 ### Changed

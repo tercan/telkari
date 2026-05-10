@@ -1,26 +1,26 @@
 === Telkari ===
 Contributors: tercan
 Donate link: http://tercan.net/
-Tags: social media, social icons, social links, floating bar, social buttons
+Tags: social media, social icons, social links, floating bar, social buttons, cta buttons
 Requires at least: 5.9
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 0.1.2
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Theme-independent WordPress social media links management plugin with multiple design layouts, customizable positions, and per-platform brand colors.
+Theme-independent WordPress floating social media links and CTA buttons plugin with multiple design layouts, customizable positions, and per-item colors.
 
 == Description ==
 
-Telkari lets you display social media links on your WordPress site with three distinct design layouts. Each design has its own positioning options and all icons are rendered with pure CSS for optimal performance.
+Telkari lets you display floating social media links and CTA buttons on your WordPress site with three distinct design layouts. Each design has its own positioning options and items are rendered through design-specific CSS, with a lightweight toggle script used only for the Orbit layout.
 Live demo and documentation: https://tercan.github.io/telkari/
 
 = Design Layouts =
 
-* **Orbit** — Quarter-circle trigger button in a corner. Icons fan out in an arc on click with staggered animation delays. Click to toggle, click outside to close.
-* **Ribbon** — Horizontal bar fixed at the bottom of the page with icons displayed in a row.
-* **Pillar** — Vertical sidebar strip with icons stacked in a column.
+* **Orbit** - Quarter-circle trigger button in a corner. Icons fan out in an arc on click with staggered animation delays. Click to toggle, click outside to close.
+* **Ribbon** - Horizontal bar fixed at the bottom of the page with icons displayed in a row.
+* **Pillar** - Vertical sidebar strip with icons stacked in a column.
 
 = Supported Platforms =
 
@@ -34,6 +34,14 @@ Instagram, YouTube, Facebook, X (Twitter), LinkedIn, TikTok, GitHub, Pinterest, 
 * Drag-and-drop reordering
 * Per-account enable/disable toggle
 * URL validation on account creation
+
+= CTA Button Management =
+
+* Add WhatsApp, phone, email, and custom URL buttons
+* Configure labels, destinations, optional WhatsApp messages, and per-button colors
+* Drag-and-drop reordering
+* Per-button enable/disable toggle
+* Live preview while building or editing CTA buttons
 
 = Appearance Settings =
 
@@ -74,7 +82,8 @@ Instagram, YouTube, Facebook, X (Twitter), LinkedIn, TikTok, GitHub, Pinterest, 
 3. Go to the Telkari menu in the admin sidebar.
 4. Select a design layout and position.
 5. Add your social media accounts in the Social Accounts tab.
-6. Customize appearance and colors in the Appearance tab.
+6. Add optional CTA buttons in the CTA Buttons tab.
+7. Customize appearance and colors in the Appearance tab.
 
 == Frequently Asked Questions ==
 
@@ -96,7 +105,7 @@ Yes. Telkari renders icons via the wp_footer hook and uses its own CSS, so it wo
 
 = Is the plugin translatable? =
 
-Yes. All UI strings use WordPress i18n functions. A Turkish (tr_TR) translation is included.
+Yes. All UI strings use WordPress i18n functions. Translations for 11 languages are bundled: Arabic, Bengali, Chinese (Simplified), French, German, Hindi, Italian, Portuguese, Russian, Spanish, and Turkish.
 
 = Live demo / documentation URL? =
 
@@ -107,9 +116,18 @@ You can access the live demo and documentation at: https://tercan.github.io/telk
 1. Orbit design layout in action on a live site, showing the quarter-circle trigger and social icons fanning out in an arc.
 2. Design selection settings page with visual previews of Orbit, Ribbon, and Pillar layouts along with position selector.
 3. Social media accounts management page with drag-and-drop reordering and add account form.
-4. Appearance settings page with icon size and spacing sliders, icon style, link target, tooltip toggles, and per-platform color customization.
+4. CTA buttons management page with guided builder and live preview.
+5. Appearance settings page with icon size and spacing sliders, icon style, link target, tooltip toggles, and color customization.
 
 == Changelog ==
+
+= 0.2.0 =
+* Added CTA button management with WhatsApp, phone, email, and custom URL button types.
+* Added per-button CTA labels, destinations, optional WhatsApp messages, custom colors, sorting, enable/disable toggles, and live preview support.
+* Added independent CTA placement support so CTA buttons can be positioned separately from social accounts.
+* Refreshed the admin interface for Design, Social Accounts, CTA Buttons, and Appearance with a shared workspace layout.
+* Improved mobile layouts for CTA buttons and social icons across all frontend designs.
+* Updated translations and localization templates for the expanded admin and CTA feature set.
 
 = 0.1.2 =
 * Moved design-1 toggle inline script to external file loaded via wp_enqueue_script to comply with WordPress plugin directory requirements.
@@ -134,5 +152,5 @@ You can access the live demo and documentation at: https://tercan.github.io/telk
 * Auto-contrast foreground color calculation
 * CSS-only frontend rendering
 * Conditional asset loading
-* Turkish translation included
+* Translations included: Arabic, Bengali, Chinese (Simplified), French, German, Hindi, Italian, Portuguese, Russian, Spanish, Turkish
 * Clean uninstall support (single site and multisite)

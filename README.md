@@ -1,8 +1,8 @@
 # Telkari
 
-Theme-independent WordPress social media links management plugin. Display your social media accounts anywhere on your site with multiple design layouts, customizable positions, and per-platform brand colors.
+Theme-independent WordPress floating social media links and CTA buttons plugin. Display social accounts and action buttons in fixed floating layouts with customizable positions, colors, and mobile behavior.
 
-**Version:** 0.1.2
+**Version:** 0.2.0
 **Requires WordPress:** 5.9+
 **Requires PHP:** 7.4+
 **License:** GPLv2 or later
@@ -42,6 +42,13 @@ Instagram, YouTube, Facebook, X (Twitter), LinkedIn, TikTok, GitHub, Pinterest, 
 - Per-account enable/disable toggle
 - URL validation on account creation
 
+### CTA Button Management
+
+- Add WhatsApp, phone, email, and custom URL buttons
+- Configure labels, destinations, optional WhatsApp messages, and per-button colors
+- Drag-and-drop reordering with per-button enable/disable controls
+- Live preview while building or editing CTA buttons
+
 ### Appearance Settings
 
 - **Icon Size** -- Adjustable from 24px to 96px via range slider
@@ -70,6 +77,7 @@ Tabbed settings panel accessible from the top-level Telkari menu in WordPress ad
 
 - **Design** -- Visual design selector with SVG previews and integrated position selector
 - **Social Accounts** -- Account list with drag-and-drop sorting and add form
+- **CTA Buttons** -- CTA list, guided builder, color picker, and live preview
 - **Appearance** -- Card-based settings layout for icon size, spacing, style, link target, tooltips, and color customization
 
 Settings link is also available on the Plugins list page.
@@ -80,7 +88,7 @@ Settings link is also available on the Plugins list page.
 
 - Icons are rendered via `wp_footer` hook using pure CSS (no frontend JavaScript except the Orbit click handler)
 - Design-specific CSS is loaded per active design (`design-1.css`, `design-2.css`, `design-3.css`)
-- Conditional asset loading: CSS is only enqueued when at least one enabled account exists
+- Conditional asset loading: CSS is only enqueued when at least one enabled social account or CTA button exists
 - CSS custom properties for icon size, spacing, and wrapper background are injected as inline styles
 
 ### File Structure
@@ -91,11 +99,13 @@ telkari/
   uninstall.php                        Clean uninstall handler
   includes/
     core/
+      cta-buttons.php                  CTA data model and sanitization helpers
       options.php                      Settings defaults, getters, platform definitions
+      item-helpers.php                 Shared collection and link helper functions
       sanitization.php                 Input sanitization callbacks
-      security.php                     Capability checks and nonce verification
     admin/
       settings-page.php                Admin page registration and tab rendering
+      cta-list-table.php               CTA buttons list UI
       design-selector.php              Design cards and SVG previews
       social-list-table.php            Social accounts list UI
     frontend/
@@ -113,8 +123,7 @@ telkari/
       *.svg                            Font Awesome SVG icon subset (13 platforms + plugin logo)
   languages/
     telkari.pot                        Translation template
-    telkari-tr_TR.po                   Turkish translation source
-    telkari-tr_TR.mo                   Turkish translation binary
+    telkari-*.po / telkari-*.mo        Bundled translation files
 ```
 
 ### Security
@@ -129,7 +138,7 @@ telkari/
 ### Internationalization
 
 - Full i18n support with `telkari` text domain
-- Turkish (tr_TR) translation included
+- 11 translations bundled: Arabic (ar), Bengali (bn_BD), Chinese Simplified (zh_CN), French (fr_FR), German (de_DE), Hindi (hi_IN), Italian (it_IT), Portuguese (pt_PT), Russian (ru_RU), Spanish (es_ES), Turkish (tr_TR)
 - All admin UI strings are translatable
 
 ## Requirements
