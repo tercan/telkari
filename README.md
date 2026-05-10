@@ -1,25 +1,32 @@
 # Telkari
 
-Theme-independent WordPress floating social media links and CTA buttons plugin. Display social accounts and action buttons in fixed floating layouts with customizable positions, colors, and mobile behavior.
+Theme-independent WordPress plugin for floating social media links and CTA buttons. Telkari lets site owners show social icons, CTA buttons, or both in fixed frontend layouts with independent visibility, placement, colors, and responsive mobile behavior.
 
-**Version:** 0.2.0
+**Version:** 1.0.0
 **Requires WordPress:** 5.9+
 **Requires PHP:** 7.4+
 **License:** GPLv2 or later
 
 ## Features
 
+### Display Groups
+
+- Show or hide Social Icons and CTA Buttons independently from the Design tab
+- Configure Social Icons placement separately from CTA Buttons placement
+- Automatically normalizes conflicting Ribbon and Pillar placements so the two groups do not overlap
+- Supports social-only, CTA-only, and mixed frontend configurations
+
 ### Design Layouts
 
-Three built-in design templates, each with its own positioning options:
+Three built-in design templates, each with its own placement behavior:
 
-- **Orbit** -- Quarter-circle trigger button in a corner. Icons fan out in an arc on click. Uses CSS trigonometry-based arc positioning with staggered animation delays. Click to toggle, click outside to close.
-- **Ribbon** -- Horizontal bar fixed at the bottom of the page with icons displayed in a row.
-- **Pillar** -- Vertical sidebar strip with icons stacked in a column.
+- **Orbit** - Quarter-circle trigger button in a corner. Social icons fan out in an arc on click. CTA buttons can be shown with the Orbit layout without changing the toggle behavior.
+- **Ribbon** - Horizontal bar fixed at the bottom of the page. Social icons stay in a single row, and only one group can use the center placement at a time.
+- **Pillar** - Vertical sidebar strip fixed to the left or right edge. When both groups are visible, Social Icons and CTA Buttons are kept on opposite sides.
 
 ### Position System
 
-Each design supports a specific set of positions:
+Each design supports a specific set of placements:
 
 | Design | Available Positions                      |
 | ------ | ---------------------------------------- |
@@ -27,7 +34,7 @@ Each design supports a specific set of positions:
 | Ribbon | Bottom Left, Bottom Right, Bottom Center |
 | Pillar | Bottom Left, Bottom Right                |
 
-The position selector updates dynamically based on the selected design.
+The placement controls update dynamically based on the selected design and enabled display groups.
 
 ### Supported Platforms
 
@@ -47,15 +54,18 @@ Instagram, YouTube, Facebook, X (Twitter), LinkedIn, TikTok, GitHub, Pinterest, 
 - Add WhatsApp, phone, email, and custom URL buttons
 - Configure labels, destinations, optional WhatsApp messages, and per-button colors
 - Drag-and-drop reordering with per-button enable/disable controls
-- Live preview while building or editing CTA buttons
+- Guided builder with live preview while creating or editing CTA buttons
 
 ### Appearance Settings
 
-- **Icon Size** -- Adjustable from 24px to 96px via range slider
-- **Icon Spacing** -- Adjustable from 0px to 48px via range slider
-- **Icon Style** -- Rounded or Square
-- **Link Target** -- Same Tab or New Tab
-- **Tooltips** -- Show or hide platform name on hover
+- **Social Icon Size** - Adjustable from 24px to 96px via range slider
+- **Social Icon Spacing** - Adjustable from 0px to 48px via range slider
+- **CTA Button Size** - Compact, Default, or Large
+- **CTA Button Spacing** - Adjustable from 0px to 48px via range slider
+- **CTA Button Width** - Content, Fixed, or Full
+- **Icon Style** - Rounded or Square
+- **Link Target** - Same Tab or New Tab
+- **Tooltips** - Show or hide platform name on hover
 
 ### Color Customization
 
@@ -75,10 +85,10 @@ Scale and shadow hover effects on all design layouts.
 
 Tabbed settings panel accessible from the top-level Telkari menu in WordPress admin:
 
-- **Design** -- Visual design selector with SVG previews and integrated position selector
-- **Social Accounts** -- Account list with drag-and-drop sorting and add form
-- **CTA Buttons** -- CTA list, guided builder, color picker, and live preview
-- **Appearance** -- Card-based settings layout for icon size, spacing, style, link target, tooltips, and color customization
+- **Design** - Visual design selector with SVG previews, Display Groups, and relationship-aware placement controls
+- **Social Accounts** - Account list with drag-and-drop sorting, status messaging, and add form
+- **CTA Buttons** - CTA list, guided builder, color picker, status messaging, and live preview
+- **Appearance** - Card-based settings layout for Social Icons, CTA Buttons, link behavior, and color customization
 
 Settings link is also available on the Plugins list page.
 
@@ -86,10 +96,11 @@ Settings link is also available on the Plugins list page.
 
 ### Frontend Rendering
 
-- Icons are rendered via `wp_footer` hook using pure CSS (no frontend JavaScript except the Orbit click handler)
+- Icons and CTA buttons are rendered via the `wp_footer` hook using CSS-first layouts
 - Design-specific CSS is loaded per active design (`design-1.css`, `design-2.css`, `design-3.css`)
-- Conditional asset loading: CSS is only enqueued when at least one enabled social account or CTA button exists
-- CSS custom properties for icon size, spacing, and wrapper background are injected as inline styles
+- Shared frontend CSS is loaded only when at least one visible, enabled Social Icon or CTA Button exists
+- The Orbit toggle script is loaded only when the Orbit social trigger is rendered
+- CSS custom properties for icon size, spacing, CTA spacing, and wrapper background are injected as inline styles
 
 ### File Structure
 
@@ -113,6 +124,7 @@ telkari/
   assets/
     css/
       admin.css                        Admin panel styles
+      frontend-shared.css              Shared frontend social and CTA styles
       design-1.css                     Orbit design styles
       design-2.css                     Ribbon design styles
       design-3.css                     Pillar design styles
@@ -135,6 +147,13 @@ telkari/
 - SVG icon whitelist: only known filenames from the bundled set are loaded
 - Clean uninstall removes all plugin data (single site and multisite)
 
+### Privacy and External Resources
+
+- Telkari does not track users.
+- Telkari does not call external APIs or load frontend assets from a CDN.
+- Social and CTA links are configured by the site owner and may point to external destinations, but the plugin does not transmit site data to those destinations.
+- SortableJS is bundled for admin drag-and-drop sorting under the MIT license. Source: <https://github.com/SortableJS/Sortable>
+
 ### Internationalization
 
 - Full i18n support with `telkari` text domain
@@ -145,8 +164,13 @@ telkari/
 
 - WordPress 5.9 or later
 - PHP 7.4 or later
-- No external dependencies (all assets are bundled)
+- No external network dependencies (all assets are bundled)
+
+## Links
+
+- Documentation and demo: <https://tercan.github.io/telkari/>
+- Source code: <https://github.com/tercan/telkari>
 
 ## Author
 
-Tercan Keskin -- [tercan.net](https://tercan.net/)
+Tercan Keskin - [tercan.net](https://tercan.net/)

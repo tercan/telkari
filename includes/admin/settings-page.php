@@ -86,6 +86,11 @@ function telkari_enqueue_admin_assets( $hook ) {
 				'design-3' => telkari_get_allowed_positions( 'design-3' ),
 			),
 			'positionLabels' => telkari_get_position_labels(),
+			'designLabels'   => array(
+				'design-1' => __( 'Orbit', 'telkari' ),
+				'design-2' => __( 'Ribbon', 'telkari' ),
+				'design-3' => __( 'Pillar', 'telkari' ),
+			),
 			'platforms'      => telkari_get_supported_platforms(),
 			'ctaTypes'       => telkari_get_supported_cta_types(),
 			'i18n'           => array(
@@ -98,6 +103,9 @@ function telkari_enqueue_admin_assets( $hook ) {
 				'editAccountTitle'       => __( 'Edit Social Account', 'telkari' ),
 				'editAccountDescription' => __( 'Update the selected social account and save the changes back into the list.', 'telkari' ),
 				'editingAccount'         => __( 'Editing Social Account', 'telkari' ),
+				'accountAddedFeedback'   => __( 'Social account added.', 'telkari' ),
+				'accountUpdatedFeedback' => __( 'Social account updated.', 'telkari' ),
+				'duplicateAccount'       => __( 'A similar social account already exists. You can still save this one if needed.', 'telkari' ),
 				'saveAccount'            => __( 'Save Account', 'telkari' ),
 				'selectCtaType'          => __( 'Select CTA Type', 'telkari' ),
 				'confirmDeleteCta'       => __( 'Are you sure you want to delete this CTA button?', 'telkari' ),
@@ -111,6 +119,13 @@ function telkari_enqueue_admin_assets( $hook ) {
 				'ctaErrorPhone'          => __( 'Enter a valid phone number. Example: +905551112233.', 'telkari' ),
 				'ctaErrorEmail'          => __( 'Enter a valid email address. Example: info@example.com.', 'telkari' ),
 				'ctaErrorUrl'            => __( 'Enter a full address including the protocol. Example: https://example.com/contact.', 'telkari' ),
+				'ctaValueLabelDefault'   => __( 'Destination Value', 'telkari' ),
+				'ctaValueLabelWhatsapp'  => __( 'WhatsApp Number', 'telkari' ),
+				'ctaValueLabelPhone'     => __( 'Phone Number', 'telkari' ),
+				'ctaValueLabelEmail'     => __( 'Email Address', 'telkari' ),
+				'ctaValueLabelUrl'       => __( 'URL', 'telkari' ),
+				'defaultColor'           => __( 'Default color', 'telkari' ),
+				'customColor'            => __( 'Custom color', 'telkari' ),
 				'edit'                   => __( 'Edit', 'telkari' ),
 				'addCtaTitle'            => __( 'Add New CTA Button', 'telkari' ),
 				'addCtaDescription'      => __( 'Build a CTA button with guided fields and instant preview.', 'telkari' ),
@@ -124,7 +139,14 @@ function telkari_enqueue_admin_assets( $hook ) {
 				'cancelEdit'             => __( 'Cancel Edit', 'telkari' ),
 				'resetForm'              => __( 'Reset Form', 'telkari' ),
 				'enabled'                => __( 'Enabled', 'telkari' ),
+				'visible'                => __( 'Visible', 'telkari' ),
+				'hidden'                 => __( 'Hidden', 'telkari' ),
 				'delete'                 => __( 'Delete', 'telkari' ),
+				'placementNoGroups'      => __( 'Enable Social Icons or CTA Buttons to configure placement.', 'telkari' ),
+				/* translators: 1: Social Icons placement label, 2: CTA Buttons placement label. */
+				'placementAdjusted'      => __( 'Placement adjusted to avoid overlap: Social Icons %1$s, CTA Buttons %2$s.', 'telkari' ),
+				/* translators: 1: Design name, 2: CTA placement label. */
+				'ctaPreviewContext'      => __( 'Design: %1$s. CTA placement: %2$s.', 'telkari' ),
 			),
 		)
 	);
@@ -247,46 +269,81 @@ function telkari_render_cta_tab( $settings ) {
  * @param array $settings Current settings.
  */
 function telkari_render_appearance_tab( $settings ) {
+	$groups              = telkari_get_enabled_group_state( $settings );
+	$social_icon_size    = isset( $settings['social_icon_size'] ) ? $settings['social_icon_size'] : $settings['icon_size'];
+	$social_icon_spacing = isset( $settings['social_icon_spacing'] ) ? $settings['social_icon_spacing'] : $settings['icon_spacing'];
+	$cta_button_size     = isset( $settings['cta_button_size'] ) ? $settings['cta_button_size'] : 'default';
+	$cta_button_spacing  = isset( $settings['cta_button_spacing'] ) ? $settings['cta_button_spacing'] : 8;
+	$cta_button_width    = isset( $settings['cta_button_width'] ) ? $settings['cta_button_width'] : 'content';
+	$brand_colors        = telkari_get_platform_brand_colors();
+	$platforms           = telkari_get_supported_platforms();
+	$platform_colors     = isset( $settings['platform_colors'] ) ? $settings['platform_colors'] : array();
+	$trigger_default     = $brand_colors['trigger_button'];
+	$trigger_current     = isset( $platform_colors['trigger_button'] ) ? $platform_colors['trigger_button'] : $trigger_default;
+	$wrapper_default     = $brand_colors['wrapper_bg'];
+	$wrapper_current     = isset( $platform_colors['wrapper_bg'] ) ? $platform_colors['wrapper_bg'] : $wrapper_default;
+	$is_transparent      = ( 'transparent' === $wrapper_current || empty( $wrapper_current ) );
+	$cta_size_options    = array(
+		'compact' => __( 'Compact', 'telkari' ),
+		'default' => __( 'Default', 'telkari' ),
+		'large'   => __( 'Large', 'telkari' ),
+	);
+	$cta_width_options   = array(
+		'content' => __( 'Natural', 'telkari' ),
+		'fixed'   => __( 'Fixed', 'telkari' ),
+		'full'    => __( 'Full', 'telkari' ),
+	);
 	?>
-	<section class="telkari-admin-workspace" aria-label="<?php echo esc_attr__( 'Appearance', 'telkari' ); ?>">
-		<div class="telkari-settings-panel telkari-settings-panel--appearance">
+	<section class="telkari-admin-workspace telkari-appearance-workspace" aria-label="<?php echo esc_attr__( 'Appearance', 'telkari' ); ?>">
+		<h3 class="telkari-settings-section-title"><?php esc_html_e( 'Social Icons', 'telkari' ); ?></h3>
+		<p class="telkari-setting-description telkari-settings-section-description">
+			<?php
+			echo esc_html(
+				$groups['social']
+					? __( 'Controls the size, spacing, shape, and hover labels for social icons.', 'telkari' )
+					: __( 'Social icons are currently hidden on the frontend, but these settings are kept.', 'telkari' )
+			);
+			?>
+		</p>
+
+		<div class="telkari-settings-panel telkari-settings-panel--appearance<?php echo esc_attr( $groups['social'] ? '' : ' telkari-settings-section--inactive' ); ?>">
 			<div class="telkari-settings-row telkari-settings-row--two-columns">
 				<div class="telkari-setting-card">
-					<label class="telkari-setting-label" for="telkari-icon-size"><?php esc_html_e( 'Icon Size (px)', 'telkari' ); ?></label>
+					<label class="telkari-setting-label" for="telkari-social-icon-size"><?php esc_html_e( 'Social Icon Size (px)', 'telkari' ); ?></label>
 					<div class="telkari-setting-control">
 						<div class="telkari-range-field">
 							<input type="range"
-									id="telkari-icon-size"
-									name="telkari_settings[icon_size]"
-									value="<?php echo esc_attr( $settings['icon_size'] ); ?>"
+									id="telkari-social-icon-size"
+									name="telkari_settings[social_icon_size]"
+									value="<?php echo esc_attr( $social_icon_size ); ?>"
 									min="24" max="96" step="4"
 									class="telkari-range-input">
-							<output class="telkari-range-value" for="telkari-icon-size"><?php echo esc_html( $settings['icon_size'] ); ?></output>
+							<output class="telkari-range-value" for="telkari-social-icon-size"><?php echo esc_html( $social_icon_size ); ?></output>
 						</div>
 					</div>
-					<span class="telkari-setting-description"><?php esc_html_e( 'Icon size in pixels (24-96).', 'telkari' ); ?></span>
+					<span class="telkari-setting-description"><?php esc_html_e( 'Social icon size in pixels (24-96).', 'telkari' ); ?></span>
 				</div>
 
 				<div class="telkari-setting-card">
-					<label class="telkari-setting-label" for="telkari-icon-spacing"><?php esc_html_e( 'Icon Spacing (px)', 'telkari' ); ?></label>
+					<label class="telkari-setting-label" for="telkari-social-icon-spacing"><?php esc_html_e( 'Social Icon Spacing (px)', 'telkari' ); ?></label>
 					<div class="telkari-setting-control">
 						<div class="telkari-range-field">
 							<input type="range"
-									id="telkari-icon-spacing"
-									name="telkari_settings[icon_spacing]"
-									value="<?php echo esc_attr( $settings['icon_spacing'] ); ?>"
+									id="telkari-social-icon-spacing"
+									name="telkari_settings[social_icon_spacing]"
+									value="<?php echo esc_attr( $social_icon_spacing ); ?>"
 									min="0" max="48" step="4"
 									class="telkari-range-input">
-							<output class="telkari-range-value" for="telkari-icon-spacing"><?php echo esc_html( $settings['icon_spacing'] ); ?></output>
+							<output class="telkari-range-value" for="telkari-social-icon-spacing"><?php echo esc_html( $social_icon_spacing ); ?></output>
 						</div>
 					</div>
-					<span class="telkari-setting-description"><?php esc_html_e( 'Space between icons in pixels (0-48).', 'telkari' ); ?></span>
+					<span class="telkari-setting-description"><?php esc_html_e( 'Space between social icons in pixels (0-48).', 'telkari' ); ?></span>
 				</div>
 			</div>
 
-			<div class="telkari-settings-row telkari-settings-row--three-columns">
+			<div class="telkari-settings-row telkari-settings-row--two-columns">
 				<div class="telkari-setting-card">
-					<span class="telkari-setting-label"><?php esc_html_e( 'Icon Style', 'telkari' ); ?></span>
+					<span class="telkari-setting-label"><?php esc_html_e( 'Social Icon Style', 'telkari' ); ?></span>
 					<div class="telkari-setting-control">
 						<div class="telkari-btn-group">
 							<label class="telkari-btn-option <?php echo esc_attr( 'rounded' === $settings['icon_style'] ? 'telkari-btn-option--active' : '' ); ?>">
@@ -302,23 +359,7 @@ function telkari_render_appearance_tab( $settings ) {
 				</div>
 
 				<div class="telkari-setting-card">
-					<span class="telkari-setting-label"><?php esc_html_e( 'Link Target', 'telkari' ); ?></span>
-					<div class="telkari-setting-control">
-						<div class="telkari-btn-group">
-							<label class="telkari-btn-option <?php echo esc_attr( '_self' === $settings['link_target'] ? 'telkari-btn-option--active' : '' ); ?>">
-								<input type="radio" name="telkari_settings[link_target]" value="_self" <?php checked( $settings['link_target'], '_self' ); ?>>
-								<?php esc_html_e( 'Same Tab', 'telkari' ); ?>
-							</label>
-							<label class="telkari-btn-option <?php echo esc_attr( '_blank' === $settings['link_target'] ? 'telkari-btn-option--active' : '' ); ?>">
-								<input type="radio" name="telkari_settings[link_target]" value="_blank" <?php checked( $settings['link_target'], '_blank' ); ?>>
-								<?php esc_html_e( 'New Tab', 'telkari' ); ?>
-							</label>
-						</div>
-					</div>
-				</div>
-
-				<div class="telkari-setting-card">
-					<span class="telkari-setting-label"><?php esc_html_e( 'Tooltips', 'telkari' ); ?></span>
+					<span class="telkari-setting-label"><?php esc_html_e( 'Social Tooltips', 'telkari' ); ?></span>
 					<div class="telkari-setting-control">
 						<div class="telkari-btn-group">
 							<label class="telkari-btn-option <?php echo esc_attr( $settings['show_tooltip'] ? 'telkari-btn-option--active' : '' ); ?>">
@@ -335,23 +376,95 @@ function telkari_render_appearance_tab( $settings ) {
 			</div>
 		</div>
 
-		<h3 class="telkari-settings-section-title"><?php esc_html_e( 'Icon Colors', 'telkari' ); ?></h3>
-		<p class="telkari-setting-description" style="margin-bottom:0.75rem;">
-			<?php esc_html_e( 'Override the default brand color for each platform. Leave empty to use the official brand color.', 'telkari' ); ?>
+		<h3 class="telkari-settings-section-title"><?php esc_html_e( 'CTA Buttons', 'telkari' ); ?></h3>
+		<p class="telkari-setting-description telkari-settings-section-description">
+			<?php
+			echo esc_html(
+				$groups['cta']
+					? __( 'Controls CTA button density, spacing, and width behavior.', 'telkari' )
+					: __( 'CTA buttons are currently hidden on the frontend, but these settings are kept.', 'telkari' )
+			);
+			?>
 		</p>
-		<?php
-		$brand_colors    = telkari_get_platform_brand_colors();
-		$platforms       = telkari_get_supported_platforms();
-		$platform_colors = isset( $settings['platform_colors'] ) ? $settings['platform_colors'] : array();
-		$trigger_default = $brand_colors['trigger_button'];
-		$trigger_current = isset( $platform_colors['trigger_button'] ) ? $platform_colors['trigger_button'] : $trigger_default;
-		$wrapper_default = $brand_colors['wrapper_bg'];
-		$wrapper_current = isset( $platform_colors['wrapper_bg'] ) ? $platform_colors['wrapper_bg'] : $wrapper_default;
-		?>
+
+		<div class="telkari-settings-panel telkari-settings-panel--appearance<?php echo esc_attr( $groups['cta'] ? '' : ' telkari-settings-section--inactive' ); ?>">
+			<div class="telkari-settings-row telkari-settings-row--three-columns">
+				<div class="telkari-setting-card">
+					<span class="telkari-setting-label"><?php esc_html_e( 'CTA Button Size', 'telkari' ); ?></span>
+					<div class="telkari-setting-control">
+						<div class="telkari-btn-group">
+							<?php foreach ( $cta_size_options as $value => $label ) : ?>
+								<label class="telkari-btn-option <?php echo esc_attr( $cta_button_size === $value ? 'telkari-btn-option--active' : '' ); ?>">
+									<input type="radio" name="telkari_settings[cta_button_size]" value="<?php echo esc_attr( $value ); ?>" <?php checked( $cta_button_size, $value ); ?>>
+									<?php echo esc_html( $label ); ?>
+								</label>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				</div>
+
+				<div class="telkari-setting-card">
+					<label class="telkari-setting-label" for="telkari-cta-button-spacing"><?php esc_html_e( 'CTA Button Spacing (px)', 'telkari' ); ?></label>
+					<div class="telkari-setting-control">
+						<div class="telkari-range-field">
+							<input type="range"
+									id="telkari-cta-button-spacing"
+									name="telkari_settings[cta_button_spacing]"
+									value="<?php echo esc_attr( $cta_button_spacing ); ?>"
+									min="0" max="48" step="4"
+									class="telkari-range-input">
+							<output class="telkari-range-value" for="telkari-cta-button-spacing"><?php echo esc_html( $cta_button_spacing ); ?></output>
+						</div>
+					</div>
+					<span class="telkari-setting-description"><?php esc_html_e( 'Space between CTA buttons in pixels (0-48).', 'telkari' ); ?></span>
+				</div>
+
+				<div class="telkari-setting-card">
+					<span class="telkari-setting-label"><?php esc_html_e( 'CTA Button Width', 'telkari' ); ?></span>
+					<div class="telkari-setting-control">
+						<div class="telkari-btn-group">
+							<?php foreach ( $cta_width_options as $value => $label ) : ?>
+								<label class="telkari-btn-option <?php echo esc_attr( $cta_button_width === $value ? 'telkari-btn-option--active' : '' ); ?>">
+									<input type="radio" name="telkari_settings[cta_button_width]" value="<?php echo esc_attr( $value ); ?>" <?php checked( $cta_button_width, $value ); ?>>
+									<?php echo esc_html( $label ); ?>
+								</label>
+							<?php endforeach; ?>
+						</div>
+					</div>
+					<span class="telkari-setting-description"><?php esc_html_e( 'Mobile CTA labels stay on one line and shorten when needed.', 'telkari' ); ?></span>
+				</div>
+			</div>
+		</div>
+
+		<h3 class="telkari-settings-section-title"><?php esc_html_e( 'Link Behavior', 'telkari' ); ?></h3>
+		<div class="telkari-settings-panel telkari-settings-panel--appearance">
+			<div class="telkari-settings-row telkari-settings-row--two-columns">
+				<div class="telkari-setting-card">
+					<span class="telkari-setting-label"><?php esc_html_e( 'Link Target', 'telkari' ); ?></span>
+					<div class="telkari-setting-control">
+						<div class="telkari-btn-group">
+							<label class="telkari-btn-option <?php echo esc_attr( '_self' === $settings['link_target'] ? 'telkari-btn-option--active' : '' ); ?>">
+								<input type="radio" name="telkari_settings[link_target]" value="_self" <?php checked( $settings['link_target'], '_self' ); ?>>
+								<?php esc_html_e( 'Same Tab', 'telkari' ); ?>
+							</label>
+							<label class="telkari-btn-option <?php echo esc_attr( '_blank' === $settings['link_target'] ? 'telkari-btn-option--active' : '' ); ?>">
+								<input type="radio" name="telkari_settings[link_target]" value="_blank" <?php checked( $settings['link_target'], '_blank' ); ?>>
+								<?php esc_html_e( 'New Tab', 'telkari' ); ?>
+							</label>
+						</div>
+					</div>
+					<span class="telkari-setting-description"><?php esc_html_e( 'Applies to social links and CTA buttons.', 'telkari' ); ?></span>
+				</div>
+			</div>
+		</div>
+
+		<h3 class="telkari-settings-section-title"><?php esc_html_e( 'Colors', 'telkari' ); ?></h3>
+		<p class="telkari-setting-description telkari-settings-section-description">
+			<?php esc_html_e( 'Override social platform colors and shared design colors. CTA button colors are managed per button in the CTA Buttons tab.', 'telkari' ); ?>
+		</p>
 		<div class="telkari-color-highlight">
 			<div class="telkari-color-item">
 				<label><?php esc_html_e( 'Bar Background (Ribbon / Pillar)', 'telkari' ); ?></label>
-				<?php $is_transparent = ( 'transparent' === $wrapper_current || empty( $wrapper_current ) ); ?>
 				<input type="text"
 						class="telkari-color-picker"
 						id="telkari-wrapper-bg-picker"
@@ -391,15 +504,29 @@ function telkari_render_appearance_tab( $settings ) {
 				</div>
 			<?php endforeach; ?>
 		</div>
-		<p style="margin-top:0.75rem;">
+		<p class="telkari-color-actions">
 			<button type="button" class="button" id="telkari-reset-colors">
 				<?php esc_html_e( 'Reset All Colors', 'telkari' ); ?>
 			</button>
 		</p>
 
 		<?php
-		// Preserve other settings as hidden fields.
-		telkari_render_hidden_settings( $settings, array( 'icon_size', 'icon_spacing', 'icon_style', 'link_target', 'show_tooltip', 'platform_colors' ) );
+		telkari_render_hidden_settings(
+			$settings,
+			array(
+				'icon_size',
+				'icon_spacing',
+				'social_icon_size',
+				'social_icon_spacing',
+				'cta_button_size',
+				'cta_button_spacing',
+				'cta_button_width',
+				'icon_style',
+				'link_target',
+				'show_tooltip',
+				'platform_colors',
+			)
+		);
 		?>
 	</section>
 	<!-- /.telkari-admin-workspace -->
@@ -416,7 +543,23 @@ function telkari_render_appearance_tab( $settings ) {
  * @param array $exclude_keys Keys managed by the current tab.
  */
 function telkari_render_hidden_settings( $settings, $exclude_keys ) {
-	$simple_keys = array( 'active_design', 'active_position', 'cta_position', 'icon_size', 'icon_spacing', 'icon_style', 'link_target', 'show_tooltip' );
+	$simple_keys = array(
+		'active_design',
+		'active_position',
+		'cta_position',
+		'show_social_accounts',
+		'show_cta_buttons',
+		'icon_size',
+		'icon_spacing',
+		'social_icon_size',
+		'social_icon_spacing',
+		'cta_button_size',
+		'cta_button_spacing',
+		'cta_button_width',
+		'icon_style',
+		'link_target',
+		'show_tooltip',
+	);
 
 	foreach ( $simple_keys as $key ) {
 		if ( in_array( $key, $exclude_keys, true ) ) {

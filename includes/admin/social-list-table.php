@@ -87,14 +87,34 @@ function telkari_get_social_account_action_aria_label( $action_label, $platform_
  * @param array $settings Current settings.
  */
 function telkari_social_list_render( $settings ) {
-	$platforms = telkari_get_supported_platforms();
-	$accounts  = isset( $settings['social_accounts'] ) ? $settings['social_accounts'] : array();
+	$platforms      = telkari_get_supported_platforms();
+	$accounts       = isset( $settings['social_accounts'] ) ? $settings['social_accounts'] : array();
+	$enabled_groups = telkari_get_enabled_group_state( $settings );
 	?>
 	<section class="telkari-admin-workspace" aria-labelledby="telkari-account-section-title">
 		<header class="telkari-account-panel-header">
 			<div>
 				<h2 id="telkari-account-section-title"><?php esc_html_e( 'Social Media Accounts', 'telkari' ); ?></h2>
 				<p class="description"><?php esc_html_e( 'Add, reorder, and manage your social media accounts. Drag to reorder.', 'telkari' ); ?></p>
+				<p class="telkari-group-status" data-state="<?php echo esc_attr( $enabled_groups['social'] ? 'visible' : 'hidden' ); ?>">
+					<?php
+					if ( $enabled_groups['social'] ) {
+						printf(
+							'%1$s <a class="telkari-group-status-link" href="%2$s">%3$s</a>',
+							esc_html__( 'Social icons are visible on the frontend.', 'telkari' ),
+							esc_url( admin_url( 'admin.php?page=telkari-settings&tab=design#telkari-display-groups' ) ),
+							esc_html__( 'You can disable them from the Design tab', 'telkari' )
+						);
+					} else {
+						printf(
+							'%1$s <a class="telkari-group-status-link" href="%2$s">%3$s</a>',
+							esc_html__( 'Social accounts are saved but hidden on the frontend.', 'telkari' ),
+							esc_url( admin_url( 'admin.php?page=telkari-settings&tab=design#telkari-display-groups' ) ),
+							esc_html__( 'You can make it visible from the Design tab', 'telkari' )
+						);
+					}
+					?>
+				</p>
 			</div>
 		</header>
 		<!-- /.telkari-account-panel-header -->
@@ -225,6 +245,7 @@ function telkari_render_add_account_form( $platforms ) {
 		<header class="telkari-account-builder-header">
 			<div>
 				<p class="telkari-account-builder-status" id="telkari-account-builder-status" hidden aria-live="polite"></p>
+				<p class="telkari-cta-builder-feedback" id="telkari-account-builder-feedback" hidden role="status" aria-live="polite" aria-atomic="true"></p>
 				<h3 id="telkari-account-builder-title"><?php esc_html_e( 'Add New Account', 'telkari' ); ?></h3>
 			</div>
 		</header>
@@ -268,7 +289,8 @@ function telkari_render_add_account_form( $platforms ) {
 						class="regular-text"
 						placeholder="https://"
 						data-default-placeholder="https://"
-						aria-describedby="telkari-account-platform-summary-example">
+						aria-describedby="telkari-account-platform-summary-example telkari-account-url-error">
+				<span class="telkari-field-error" id="telkari-account-url-error" hidden aria-live="polite"></span>
 			</div>
 		</div>
 		<!-- /.telkari-account-builder-grid -->

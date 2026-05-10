@@ -53,6 +53,7 @@
 .telkari-design-2 .telkari-icons-wrapper {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: nowrap;
 	align-items: center;
 	gap: var(--telkari-design-2-icon-spacing);
 	padding: 0.5rem 0.75rem;
@@ -149,7 +150,6 @@
 		max-width: calc(100vw - 1rem);
 	}
 
-	.telkari-design-2 .telkari-icons-wrapper,
 	.telkari-design-2 .telkari-cta-wrapper {
 		box-sizing: border-box;
 		width: 100%;
@@ -158,10 +158,15 @@
 	}
 
 	.telkari-design-2 .telkari-icons-wrapper {
-		flex-direction: column;
+		box-sizing: border-box;
+		flex-direction: row;
 		flex-wrap: nowrap;
 		align-items: center;
 		justify-content: center;
+		max-width: calc(100vw - 1rem);
+		padding: 0.375rem;
+		overflow-x: auto;
+		overflow-y: hidden;
 	}
 
 	.telkari-design-2 .telkari-cta-wrapper {
@@ -169,6 +174,10 @@
 		flex-wrap: nowrap;
 		align-items: stretch;
 		justify-content: flex-start;
+	}
+
+	.telkari-design-2.telkari-container--cta-only .telkari-design-shell {
+		width: var(--telkari-mobile-cta-stack-width);
 	}
 
 	.telkari-design-2 .telkari-cta-link {

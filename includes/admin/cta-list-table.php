@@ -69,14 +69,34 @@ function telkari_get_cta_admin_action_aria_label( $action_label, $button_label )
  * @param array $settings Current settings.
  */
 function telkari_cta_list_render( $settings ) {
-	$cta_types = telkari_get_supported_cta_types();
-	$buttons   = isset( $settings['cta_buttons'] ) ? $settings['cta_buttons'] : array();
+	$cta_types      = telkari_get_supported_cta_types();
+	$buttons        = isset( $settings['cta_buttons'] ) ? $settings['cta_buttons'] : array();
+	$enabled_groups = telkari_get_enabled_group_state( $settings );
 	?>
 	<section class="telkari-admin-workspace" aria-labelledby="telkari-cta-section-title">
 		<header class="telkari-cta-panel-header">
 			<div>
 				<h2 id="telkari-cta-section-title"><?php esc_html_e( 'CTA Buttons', 'telkari' ); ?></h2>
 				<p class="description"><?php esc_html_e( 'Add, reorder, and manage your CTA buttons. Drag to reorder.', 'telkari' ); ?></p>
+				<p class="telkari-group-status" data-state="<?php echo esc_attr( $enabled_groups['cta'] ? 'visible' : 'hidden' ); ?>">
+					<?php
+					if ( $enabled_groups['cta'] ) {
+						printf(
+							'%1$s <a class="telkari-group-status-link" href="%2$s">%3$s</a>',
+							esc_html__( 'CTA buttons are visible on the frontend.', 'telkari' ),
+							esc_url( admin_url( 'admin.php?page=telkari-settings&tab=design#telkari-display-groups' ) ),
+							esc_html__( 'You can disable them from the Design tab', 'telkari' )
+						);
+					} else {
+						printf(
+							'%1$s <a class="telkari-group-status-link" href="%2$s">%3$s</a>',
+							esc_html__( 'CTA buttons are saved but hidden on the frontend.', 'telkari' ),
+							esc_url( admin_url( 'admin.php?page=telkari-settings&tab=design#telkari-display-groups' ) ),
+							esc_html__( 'You can make it visible from the Design tab', 'telkari' )
+						);
+					}
+					?>
+				</p>
 			</div>
 		</header>
 		<!-- /.telkari-cta-panel-header -->
@@ -278,7 +298,7 @@ function telkari_render_add_cta_form( $cta_types ) {
 			</div>
 
 			<div class="telkari-add-form-row telkari-add-form-row--wide">
-				<label for="telkari-new-cta-value"><?php esc_html_e( 'Destination Value', 'telkari' ); ?></label>
+				<label for="telkari-new-cta-value" id="telkari-cta-value-label"><?php esc_html_e( 'Destination Value', 'telkari' ); ?></label>
 				<input type="text"
 						id="telkari-new-cta-value"
 						class="regular-text"
@@ -367,6 +387,7 @@ function telkari_render_cta_preview_panel() {
 					data-empty-text="<?php echo esc_attr__( 'Your CTA preview updates as you edit the fields.', 'telkari' ); ?>">
 					<?php esc_html_e( 'Your CTA preview updates as you edit the fields.', 'telkari' ); ?>
 				</p>
+				<p class="telkari-cta-preview-context" id="telkari-cta-preview-context" aria-live="polite"></p>
 			</div>
 			<!-- /.telkari-cta-preview-content -->
 		</section>

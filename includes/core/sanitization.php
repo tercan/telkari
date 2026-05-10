@@ -24,26 +24,52 @@ function telkari_sanitize_settings( $input ) {
 		isset( $input['active_design'] ) ? $input['active_design'] : $defaults['active_design']
 	);
 
-	// Position (must be valid for the selected design).
-	$sanitized['active_position'] = telkari_sanitize_position(
+	// Group visibility.
+	$visibility_flags                  = telkari_sanitize_group_visibility_flags( $input );
+	$sanitized['show_social_accounts'] = $visibility_flags['show_social_accounts'];
+	$sanitized['show_cta_buttons']     = $visibility_flags['show_cta_buttons'];
+	$enabled_groups                    = telkari_get_enabled_group_state( $sanitized );
+	$normalized_positions              = telkari_normalize_position_pair(
+		$sanitized['active_design'],
 		isset( $input['active_position'] ) ? $input['active_position'] : $defaults['active_position'],
-		$sanitized['active_design']
-	);
-
-	$sanitized['cta_position'] = telkari_sanitize_position(
 		isset( $input['cta_position'] ) ? $input['cta_position'] : $defaults['cta_position'],
-		$sanitized['active_design']
+		$enabled_groups
 	);
+	$sanitized['active_position']      = $normalized_positions['social_position'];
+	$sanitized['cta_position']         = $normalized_positions['cta_position'];
 
-	// Icon size (24-96).
-	$sanitized['icon_size'] = isset( $input['icon_size'] )
+	// Social icon appearance. Legacy icon fields mirror these values.
+	$legacy_icon_size = isset( $input['icon_size'] )
 		? min( 96, max( 24, absint( $input['icon_size'] ) ) )
 		: $defaults['icon_size'];
 
-	// Icon spacing (0-48).
-	$sanitized['icon_spacing'] = isset( $input['icon_spacing'] )
+	$legacy_icon_spacing = isset( $input['icon_spacing'] )
 		? min( 48, max( 0, absint( $input['icon_spacing'] ) ) )
 		: $defaults['icon_spacing'];
+
+	$sanitized['social_icon_size'] = isset( $input['social_icon_size'] )
+		? min( 96, max( 24, absint( $input['social_icon_size'] ) ) )
+		: $legacy_icon_size;
+
+	$sanitized['social_icon_spacing'] = isset( $input['social_icon_spacing'] )
+		? min( 48, max( 0, absint( $input['social_icon_spacing'] ) ) )
+		: $legacy_icon_spacing;
+
+	$sanitized['icon_size']    = $sanitized['social_icon_size'];
+	$sanitized['icon_spacing'] = $sanitized['social_icon_spacing'];
+
+	// CTA appearance.
+	$sanitized['cta_button_size'] = isset( $input['cta_button_size'] ) && in_array( $input['cta_button_size'], array( 'compact', 'default', 'large' ), true )
+		? $input['cta_button_size']
+		: $defaults['cta_button_size'];
+
+	$sanitized['cta_button_spacing'] = isset( $input['cta_button_spacing'] )
+		? min( 48, max( 0, absint( $input['cta_button_spacing'] ) ) )
+		: $defaults['cta_button_spacing'];
+
+	$sanitized['cta_button_width'] = isset( $input['cta_button_width'] ) && in_array( $input['cta_button_width'], array( 'content', 'fixed', 'full' ), true )
+		? $input['cta_button_width']
+		: $defaults['cta_button_width'];
 
 	// Icon style.
 	$sanitized['icon_style'] = isset( $input['icon_style'] ) && in_array( $input['icon_style'], array( 'rounded', 'square' ), true )

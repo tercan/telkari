@@ -14,8 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function telkari_enqueue_frontend_css() {
 	$settings = telkari_get_settings();
-	$accounts = telkari_get_enabled_sorted_collection_items( $settings['social_accounts'], array( 'url' ) );
-	$buttons  = telkari_get_enabled_sorted_collection_items( $settings['cta_buttons'], array( 'type', 'url' ) );
+	$groups   = telkari_get_enabled_group_state( $settings );
+	$accounts = $groups['social'] ? telkari_get_enabled_sorted_collection_items( $settings['social_accounts'], array( 'url' ) ) : array();
+	$buttons  = $groups['cta'] ? telkari_get_enabled_sorted_collection_items( $settings['cta_buttons'], array( 'type', 'url' ) ) : array();
 
 	if ( empty( $accounts ) && empty( $buttons ) ) {
 		return;
@@ -49,8 +50,12 @@ function telkari_enqueue_frontend_css() {
 	}
 
 	// Convert px values to rem for CSS custom properties.
-	$icon_size_rem    = round( $settings['icon_size'] / 16, 4 );
-	$icon_spacing_rem = round( $settings['icon_spacing'] / 16, 4 );
+	$social_icon_size    = isset( $settings['social_icon_size'] ) ? $settings['social_icon_size'] : $settings['icon_size'];
+	$social_icon_spacing = isset( $settings['social_icon_spacing'] ) ? $settings['social_icon_spacing'] : $settings['icon_spacing'];
+	$cta_button_spacing  = isset( $settings['cta_button_spacing'] ) ? $settings['cta_button_spacing'] : $settings['icon_spacing'];
+	$icon_size_rem       = round( $social_icon_size / 16, 4 );
+	$icon_spacing_rem    = round( $social_icon_spacing / 16, 4 );
+	$cta_spacing_rem     = round( $cta_button_spacing / 16, 4 );
 
 	// Resolve wrapper background color.
 	$brand_colors    = telkari_get_platform_brand_colors();
@@ -58,9 +63,10 @@ function telkari_enqueue_frontend_css() {
 	$wrapper_bg      = ! empty( $platform_colors['wrapper_bg'] ) ? $platform_colors['wrapper_bg'] : $brand_colors['wrapper_bg'];
 
 	$custom_css = sprintf(
-		'.telkari-container { --telkari-icon-size: %srem; --telkari-icon-spacing: %srem; --telkari-wrapper-bg: %s; }',
+		'.telkari-container { --telkari-icon-size: %srem; --telkari-icon-spacing: %srem; --telkari-cta-spacing: %srem; --telkari-wrapper-bg: %s; }',
 		esc_attr( $icon_size_rem ),
 		esc_attr( $icon_spacing_rem ),
+		esc_attr( $cta_spacing_rem ),
 		esc_attr( $wrapper_bg )
 	);
 
@@ -73,15 +79,26 @@ add_action( 'wp_enqueue_scripts', 'telkari_enqueue_frontend_css' );
  */
 function telkari_render_frontend_icons() {
 	$settings = telkari_get_settings();
-	$accounts = telkari_get_enabled_sorted_collection_items( $settings['social_accounts'], array( 'url' ) );
-	$buttons  = telkari_get_enabled_sorted_collection_items( $settings['cta_buttons'], array( 'type', 'url' ) );
+	$groups   = telkari_get_enabled_group_state( $settings );
+	$accounts = $groups['social'] ? telkari_get_enabled_sorted_collection_items( $settings['social_accounts'], array( 'url' ) ) : array();
+	$buttons  = $groups['cta'] ? telkari_get_enabled_sorted_collection_items( $settings['cta_buttons'], array( 'type', 'url' ) ) : array();
 
 	if ( empty( $accounts ) && empty( $buttons ) ) {
 		return;
 	}
 
-	$social_position = isset( $settings['active_position'] ) ? $settings['active_position'] : 'bottom-right';
-	$cta_position    = isset( $settings['cta_position'] ) ? $settings['cta_position'] : $social_position;
+	$render_groups      = array(
+		'social' => ! empty( $accounts ),
+		'cta'    => ! empty( $buttons ),
+	);
+	$normalized_pair    = telkari_normalize_position_pair(
+		$settings['active_design'],
+		isset( $settings['active_position'] ) ? $settings['active_position'] : 'bottom-right',
+		isset( $settings['cta_position'] ) ? $settings['cta_position'] : 'bottom-right',
+		$render_groups
+	);
+	$social_position    = $normalized_pair['social_position'];
+	$cta_position       = $normalized_pair['cta_position'];
 
 	if ( ! empty( $accounts ) && ! empty( $buttons ) && $social_position !== $cta_position ) {
 		telkari_render_frontend_container( $settings, $accounts, array(), $social_position );
@@ -125,6 +142,19 @@ function telkari_render_frontend_container( $settings, $accounts, $buttons, $pos
 	if ( ! empty( $buttons ) ) {
 		$classes[] = 'telkari-has-ctas';
 	}
+
+	if ( ! empty( $accounts ) && ! empty( $buttons ) ) {
+		$classes[] = 'telkari-container--mixed';
+	} elseif ( ! empty( $accounts ) ) {
+		$classes[] = 'telkari-container--social-only';
+	} elseif ( ! empty( $buttons ) ) {
+		$classes[] = 'telkari-container--cta-only';
+	}
+
+	$cta_button_size  = isset( $settings['cta_button_size'] ) ? sanitize_html_class( $settings['cta_button_size'] ) : 'default';
+	$cta_button_width = isset( $settings['cta_button_width'] ) ? sanitize_html_class( $settings['cta_button_width'] ) : 'content';
+	$classes[]        = 'telkari-cta-size-' . $cta_button_size;
+	$classes[]        = 'telkari-cta-width-' . $cta_button_width;
 
 	$is_design_1 = 'design-1' === $settings['active_design'];
 	?>

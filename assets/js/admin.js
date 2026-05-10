@@ -127,17 +127,113 @@
 				this.closest('.telkari-design-option').classList.add('telkari-design-option--active');
 
 				// Rebuild position button groups for the selected design.
-				updatePositionGroups(this.value);
+				syncDesignControls(this.value);
 			});
 		});
+
+		document.querySelectorAll('.telkari-display-group-input').forEach(function (input) {
+			input.addEventListener('change', function () {
+				syncDesignControls(getSelectedDesignId());
+			});
+		});
+
+		syncDesignControls(getSelectedDesignId());
+	}
+
+	/**
+	 * Return the active design identifier.
+	 *
+	 * @return {string}
+	 */
+	function getSelectedDesignId() {
+		var selected = document.querySelector('.telkari-design-radio:checked');
+
+		return selected ? selected.value : getSettingInputValue('active_design', 'design-1');
+	}
+
+	/**
+	 * Return current display group visibility state.
+	 *
+	 * @return {Object}
+	 */
+	function getDisplayGroupState() {
+		var socialInput = document.getElementById('telkari-show-social-accounts');
+		var ctaInput = document.getElementById('telkari-show-cta-buttons');
+
+		return {
+			social: socialInput ? socialInput.checked : true,
+			cta: ctaInput ? ctaInput.checked : true
+		};
+	}
+
+	/**
+	 * Sync all design controls for the selected design and display groups.
+	 *
+	 * @param {string} designId Selected design identifier.
+	 */
+	function syncDesignControls(designId) {
+		var groupState = getDisplayGroupState();
+		var previousPair = getSelectedPlacementPair();
+		var selectedPair = normalizePlacementPair(designId, previousPair, groupState);
+
+		updatePlacementVisibility(groupState);
+		updatePositionGroups(designId, groupState, selectedPair);
+		updatePlacementStatus(groupState, previousPair, selectedPair);
+	}
+
+	/**
+	 * Show only the placement cards for enabled groups.
+	 *
+	 * @param {Object} groupState Display group state.
+	 */
+	function updatePlacementVisibility(groupState) {
+		document.querySelectorAll('.telkari-placement-card').forEach(function (card) {
+			var group = card.getAttribute('data-placement-card');
+			card.hidden = !groupState[group];
+		});
+	}
+
+	/**
+	 * Announce placement visibility and normalization changes.
+	 *
+	 * @param {Object} groupState Display group state.
+	 * @param {Object} previousPair Previous placement pair.
+	 * @param {Object} selectedPair Normalized placement pair.
+	 */
+	function updatePlacementStatus(groupState, previousPair, selectedPair) {
+		var status = document.getElementById('telkari-placement-status');
+		var socialLabel = getPositionLabel(selectedPair.social);
+		var ctaLabel = getPositionLabel(selectedPair.cta);
+		var changed = previousPair.social !== selectedPair.social || previousPair.cta !== selectedPair.cta;
+
+		if (!status) {
+			return;
+		}
+
+		if (!groupState.social && !groupState.cta) {
+			status.textContent = telkariAdmin.i18n.placementNoGroups;
+			status.hidden = false;
+			return;
+		}
+
+		if (groupState.social && groupState.cta && changed) {
+			status.textContent = formatString(telkariAdmin.i18n.placementAdjusted, socialLabel, ctaLabel);
+			status.hidden = false;
+			return;
+		}
+
+		status.textContent = '';
+		status.hidden = true;
 	}
 
 	/**
 	 * Rebuild all position button groups based on the selected design.
 	 *
 	 * @param {string} designId The selected design identifier.
+	 * @param {Object} groupState Display group state.
+	 * @param {Object} selectedPair Selected placement pair.
 	 */
-	function updatePositionGroups(designId) {
+	function updatePositionGroups(designId, groupState, selectedPair) {
 		var groups = document.querySelectorAll('.telkari-position-group');
 
 		if (!groups.length || !telkariAdmin.positions || !telkariAdmin.positionLabels) {
@@ -145,7 +241,7 @@
 		}
 
 		groups.forEach(function (group) {
-			rebuildPositionGroup(group, designId);
+			rebuildPositionGroup(group, designId, groupState, selectedPair);
 		});
 	}
 
@@ -154,11 +250,14 @@
 	 *
 	 * @param {HTMLElement} group Position group element.
 	 * @param {string} designId Selected design identifier.
+	 * @param {Object} groupState Display group state.
+	 * @param {Object} selectedPair Selected placement pair.
 	 */
-	function rebuildPositionGroup(group, designId) {
+	function rebuildPositionGroup(group, designId, groupState, selectedPair) {
 		var positions;
 		var labels;
 		var settingName;
+		var groupKey;
 
 		if (!group) {
 			return;
@@ -167,23 +266,166 @@
 		positions = telkariAdmin.positions[designId] || [];
 		labels = telkariAdmin.positionLabels;
 		settingName = group.getAttribute('data-setting-name') || 'telkari_settings[active_position]';
-
-		var currentRadio = group.querySelector('input:checked');
-		var currentValue = currentRadio ? currentRadio.value : '';
-
-		var selectedValue = positions.indexOf(currentValue) !== -1 ? currentValue : positions[0] || '';
+		groupKey = group.getAttribute('data-group') || 'social';
+		var selectedValue = selectedPair[groupKey] || positions[0] || '';
 
 		var html = '';
 		positions.forEach(function (pos) {
 			var isActive = pos === selectedValue;
-			html += '<label class="telkari-btn-option' + (isActive ? ' telkari-btn-option--active' : '') + '">' +
-				'<input type="radio" name="' + escapeHtml(settingName) + '" value="' + escapeHtml(pos) + '"' + (isActive ? ' checked' : '') + '>' +
+			var isDisabled = isPlacementOptionDisabled(designId, groupKey, pos, selectedPair, groupState);
+			var labelClass = 'telkari-btn-option' + (isActive ? ' telkari-btn-option--active' : '') + (isDisabled ? ' telkari-btn-option--disabled' : '');
+			html += '<label class="' + escapeAttribute(labelClass) + '"' + (isDisabled ? ' aria-disabled="true"' : '') + '>' +
+				'<input type="radio" name="' + escapeAttribute(settingName) + '" value="' + escapeAttribute(pos) + '"' + (isActive ? ' checked' : '') + (isDisabled ? ' disabled' : '') + '>' +
 				escapeHtml(labels[pos] || pos) +
 				'</label>';
 		});
 
 		group.innerHTML = html;
 		bindButtonGroupInputs(group);
+	}
+
+	/**
+	 * Get currently selected placement pair from the DOM.
+	 *
+	 * @return {Object}
+	 */
+	function getSelectedPlacementPair() {
+		return {
+			social: getSelectedPositionValue('social') || 'bottom-right',
+			cta: getSelectedPositionValue('cta') || 'bottom-right'
+		};
+	}
+
+	/**
+	 * Return selected position for a group.
+	 *
+	 * @param {string} groupKey Group key.
+	 * @return {string}
+	 */
+	function getSelectedPositionValue(groupKey) {
+		var group = document.querySelector('.telkari-position-group[data-group="' + escapeAttribute(groupKey) + '"]');
+		var selected = group ? group.querySelector('input:checked') : null;
+		var settingKey = groupKey === 'cta' ? 'cta_position' : 'active_position';
+
+		return selected ? selected.value : getSettingInputValue(settingKey, '');
+	}
+
+	/**
+	 * Return a simple setting input value from the current tab.
+	 *
+	 * @param {string} key Settings key.
+	 * @param {string} fallback Fallback value.
+	 * @return {string}
+	 */
+	function getSettingInputValue(key, fallback) {
+		var input = document.querySelector('[name="telkari_settings[' + key + ']"]');
+
+		return input ? input.value : fallback;
+	}
+
+	/**
+	 * Return the translated design label.
+	 *
+	 * @param {string} designId Design identifier.
+	 * @return {string}
+	 */
+	function getDesignLabel(designId) {
+		if (telkariAdmin.designLabels && telkariAdmin.designLabels[designId]) {
+			return telkariAdmin.designLabels[designId];
+		}
+
+		return designId;
+	}
+
+	/**
+	 * Return the translated position label.
+	 *
+	 * @param {string} position Position key.
+	 * @return {string}
+	 */
+	function getPositionLabel(position) {
+		if (telkariAdmin.positionLabels && telkariAdmin.positionLabels[position]) {
+			return telkariAdmin.positionLabels[position];
+		}
+
+		return position;
+	}
+
+	/**
+	 * Replace numbered placeholders in a localized string.
+	 *
+	 * @param {string} template Localized string template.
+	 * @param {...string} values Replacement values.
+	 * @return {string}
+	 */
+	function formatString(template) {
+		var values = Array.prototype.slice.call(arguments, 1);
+
+		return (template || '').replace(/%([0-9]+)\\$s/g, function (match, index) {
+			return values[parseInt(index, 10) - 1] || match;
+		});
+	}
+
+	/**
+	 * Normalize social/CTA positions on the admin side for instant feedback.
+	 *
+	 * @param {string} designId Selected design identifier.
+	 * @param {Object} selectedPair Selected placement pair.
+	 * @param {Object} groupState Display group state.
+	 * @return {Object}
+	 */
+	function normalizePlacementPair(designId, selectedPair, groupState) {
+		var positions = telkariAdmin.positions[designId] || [];
+		var social = positions.indexOf(selectedPair.social) !== -1 ? selectedPair.social : positions[0] || 'bottom-right';
+		var cta = positions.indexOf(selectedPair.cta) !== -1 ? selectedPair.cta : positions[0] || 'bottom-right';
+
+		if (!(groupState.social && groupState.cta)) {
+			return {
+				social: social,
+				cta: cta
+			};
+		}
+
+		if (designId === 'design-3') {
+			cta = getOppositeEdgePosition(social);
+		} else if (designId === 'design-2' && social === cta) {
+			cta = social === 'bottom-right' ? 'bottom-left' : 'bottom-right';
+		}
+
+		return {
+			social: social,
+			cta: cta
+		};
+	}
+
+	/**
+	 * Return whether a position option should be disabled.
+	 *
+	 * @param {string} designId Selected design identifier.
+	 * @param {string} groupKey Group key.
+	 * @param {string} position Position option.
+	 * @param {Object} selectedPair Selected placement pair.
+	 * @param {Object} groupState Display group state.
+	 * @return {boolean}
+	 */
+	function isPlacementOptionDisabled(designId, groupKey, position, selectedPair, groupState) {
+		var otherGroup = groupKey === 'social' ? 'cta' : 'social';
+
+		if (!(groupState.social && groupState.cta) || designId === 'design-1') {
+			return false;
+		}
+
+		return position === selectedPair[otherGroup];
+	}
+
+	/**
+	 * Return the opposite side for left/right-only layouts.
+	 *
+	 * @param {string} position Current position.
+	 * @return {string}
+	 */
+	function getOppositeEdgePosition(position) {
+		return position === 'bottom-left' ? 'bottom-right' : 'bottom-left';
 	}
 
 	/**
@@ -200,11 +442,20 @@
 
 		inputs = group.querySelectorAll('input');
 		inputs.forEach(function (input) {
+			if (input.dataset.telkariButtonGroupBound === 'true') {
+				return;
+			}
+
+			input.dataset.telkariButtonGroupBound = 'true';
 			input.addEventListener('change', function () {
 				group.querySelectorAll('.telkari-btn-option').forEach(function (label) {
 					label.classList.remove('telkari-btn-option--active');
 				});
 				this.closest('.telkari-btn-option').classList.add('telkari-btn-option--active');
+
+				if (group.classList.contains('telkari-position-group')) {
+					syncDesignControls(getSelectedDesignId());
+				}
 			});
 		});
 	}
@@ -358,11 +609,13 @@
 		if (accountFormElements.urlInput) {
 			accountFormElements.urlInput.addEventListener('input', function () {
 				accountFormElements.urlInput.setAttribute('aria-invalid', 'false');
+				hideAccountFieldError();
 				syncAccountFormState();
 			});
 
 			accountFormElements.urlInput.addEventListener('change', function () {
 				accountFormElements.urlInput.setAttribute('aria-invalid', 'false');
+				hideAccountFieldError();
 				syncAccountFormState();
 			});
 		}
@@ -510,7 +763,7 @@
 				accountFormElements.platformSelector.classList.toggle('telkari-account-platform-selector--invalid', !platform);
 			}
 			urlInput.setAttribute('aria-invalid', url ? 'false' : 'true');
-			alert(telkariAdmin.i18n.fillFields);
+			showAccountFieldError(telkariAdmin.i18n.fillFields);
 			return;
 		}
 
@@ -519,7 +772,7 @@
 			new URL(url);
 		} catch (err) {
 			urlInput.setAttribute('aria-invalid', 'true');
-			alert(telkariAdmin.i18n.fillFields);
+			showAccountFieldError(telkariAdmin.i18n.fillFields);
 			return;
 		}
 
@@ -528,8 +781,10 @@
 			accountFormElements.platformSelector.classList.remove('telkari-account-platform-selector--invalid');
 		}
 		urlInput.setAttribute('aria-invalid', 'false');
+		hideAccountFieldError();
 		var existingRows = listEl.querySelectorAll('.telkari-account-row');
 		var index = currentEditingAccountRow ? getCollectionRowIndex(currentEditingAccountRow, listEl) : existingRows.length;
+		var hasDuplicate = hasDuplicateAccount(listEl, platform, url, currentEditingAccountRow);
 		var accountData = {
 			id: existingAccount && existingAccount.id ? existingAccount.id : 'telkari_' + Date.now(),
 			platform: platform,
@@ -563,6 +818,11 @@
 		if (targetRow) {
 			flashCollectionRow(targetRow);
 		}
+
+		showAccountBuilderFeedback(
+			hasDuplicate ? telkariAdmin.i18n.duplicateAccount : (existingAccount ? telkariAdmin.i18n.accountUpdatedFeedback : telkariAdmin.i18n.accountAddedFeedback),
+			hasDuplicate ? 'warning' : 'success'
+		);
 	}
 
 	/**
@@ -645,6 +905,8 @@
 			title: document.getElementById('telkari-account-builder-title'),
 			description: document.getElementById('telkari-account-builder-description'),
 			status: document.getElementById('telkari-account-builder-status'),
+			feedbackOutput: document.getElementById('telkari-account-builder-feedback'),
+			errorOutput: document.getElementById('telkari-account-url-error'),
 			platformSelector: document.getElementById('telkari-account-platform-selector'),
 			platformInputs: document.querySelectorAll('input[name="telkari-new-platform"]'),
 			urlInput: document.getElementById('telkari-new-url'),
@@ -765,7 +1027,89 @@
 			accountFormElements.urlInput.setAttribute('aria-invalid', 'false');
 		}
 
+		hideAccountFieldError();
 		syncAccountFormState();
+	}
+
+	/**
+	 * Show an inline social account field error.
+	 *
+	 * @param {string} message Error message.
+	 */
+	function showAccountFieldError(message) {
+		var accountFormElements = getAccountFormElements();
+
+		if (!accountFormElements.errorOutput) {
+			return;
+		}
+
+		accountFormElements.errorOutput.textContent = message || '';
+		accountFormElements.errorOutput.hidden = !message;
+	}
+
+	/**
+	 * Hide the inline social account field error.
+	 */
+	function hideAccountFieldError() {
+		showAccountFieldError('');
+	}
+
+	/**
+	 * Show social account builder feedback.
+	 *
+	 * @param {string} message Feedback message.
+	 * @param {string} state Feedback state.
+	 */
+	function showAccountBuilderFeedback(message, state) {
+		var accountFormElements = getAccountFormElements();
+
+		if (!accountFormElements.feedbackOutput || !message) {
+			return;
+		}
+
+		accountFormElements.feedbackOutput.textContent = message;
+		accountFormElements.feedbackOutput.hidden = false;
+		accountFormElements.feedbackOutput.setAttribute('data-state', state || 'success');
+	}
+
+	/**
+	 * Return whether the account list already contains a matching account.
+	 *
+	 * @param {HTMLElement} listEl Account list element.
+	 * @param {string} platform Platform key.
+	 * @param {string} url Profile URL.
+	 * @param {?HTMLElement} ignoredRow Row ignored during edit.
+	 * @return {boolean}
+	 */
+	function hasDuplicateAccount(listEl, platform, url, ignoredRow) {
+		var normalizedUrl = normalizeComparableUrl(url);
+		var hasDuplicate = false;
+
+		if (!listEl) {
+			return false;
+		}
+
+		listEl.querySelectorAll('.telkari-account-row').forEach(function (row) {
+			if (row === ignoredRow) {
+				return;
+			}
+
+			if (getHiddenRowFieldValue(row, 'platform') === platform && normalizeComparableUrl(getHiddenRowFieldValue(row, 'url')) === normalizedUrl) {
+				hasDuplicate = true;
+			}
+		});
+
+		return hasDuplicate;
+	}
+
+	/**
+	 * Normalize URLs for loose duplicate checks.
+	 *
+	 * @param {string} url URL value.
+	 * @return {string}
+	 */
+	function normalizeComparableUrl(url) {
+		return (url || '').trim().replace(/\/+$/, '').toLowerCase();
 	}
 
 	/**
@@ -981,7 +1325,12 @@
 		var normalizedCta = normalizeCtaInput(type, value, message);
 
 		if (!normalizedCta) {
-			alert(telkariAdmin.i18n.fillCtaFields);
+			valueInput.setAttribute('aria-invalid', 'true');
+			if (builderElements.errorOutput) {
+				builderElements.errorOutput.textContent = getCtaValidationErrorMessage(type) || telkariAdmin.i18n.fillCtaFields;
+				builderElements.errorOutput.hidden = false;
+			}
+			valueInput.focus();
 			return;
 		}
 
@@ -1039,6 +1388,7 @@
 		var errorOutput = builderElements.errorOutput;
 		var feedbackOutput = builderElements.feedbackOutput;
 		var colorInput = builderElements.colorInput;
+		var valueLabel = builderElements.valueLabel;
 		var hasValue;
 		var errorMessage = '';
 		var defaultLabelPlaceholder = '';
@@ -1062,22 +1412,37 @@
 
 		switch (type) {
 			case 'whatsapp':
+				if (valueLabel) {
+					valueLabel.textContent = telkariAdmin.i18n.ctaValueLabelWhatsapp;
+				}
 				valueInput.placeholder = '905551112233';
 				valueInput.setAttribute('inputmode', 'tel');
 				break;
 			case 'phone':
+				if (valueLabel) {
+					valueLabel.textContent = telkariAdmin.i18n.ctaValueLabelPhone;
+				}
 				valueInput.placeholder = '+905551112233';
 				valueInput.setAttribute('inputmode', 'tel');
 				break;
 			case 'email':
+				if (valueLabel) {
+					valueLabel.textContent = telkariAdmin.i18n.ctaValueLabelEmail;
+				}
 				valueInput.placeholder = 'info@example.com';
 				valueInput.setAttribute('inputmode', 'email');
 				break;
 			case 'url':
+				if (valueLabel) {
+					valueLabel.textContent = telkariAdmin.i18n.ctaValueLabelUrl;
+				}
 				valueInput.placeholder = 'https://example.com/contact';
 				valueInput.setAttribute('inputmode', 'url');
 				break;
 			default:
+				if (valueLabel) {
+					valueLabel.textContent = telkariAdmin.i18n.ctaValueLabelDefault;
+				}
 				valueInput.placeholder = defaultValuePlaceholder;
 				valueInput.removeAttribute('inputmode');
 		}
@@ -1144,6 +1509,7 @@
 			resetBtn: document.getElementById('telkari-reset-cta-form'),
 			typeInputs: document.querySelectorAll('input[name="telkari-new-cta-type"]'),
 			labelInput: document.getElementById('telkari-new-cta-label'),
+			valueLabel: document.getElementById('telkari-cta-value-label'),
 			valueInput: document.getElementById('telkari-new-cta-value'),
 			messageRow: document.getElementById('telkari-cta-message-row'),
 			messageInput: document.getElementById('telkari-new-cta-message'),
@@ -1803,7 +2169,7 @@
 
 		colorState.hidden = false;
 		colorState.setAttribute('data-color-source', hasCustomColor ? 'custom' : 'default');
-		colorStateValue.textContent = resolvedColor.toUpperCase();
+		colorStateValue.textContent = (hasCustomColor ? telkariAdmin.i18n.customColor : telkariAdmin.i18n.defaultColor) + ': ' + resolvedColor.toUpperCase();
 		colorStateSwatch.style.backgroundColor = resolvedColor;
 		syncCtaColorPickerUi(builderElements.colorInput, resolvedColor, hasCustomColor);
 	}
@@ -1923,6 +2289,7 @@
 		var previewLabel = document.getElementById('telkari-cta-preview-label');
 		var previewValue = document.getElementById('telkari-cta-preview-value');
 		var previewNote = document.getElementById('telkari-cta-preview-note');
+		var previewContext = document.getElementById('telkari-cta-preview-context');
 		var resolvedColor = getResolvedCtaColor(rawColor, ctaType);
 		var contrastColor = getContrastColor(resolvedColor);
 		var previewLabelText = label || (ctaType ? ctaType.label : '');
@@ -1965,6 +2332,29 @@
 		previewLabel.textContent = previewLabelText;
 		previewValue.textContent = previewValueText;
 		previewNote.textContent = previewNoteText;
+		updateCtaPreviewContext(previewContext);
+	}
+
+	/**
+	 * Update the CTA preview design and placement context line.
+	 *
+	 * @param {?HTMLElement} previewContext Preview context element.
+	 */
+	function updateCtaPreviewContext(previewContext) {
+		var designId;
+		var ctaPosition;
+
+		if (!previewContext) {
+			return;
+		}
+
+		designId = getSelectedDesignId();
+		ctaPosition = getSelectedPositionValue('cta') || 'bottom-right';
+		previewContext.textContent = formatString(
+			telkariAdmin.i18n.ctaPreviewContext,
+			getDesignLabel(designId),
+			getPositionLabel(ctaPosition)
+		);
 	}
 
 	/**

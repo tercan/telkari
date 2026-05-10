@@ -145,7 +145,11 @@
 	.telkari-design-3.telkari-position-bottom-left .telkari-design-shell,
 	.telkari-design-3.telkari-position-bottom-right .telkari-design-shell {
 		flex-direction: column;
-		max-width: calc(100vw - 1rem);
+		max-width: min(11rem, calc(100vw - 1rem));
+	}
+
+	.telkari-design-3.telkari-container--social-only .telkari-design-shell {
+		max-width: calc(var(--telkari-design-3-icon-size) + 0.75rem);
 	}
 
 	.telkari-design-3 .telkari-icons-wrapper {

@@ -3,7 +3,7 @@
  * Plugin Name: Telkari
  * Plugin URI: https://tercan.net/telkari
  * Description: Theme-independent WordPress floating social media links and CTA buttons plugin.
- * Version: 0.2.0
+ * Version: 1.0.0
  * Requires at least: 5.9
  * Requires PHP: 7.4
  * Author: Tercan Keskin
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TELKARI_VERSION', '0.2.0' );
+define( 'TELKARI_VERSION', '1.0.0' );
 define( 'TELKARI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TELKARI_URL', plugin_dir_url( __FILE__ ) );
 define( 'TELKARI_BASENAME', plugin_basename( __FILE__ ) );

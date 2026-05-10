@@ -1,21 +1,25 @@
 # Changelog
 
-## [0.2.0] - 2026-05-10 15:59
+## [1.0.0] - 2026-05-11 02:30
 
 ### Added
 
 - Added CTA button management with WhatsApp, phone, email, and custom URL button types.
 - Added per-button CTA labels, destinations, optional WhatsApp messages, custom colors, sorting, enable/disable toggles, and live preview support.
+- Added Design tab visibility controls for showing or hiding Social Icons and CTA Buttons independently.
 - Added independent CTA placement support so CTA buttons can be positioned separately from social accounts.
+- Added separate CTA appearance controls for button size, spacing, and width.
 - Added shared frontend CSS for CTA buttons and responsive mobile sizing across Orbit, Ribbon, and Pillar designs.
-- Added WordPress Coding Standards configuration for future validation.
 
 ### Changed
 
 - Refreshed the admin interface for Design, Social Accounts, CTA Buttons, and Appearance with a shared workspace layout.
 - Updated Social Accounts management to use the same compact row, icon-only action, and builder patterns as CTA Buttons.
 - Updated admin accent colors to use the Telkari corporate color system.
+- Updated Ribbon and Pillar placement behavior to keep Social Icons and CTA Buttons from sharing the same side when both groups are visible.
 - Improved mobile layouts for CTA buttons and social icons across all frontend designs.
+- Updated WordPress.org `readme.txt` metadata, FAQ, screenshots, privacy notes, and source documentation.
+- Updated `README.md` to reflect Display Groups, CTA placement, CTA appearance controls, privacy behavior, and bundled asset details.
 - Updated translations and localization templates for the expanded admin and CTA feature set.
 
 ### Fixed
@@ -24,6 +28,10 @@
 - Fixed CTA builder button text fallback when localized strings are unavailable.
 - Fixed WhatsApp CTA icon rendering to use the correct icon path.
 - Fixed mobile CTA button width consistency.
+
+### Removed
+
+- Removed development-only PHPCS configuration from the release tree after Plugin Check flagged it as an application file.
 
 ## [0.1.2] - 2026-03-14 02:24
 

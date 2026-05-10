@@ -282,7 +282,7 @@
 
 	.telkari-design-1 .telkari-cta-wrapper {
 		align-items: stretch;
-		gap: var(--telkari-mobile-icon-spacing);
+		gap: var(--telkari-mobile-cta-spacing);
 		padding: 0 0.375rem 0.375rem;
 		max-width: calc(100vw - 1rem);
 		width: var(--telkari-mobile-cta-stack-width);
