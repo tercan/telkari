@@ -3,12 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Telkari - WordPress Social Media Links Plugin</title>
+    <title>Telkari - WordPress Social Media Links and CTA Buttons Plugin</title>
     <meta
       name="description"
-      content="Theme-independent WordPress social media links management plugin. Display social media accounts with multiple design layouts, customizable positions, and brand colors."
+      content="Theme-independent WordPress social media links and CTA buttons plugin with multiple layouts, separate placements, colors, and mobile behavior."
     />
-    <link rel="canonical" href="https://github.com/tercan/telkari" />
+    <meta property="og:title" content="Telkari - WordPress Social Media Links and CTA Buttons Plugin" />
+    <meta
+      property="og:description"
+      content="Theme-independent WordPress social media links and CTA buttons plugin with multiple layouts, separate placements, colors, and mobile behavior."
+    />
+    <meta property="og:image" content="https://tercan.github.io/telkari/telkari.svg" />
+    <meta property="og:url" content="https://tercan.github.io/telkari/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Telkari - WordPress Social Media Links and CTA Buttons Plugin" />
+    <meta
+      name="twitter:description"
+      content="Theme-independent WordPress social media links and CTA buttons plugin with multiple layouts, separate placements, colors, and mobile behavior."
+    />
+    <meta name="twitter:image" content="https://tercan.github.io/telkari/telkari.svg" />
+    <link rel="canonical" href="https://tercan.github.io/telkari/" />
+    <link rel="alternate" hreflang="en" href="https://tercan.github.io/telkari/" />
+    <link rel="alternate" hreflang="tr" href="https://tercan.github.io/telkari/tr/" />
+    <link rel="alternate" hreflang="x-default" href="https://tercan.github.io/telkari/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -63,13 +81,12 @@
       <!-- Hero -->
       <section class="hero" id="hero">
         <div class="container">
-          <span class="hero-version">v0.2.0</span>
+          <span class="hero-version">v1.0.0</span>
           <h1 class="hero-title">Telkari</h1>
           <p class="hero-subtitle">
-            Theme-independent WordPress social media links management plugin.
-            Add your social media accounts anywhere on your site with
-            multiple design layouts, customizable positions, and per-platform
-            brand colors.
+            Theme-independent WordPress floating social links and CTA buttons.
+            Show social icons, action buttons, or both with multiple layouts,
+            separate placements, per-item colors, and compact mobile behavior.
           </p>
           <div class="hero-meta">
             <div class="hero-meta-item">
@@ -137,8 +154,8 @@
             <span class="section-label">Features</span>
             <h2 class="section-title">Everything You Need</h2>
             <p class="section-description">
-              A comprehensive set of tools to manage and display social media
-              links on your WordPress site.
+              A compact toolkit for managing floating social links and
+              conversion-focused CTA buttons from one WordPress admin page.
             </p>
           </div>
           <div class="features-grid">
@@ -150,10 +167,10 @@
                   />
                 </svg>
               </div>
-              <h3 class="feature-card-title">3 Design Layouts</h3>
+              <h3 class="feature-card-title">Social + CTA Layouts</h3>
               <p class="feature-card-description">
-                Orbit, Ribbon, and Pillar designs with distinct visual styles
-                and positioning options.
+                Orbit, Ribbon, and Pillar designs can show social icons, CTA
+                buttons, or both with relationship-aware placement rules.
               </p>
             </article>
             <!-- /.feature-card -->
@@ -165,10 +182,10 @@
                   />
                 </svg>
               </div>
-              <h3 class="feature-card-title">Drag & Drop Sorting</h3>
+              <h3 class="feature-card-title">Display Groups</h3>
               <p class="feature-card-description">
-                Reorder your social accounts with intuitive drag-and-drop
-                powered by SortableJS.
+                Toggle Social Icons and CTA Buttons independently, then place
+                each group without forcing everything to the same side.
               </p>
             </article>
             <!-- /.feature-card -->
@@ -180,10 +197,10 @@
                   />
                 </svg>
               </div>
-              <h3 class="feature-card-title">Brand Colors</h3>
+              <h3 class="feature-card-title">CTA Button Builder</h3>
               <p class="feature-card-description">
-                Per-platform brand color overrides with WordPress color picker.
-                13 official colors included.
+                Create WhatsApp, phone, email, and custom URL buttons with
+                labels, destinations, custom colors, sorting, and preview.
               </p>
             </article>
             <!-- /.feature-card -->
@@ -195,10 +212,10 @@
                   />
                 </svg>
               </div>
-              <h3 class="feature-card-title">Responsive Design</h3>
+              <h3 class="feature-card-title">Responsive Frontend</h3>
               <p class="feature-card-description">
-                Theme-independent rendering via wp_footer hook. Works with any
-                WordPress theme.
+                Mobile layouts tighten spacing, preserve tap targets, and keep
+                CTA labels controlled with single-line truncation.
               </p>
             </article>
             <!-- /.feature-card -->
@@ -227,8 +244,8 @@
               </div>
               <h3 class="feature-card-title">Internationalization</h3>
               <p class="feature-card-description">
-                Full i18n support with telkari text domain. Turkish translation
-                included out of the box.
+                Full i18n support with the telkari text domain and 11 bundled
+                translation files.
               </p>
             </article>
             <!-- /.feature-card -->
@@ -244,8 +261,8 @@
             <span class="section-label">Design Layouts</span>
             <h2 class="section-title">Three Built-in Designs</h2>
             <p class="section-description">
-              Each design template offers its own visual style and positioning
-              options.
+              Each design template offers its own visual style for social icons
+              and CTA buttons.
             </p>
           </div>
           <div class="designs-grid">
@@ -287,14 +304,17 @@
                       />
                     </svg>
                   </div>
+                  <div class="preview-cta-pill preview-cta-pill--orbit">
+                    Contact
+                  </div>
                 </div>
               </div>
               <div class="design-card-body">
                 <h3 class="design-card-name">Orbit</h3>
                 <p class="design-card-description">
-                  Quarter-circle trigger button in a corner. Icons fan out in an
-                  arc on click with CSS trigonometry-based positioning and
-                  staggered animations.
+                  Quarter-circle trigger button in a corner. Social icons fan
+                  out in an arc, while CTA buttons can stay as a compact stack
+                  near the trigger.
                 </p>
                 <div class="design-card-positions">
                   <span class="position-tag">Bottom Left</span>
@@ -347,15 +367,17 @@
                         />
                       </svg>
                     </div>
+                    <div class="preview-cta-pill preview-cta-pill--ribbon">
+                      Book
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="design-card-body">
                 <h3 class="design-card-name">Ribbon</h3>
                 <p class="design-card-description">
-                  Horizontal bar fixed at the bottom of the page with icons
-                  displayed in a row. Always visible, non-intrusive presence
-                  that keeps your social links accessible at all times.
+                  Horizontal bar fixed at the bottom of the page. Social icons
+                  stay in one row, and CTA buttons can use a separate placement.
                 </p>
                 <div class="design-card-positions">
                   <span class="position-tag">Bottom Left</span>
@@ -368,6 +390,10 @@
             <article class="design-card fade-in">
               <div class="design-card-preview">
                 <div class="preview-pillar">
+                  <div class="preview-pillar-cta-stack">
+                    <span class="preview-cta-pill">Call</span>
+                    <span class="preview-cta-pill">Email</span>
+                  </div>
                   <div class="preview-pillar-bar">
                     <div
                       class="preview-pillar-icon"
@@ -405,9 +431,9 @@
               <div class="design-card-body">
                 <h3 class="design-card-name">Pillar</h3>
                 <p class="design-card-description">
-                  Vertical sidebar strip with icons stacked in a column. Minimal
-                  screen footprint with a sleek edge-aligned layout that stays
-                  out of the way while remaining easily accessible.
+                  Vertical sidebar strip with icons stacked in a column. When
+                  both groups are visible, CTA buttons and social icons stay on
+                  opposite sides.
                 </p>
                 <div class="design-card-positions">
                   <span class="position-tag">Bottom Left</span>
@@ -461,8 +487,8 @@
                 <h3 class="admin-tab-name">Design</h3>
               </div>
               <p class="admin-tab-description">
-                Visual design selector with SVG previews and integrated position
-                selector.
+                Visual design selector with SVG previews, Display Groups, and
+                relationship-aware placement controls.
               </p>
               <ul class="admin-tab-features">
                 <li class="admin-tab-feature">
@@ -470,21 +496,21 @@
                     <path
                       d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
                     /></svg
-                  >SVG design previews
+                  >Display group visibility
                 </li>
                 <li class="admin-tab-feature">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
                     /></svg
-                  >Dynamic position selector
+                  >Separate placement controls
                 </li>
                 <li class="admin-tab-feature">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
                     /></svg
-                  >One-click design switching
+                  >Overlap prevention rules
                 </li>
               </ul>
             </article>
@@ -501,7 +527,8 @@
                 <h3 class="admin-tab-name">Social Accounts</h3>
               </div>
               <p class="admin-tab-description">
-                Account list with drag-and-drop sorting and add form.
+                Account list with drag-and-drop sorting, status messaging, and
+                add form.
               </p>
               <ul class="admin-tab-features">
                 <li class="admin-tab-feature">
@@ -533,15 +560,15 @@
                 <div class="admin-tab-icon">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path
-                      d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-1 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8z"
+                      d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
                     />
                   </svg>
                 </div>
-                <h3 class="admin-tab-name">Appearance</h3>
+                <h3 class="admin-tab-name">CTA Buttons</h3>
               </div>
               <p class="admin-tab-description">
-                Card-based settings for icon size, spacing, style, and color
-                customization.
+                Guided CTA builder with preview, custom colors, sorting, and
+                per-button enable/disable controls.
               </p>
               <ul class="admin-tab-features">
                 <li class="admin-tab-feature">
@@ -549,7 +576,54 @@
                     <path
                       d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
                     /></svg
-                  >Icon size (24px - 96px)
+                  >WhatsApp, phone, email, URL
+                </li>
+                <li class="admin-tab-feature">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                    /></svg
+                  >Live builder preview
+                </li>
+                <li class="admin-tab-feature">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                    /></svg
+                  >Per-button color controls
+                </li>
+              </ul>
+            </article>
+            <!-- /.admin-tab -->
+            <article class="admin-tab fade-in">
+              <div class="admin-tab-header">
+                <div class="admin-tab-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-1 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="admin-tab-name">Appearance</h3>
+              </div>
+              <p class="admin-tab-description">
+                Card-based settings for Social Icons, CTA Buttons, link
+                behavior, tooltips, and colors.
+              </p>
+              <ul class="admin-tab-features">
+                <li class="admin-tab-feature">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                    /></svg
+                  >Social icon size and spacing
+                </li>
+                <li class="admin-tab-feature">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                    /></svg
+                  >CTA size, spacing, and width
                 </li>
                 <li class="admin-tab-feature">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -557,13 +631,6 @@
                       d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
                     /></svg
                   >WordPress color picker
-                </li>
-                <li class="admin-tab-feature">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-                    /></svg
-                  >Reset all colors
                 </li>
               </ul>
             </article>
@@ -581,7 +648,7 @@
             <h2 class="section-title">Under the Hood</h2>
             <p class="section-description">
               Built with WordPress best practices, security-first architecture,
-              and zero external dependencies.
+              and no external network dependencies.
             </p>
           </div>
           <div class="tech-grid">
@@ -596,16 +663,41 @@
               </h3>
               <ul class="tech-list">
                 <li class="tech-list-item">
-                  Icons rendered via <code>wp_footer</code> hook using pure CSS
+                  Social icons and CTA buttons rendered via <code>wp_footer</code>
                 </li>
                 <li class="tech-list-item">
                   Design-specific CSS loaded per active design
                 </li>
                 <li class="tech-list-item">
-                  Conditional asset loading when accounts exist
+                  Shared frontend CSS loaded only when visible items exist
                 </li>
                 <li class="tech-list-item">
-                  CSS custom properties for inline theming
+                  Orbit toggle script loaded only when the social trigger exists
+                </li>
+              </ul>
+            </div>
+            <!-- /.tech-block -->
+            <div class="tech-block fade-in">
+              <h3 class="tech-block-title">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M6 3h12v2H6V3zm0 16h12v2H6v-2zm2-8h8v2H8v-2zm-4-4h16v2H4V7zm0 8h16v2H4v-2z"
+                  />
+                </svg>
+                Display Logic
+              </h3>
+              <ul class="tech-list">
+                <li class="tech-list-item">
+                  Independent Social Icons and CTA Buttons visibility flags
+                </li>
+                <li class="tech-list-item">
+                  Relationship-aware placement normalization
+                </li>
+                <li class="tech-list-item">
+                  Ribbon and Pillar avoid same-side group collisions
+                </li>
+                <li class="tech-list-item">
+                  CTA-only, social-only, and mixed render states
                 </li>
               </ul>
             </div>
@@ -647,13 +739,13 @@
                   Full i18n with <code>telkari</code> text domain
                 </li>
                 <li class="tech-list-item">
-                  Turkish (tr_TR) translation included
+                  11 bundled translation files
                 </li>
                 <li class="tech-list-item">
                   All admin UI strings translatable
                 </li>
                 <li class="tech-list-item">
-                  Translation template (.pot) provided
+                  Translation template (<code>.pot</code>) provided
                 </li>
               </ul>
             </div>
@@ -675,7 +767,7 @@
                 <li class="tech-list-item">
                   Clean uninstall (single site + multisite)
                 </li>
-                <li class="tech-list-item">No external dependencies</li>
+                <li class="tech-list-item">No external network dependencies</li>
               </ul>
             </div>
             <!-- /.tech-block -->
@@ -726,7 +818,7 @@
             <span class="section-label">Requirements</span>
             <h2 class="section-title">Get Started</h2>
             <p class="section-description">
-              No external dependencies. All assets are bundled.
+              No external network dependencies. All required assets are bundled.
             </p>
           </div>
           <div class="requirements-grid fade-in">
@@ -798,26 +890,40 @@
     <!-- /.site-footer -->
 
     <!-- Orbit Live Demo -->
-    <div class="telkari-container telkari-design-1 telkari-position-bottom-right telkari-style-rounded telkari-has-tooltips" id="orbit-demo" style="--telkari-icon-size: 3rem; --telkari-icon-spacing: 0.75rem; --telkari-item-count: 5">
-      <button class="telkari-trigger" id="orbit-trigger" aria-label="Toggle social links" aria-expanded="false">
-        <svg class="telkari-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/></svg>
-      </button>
-      <div class="telkari-icons-wrapper" style="--telkari-item-count:5">
-        <a href="https://www.facebook.com/tercankeskin/" title="Facebook" class="telkari-icon-link telkari-platform-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="--telkari-bg:#1877f2;--telkari-fg:#ffffff;--telkari-item-index:0">
-          <svg class="telkari-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-56.6v-78.2h56.6v-61.3c0-56.4 33.5-87.3 84.6-87.3 24.5 0 50.2 4.4 50.2 4.4v55.4h-28.3c-27.8 0-36.5 17.3-36.5 35v42h62.3l-10 78.2h-52.3v170.3C429.3 476.8 512 376 512 256z"></path></svg>
-        </a>
-        <a href="https://www.x.com/tercankeskin/" title="X (Twitter)" class="telkari-icon-link telkari-platform-x" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" style="--telkari-bg:#000000;--telkari-fg:#ffffff;--telkari-item-index:1">
-          <svg class="telkari-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>
-        </a>
-        <a href="https://www.github.com/tercan/" title="Github" class="telkari-icon-link telkari-platform-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="--telkari-bg:#181717;--telkari-fg:#ffffff;--telkari-item-index:2">
-          <svg class="telkari-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
-        </a>
-        <a href="https://www.instagram.com/tercankeskin/" title="Instagram" class="telkari-icon-link telkari-platform-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="--telkari-bg:#e4405f;--telkari-fg:#ffffff;--telkari-item-index:3">
-          <svg class="telkari-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/tercan/" title="LinkedIn" class="telkari-icon-link telkari-platform-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="--telkari-bg:#0a66c2;--telkari-fg:#ffffff;--telkari-item-index:4">
-          <svg class="telkari-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
-        </a>
+    <div class="telkari-container telkari-design-1 telkari-position-bottom-right telkari-style-rounded telkari-has-tooltips telkari-has-socials telkari-has-ctas telkari-container--mixed telkari-cta-size-compact telkari-cta-width-fixed" id="orbit-demo" style="--telkari-icon-size: 3rem; --telkari-icon-spacing: 0.75rem; --telkari-cta-spacing: 0.5rem; --telkari-item-count: 5">
+      <div class="telkari-design-shell">
+        <div class="telkari-cta-wrapper" role="group" aria-label="CTA Buttons">
+          <a href="https://wa.me/905551112233" class="telkari-cta-link telkari-cta-type-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style="--telkari-bg:#25d366;--telkari-fg:#111827">
+            <svg class="telkari-cta-link-icon" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6z"/></svg>
+            <span class="telkari-cta-link-label">WhatsApp</span>
+          </a>
+          <a href="mailto:hello@example.com" class="telkari-cta-link telkari-cta-type-email" aria-label="Email us" style="--telkari-bg:#003999;--telkari-fg:#ffffff">
+            <svg class="telkari-cta-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" ry="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span class="telkari-cta-link-label">Email Us</span>
+          </a>
+        </div>
+        <nav class="telkari-social-group" aria-label="Social Media Links">
+          <button class="telkari-trigger" id="orbit-trigger" aria-label="Toggle social links" aria-expanded="false">
+            <svg class="telkari-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/></svg>
+          </button>
+          <div class="telkari-icons-wrapper" style="--telkari-item-count:5">
+            <a href="https://www.facebook.com/tercankeskin/" title="Facebook" class="telkari-icon-link telkari-platform-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="--telkari-bg:#1877f2;--telkari-fg:#ffffff;--telkari-item-index:0">
+              <svg class="telkari-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-56.6v-78.2h56.6v-61.3c0-56.4 33.5-87.3 84.6-87.3 24.5 0 50.2 4.4 50.2 4.4v55.4h-28.3c-27.8 0-36.5 17.3-36.5 35v42h62.3l-10 78.2h-52.3v170.3C429.3 476.8 512 376 512 256z"></path></svg>
+            </a>
+            <a href="https://www.x.com/tercankeskin/" title="X (Twitter)" class="telkari-icon-link telkari-platform-x" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" style="--telkari-bg:#000000;--telkari-fg:#ffffff;--telkari-item-index:1">
+              <svg class="telkari-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>
+            </a>
+            <a href="https://www.github.com/tercan/" title="Github" class="telkari-icon-link telkari-platform-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="--telkari-bg:#181717;--telkari-fg:#ffffff;--telkari-item-index:2">
+              <svg class="telkari-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"></path></svg>
+            </a>
+            <a href="https://www.instagram.com/tercankeskin/" title="Instagram" class="telkari-icon-link telkari-platform-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="--telkari-bg:#e4405f;--telkari-fg:#ffffff;--telkari-item-index:3">
+              <svg class="telkari-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7z"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/tercan/" title="LinkedIn" class="telkari-icon-link telkari-platform-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="--telkari-bg:#0a66c2;--telkari-fg:#ffffff;--telkari-item-index:4">
+              <svg class="telkari-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3z"></path></svg>
+            </a>
+          </div>
+        </nav>
       </div>
     </div>
     <!-- /#orbit-demo -->
