@@ -1,12 +1,12 @@
-# Arabic translation for Telkari plugin.
+# Arabic translation for Telkari - Floating Social Icons & CTAs plugin.
 # Copyright (C) 2026 Tercan Keskin
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Telkari 1.0.0\n"
+"Project-Id-Version: Telkari - Floating Social Icons & CTAs 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-11 02:18+0300\n"
-"PO-Revision-Date: 2026-02-19 18:26\n"
+"POT-Creation-Date: 2026-07-24 19:36+0300\n"
+"PO-Revision-Date: 2026-07-24 19:36+0300\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar\n"
@@ -16,162 +16,147 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0?0:n==1?1:n==2?2:n%100>=3 && n%100<=10?"
 "3:n%100>=11 && n%100<=99?4:5;\n"
 
-#: telkari.php:49
-msgid "Settings"
-msgstr "Al-iidadat"
-
-#: telkari.php:71
-msgid "Documentation"
-msgstr "Al-wathaeq"
-
-#: includes/admin/cta-list-table.php:79 includes/admin/settings-page.php:169
-#: includes/admin/settings-page.php:379 includes/frontend/render-icons.php:225
+#: includes/admin/cta-list-table.php:79 includes/admin/settings-page.php:171
+#: includes/admin/settings-page.php:381 includes/frontend/render-icons.php:225
 msgid "CTA Buttons"
-msgstr ""
+msgstr "أزرار CTA"
 
 #: includes/admin/cta-list-table.php:80
-#, fuzzy
 msgid "Add, reorder, and manage your CTA buttons. Drag to reorder."
-msgstr ""
-"Addif hisabatak al-ijtimaeia wa-aid tartibaha wa-adrha. Is-hab li-aadat al-"
-"tartib."
+msgstr "أضف أزرار CTA وأعد ترتيبها وإدارتها. اسحب لإعادة الترتيب."
 
 #: includes/admin/cta-list-table.php:86
 msgid "CTA buttons are visible on the frontend."
-msgstr ""
+msgstr "أزرار CTA مرئية في الواجهة الأمامية."
 
 #: includes/admin/cta-list-table.php:88
 #: includes/admin/social-list-table.php:106
 msgid "You can disable them from the Design tab"
-msgstr ""
+msgstr "يمكنك تعطيلها من علامة تبويب التصميم"
 
 #: includes/admin/cta-list-table.php:93
 msgid "CTA buttons are saved but hidden on the frontend."
-msgstr ""
+msgstr "أزرار CTA محفوظة ولكنها مخفية في الواجهة الأمامية."
 
 #: includes/admin/cta-list-table.php:95
 #: includes/admin/social-list-table.php:113
 msgid "You can make it visible from the Design tab"
-msgstr ""
+msgstr "يمكنك جعلها مرئية من علامة تبويب التصميم"
 
 #: includes/admin/cta-list-table.php:112 includes/admin/cta-list-table.php:115
-#, fuzzy
 msgid "CTA list is empty. Add your first CTA button below."
-msgstr "Lam yatim idafat ay hisabat ijtimaeia baed. Addif awal hisab adnah."
+msgstr "قائمة CTA فارغة. أضف زر CTA الأول أدناه."
 
-#: includes/admin/cta-list-table.php:158 includes/admin/settings-page.php:129
+#: includes/admin/cta-list-table.php:158 includes/admin/settings-page.php:131
 #: includes/admin/social-list-table.php:173
 msgid "Edit"
 msgstr "Tahrir"
 
-#: includes/admin/cta-list-table.php:159 includes/admin/settings-page.php:144
+#: includes/admin/cta-list-table.php:159 includes/admin/settings-page.php:146
 #: includes/admin/social-list-table.php:174
 msgid "Delete"
 msgstr "Hadhf"
 
-#: includes/admin/cta-list-table.php:160 includes/admin/settings-page.php:141
+#: includes/admin/cta-list-table.php:160 includes/admin/settings-page.php:143
 #: includes/admin/social-list-table.php:175
 msgid "Enabled"
 msgstr "Mufael"
 
-#: includes/admin/cta-list-table.php:251 includes/admin/settings-page.php:130
-#, fuzzy
+#: includes/admin/cta-list-table.php:251 includes/admin/settings-page.php:132
 msgid "Add New CTA Button"
-msgstr "Idafat hisab jadid"
+msgstr "إضافة زر CTA جديد"
 
 #: includes/admin/cta-list-table.php:256
 msgid "CTA Type"
-msgstr ""
+msgstr "نوع CTA"
 
 #: includes/admin/cta-list-table.php:292
 msgid "Button Label"
-msgstr ""
+msgstr "تسمية الزر"
 
-#: includes/admin/cta-list-table.php:301 includes/admin/settings-page.php:122
+#: includes/admin/cta-list-table.php:301 includes/admin/settings-page.php:124
 msgid "Destination Value"
-msgstr ""
+msgstr "قيمة الوجهة"
 
 #: includes/admin/cta-list-table.php:305 includes/admin/cta-list-table.php:306
-#: includes/admin/settings-page.php:113
+#: includes/admin/settings-page.php:115
 msgid "Choose a CTA type to see the expected format."
-msgstr ""
+msgstr "اختر نوع CTA لرؤية التنسيق المتوقع."
 
 #: includes/admin/cta-list-table.php:312
 msgid "WhatsApp Message"
-msgstr ""
+msgstr "رسالة واتساب"
 
 #: includes/admin/cta-list-table.php:314
 msgid "Optional. Only used for WhatsApp buttons."
-msgstr ""
+msgstr "اختياري. يستخدم فقط لأزرار واتساب."
 
 #: includes/admin/cta-list-table.php:318
-#, fuzzy
 msgid "Button Color"
-msgstr "Alwan al-ayqonat"
+msgstr "لون الزر"
 
 #: includes/admin/cta-list-table.php:326
 msgid "Optional. Leave empty to use the default CTA color."
-msgstr ""
+msgstr "اختياري. اتركه فارغًا لاستخدام لون CTA الافتراضي."
 
-#: includes/admin/cta-list-table.php:334 includes/admin/settings-page.php:140
+#: includes/admin/cta-list-table.php:334 includes/admin/settings-page.php:142
 #: includes/admin/social-list-table.php:301
-#, fuzzy
 msgid "Reset Form"
-msgstr "Ieadat dae kul al-alwan"
+msgstr "إعادة تعيين النموذج"
 
-#: includes/admin/cta-list-table.php:337 includes/admin/settings-page.php:137
+#: includes/admin/cta-list-table.php:337 includes/admin/settings-page.php:139
 msgid "Add CTA Button"
-msgstr ""
+msgstr "إضافة زر CTA"
 
 #: includes/admin/cta-list-table.php:368 includes/admin/cta-list-table.php:369
 msgid "Choose a CTA type"
-msgstr ""
+msgstr "اختر نوع CTA"
 
 #: includes/admin/cta-list-table.php:378 includes/admin/cta-list-table.php:379
 msgid "Live Preview"
-msgstr ""
+msgstr "معاينة مباشرة"
 
 #: includes/admin/cta-list-table.php:382 includes/admin/cta-list-table.php:383
 msgid "The CTA label, value, and color preview appear here."
-msgstr ""
+msgstr "تظهر معاينة تسمية CTA والقيمة واللون هنا."
 
 #: includes/admin/cta-list-table.php:387 includes/admin/cta-list-table.php:388
 msgid "Your CTA preview updates as you edit the fields."
-msgstr ""
+msgstr "تتحث معاينة CTA الخاصة بك أثناء تحرير الحقول."
 
 #: includes/admin/design-selector.php:35
 msgid "Display Groups"
-msgstr ""
+msgstr "مجموعات العرض"
 
 #: includes/admin/design-selector.php:42
 msgid "Show Social Icons"
-msgstr ""
+msgstr "عرض أيقونات وسائل التواصل الاجتماعي"
 
 #: includes/admin/design-selector.php:43
 msgid "Display saved social accounts on the frontend."
-msgstr ""
+msgstr "عرض حسابات وسائل التواصل الاجتماعي المحفوظة في الواجهة الأمامية."
 
 #: includes/admin/design-selector.php:54
 msgid "Show CTA Buttons"
-msgstr ""
+msgstr "عرض أزرار CTA"
 
 #: includes/admin/design-selector.php:55
 msgid "Display saved CTA buttons on the frontend."
-msgstr ""
+msgstr "عرض أزرار CTA المحفوظة في الواجهة الأمامية."
 
-#: includes/admin/design-selector.php:74 includes/admin/settings-page.php:145
+#: includes/admin/design-selector.php:74 includes/admin/settings-page.php:147
 msgid "Enable Social Icons or CTA Buttons to configure placement."
-msgstr ""
+msgstr "تمكين أيقونات وسائل التواصل الاجتماعي أو أزرار CTA لتكوين الموضع."
 
 #: includes/admin/design-selector.php:80
 msgid "Design Style"
-msgstr ""
+msgstr "نمط التصميم"
 
 #: includes/admin/design-selector.php:167
 msgid "Placement"
-msgstr ""
+msgstr "الموضع"
 
-#: includes/admin/design-selector.php:250 includes/admin/settings-page.php:90
+#: includes/admin/design-selector.php:250 includes/admin/settings-page.php:92
 msgid "Orbit"
 msgstr "Madar"
 
@@ -180,8 +165,9 @@ msgid ""
 "Corner trigger with social orbit behavior and CTA buttons near the selected "
 "edge."
 msgstr ""
+"مشغل زاوية مع سلوك المدار الاجتماعي وأزرار CTA بالقرب من الحافة المحددة."
 
-#: includes/admin/design-selector.php:258 includes/admin/settings-page.php:91
+#: includes/admin/design-selector.php:258 includes/admin/settings-page.php:93
 msgid "Ribbon"
 msgstr "Sharit"
 
@@ -190,8 +176,10 @@ msgid ""
 "Bottom ribbon where social icons stay in one row and CTA buttons can use a "
 "separate placement."
 msgstr ""
+"شريط سفلي حيث تظل أيقونات وسائل التواصل الاجتماعي في صف واحد ويمكن لأزرار "
+"CTA استخدام موضع منفصل."
 
-#: includes/admin/design-selector.php:267 includes/admin/settings-page.php:92
+#: includes/admin/design-selector.php:267 includes/admin/settings-page.php:94
 msgid "Pillar"
 msgstr "Amud"
 
@@ -200,368 +188,377 @@ msgid ""
 "Vertical side strip where social icons and CTA buttons can sit on opposite "
 "edges."
 msgstr ""
+"شريط جانبي رأسي حيث يمكن لأيقونات وسائل التواصل الاجتماعي وأزرار CTA الجلوس "
+"على حواف متقابلة."
 
-#: includes/admin/settings-page.php:17 includes/admin/settings-page.php:18
+#: includes/admin/settings-page.php:19
+msgid "Telkari - Floating Social Icons & CTAs"
+msgstr "Telkari - Floating Social Icons & CTAs"
+
+#: includes/admin/settings-page.php:20
 msgid "Telkari"
 msgstr "Telkari"
 
-#: includes/admin/settings-page.php:97
+#: includes/admin/settings-page.php:99
 msgid "Select Platform"
 msgstr "Ikhtar al-mansa"
 
-#: includes/admin/settings-page.php:98
+#: includes/admin/settings-page.php:100
 msgid "Are you sure you want to delete this account?"
 msgstr "Hal anta mutaakkid annaka turid hadhf hadha al-hisab?"
 
-#: includes/admin/settings-page.php:99
+#: includes/admin/settings-page.php:101
 msgid "Please select a platform and enter a valid URL."
 msgstr "Yurja ikhtiyar mansa wa-idkhal rabit URL sahih."
 
-#: includes/admin/settings-page.php:100
+#: includes/admin/settings-page.php:102
 #: includes/admin/social-list-table.php:249
 msgid "Add New Account"
 msgstr "Idafat hisab jadid"
 
-#: includes/admin/settings-page.php:101
+#: includes/admin/settings-page.php:103
 #: includes/admin/social-list-table.php:304
 msgid "Add Account"
 msgstr "Idafat hisab"
 
-#: includes/admin/settings-page.php:102
-#, fuzzy
-msgid "Select a platform and enter the public profile URL."
-msgstr "Yurja ikhtiyar mansa wa-idkhal rabit URL sahih."
-
-#: includes/admin/settings-page.php:103
-#, fuzzy
-msgid "Edit Social Account"
-msgstr "Al-hisabat al-ijtimaeia"
-
 #: includes/admin/settings-page.php:104
-msgid ""
-"Update the selected social account and save the changes back into the list."
-msgstr ""
+msgid "Select a platform and enter the public profile URL."
+msgstr "حدد منصة وأدخل عنوان URL للملف الشخصي العام."
 
 #: includes/admin/settings-page.php:105
-#, fuzzy
-msgid "Editing Social Account"
-msgstr "Al-hisabat al-ijtimaeia"
+msgid "Edit Social Account"
+msgstr "تعديل حساب التواصل الاجتماعي"
 
 #: includes/admin/settings-page.php:106
-msgid "Social account added."
-msgstr ""
+msgid ""
+"Update the selected social account and save the changes back into the list."
+msgstr "قم بتحديث حساب التواصل الاجتماعي المحدد وحفظ التغييرات في القائمة."
 
 #: includes/admin/settings-page.php:107
-msgid "Social account updated."
-msgstr ""
+msgid "Editing Social Account"
+msgstr "تعديل حساب التواصل الاجتماعي جارٍ"
 
 #: includes/admin/settings-page.php:108
+msgid "Social account added."
+msgstr "تم إضافة حساب التواصل الاجتماعي."
+
+#: includes/admin/settings-page.php:109
+msgid "Social account updated."
+msgstr "تم تحديث حساب التواصل الاجتماعي."
+
+#: includes/admin/settings-page.php:110
 msgid ""
 "A similar social account already exists. You can still save this one if "
 "needed."
 msgstr ""
-
-#: includes/admin/settings-page.php:109
-#, fuzzy
-msgid "Save Account"
-msgstr "Al-hisabat al-ijtimaeia"
-
-#: includes/admin/settings-page.php:110
-msgid "Select CTA Type"
-msgstr ""
+"يوجد حساب تواصل اجتماعي مماثل بالفعل. لا يزال بإمكانك حفظ هذا الحساب إذا لزم "
+"الأمر."
 
 #: includes/admin/settings-page.php:111
-#, fuzzy
-msgid "Are you sure you want to delete this CTA button?"
-msgstr "Hal anta mutaakkid annaka turid hadhf hadha al-hisab?"
+msgid "Save Account"
+msgstr "حفظ الحساب"
 
 #: includes/admin/settings-page.php:112
-#, fuzzy
-msgid "Please select a CTA type and enter a valid value."
-msgstr "Yurja ikhtiyar mansa wa-idkhal rabit URL sahih."
+msgid "Select CTA Type"
+msgstr "حدد نوع CTA"
+
+#: includes/admin/settings-page.php:113
+msgid "Are you sure you want to delete this CTA button?"
+msgstr "هل أنت متأكد من رغبتك في حذف زر CTA هذا؟"
 
 #: includes/admin/settings-page.php:114
-msgid "Use international format without spaces, for example 905551112233."
-msgstr ""
+msgid "Please select a CTA type and enter a valid value."
+msgstr "يرجى تحديد نوع CTA وإدخال قيمة صالحة."
 
-#: includes/admin/settings-page.php:115
+#: includes/admin/settings-page.php:116
+msgid "Use international format without spaces, for example 905551112233."
+msgstr "استخدم التنسيق الدولي بدون مسافات، على سبيل المثال 905551112233."
+
+#: includes/admin/settings-page.php:117
 msgid ""
 "Phone numbers may include a leading plus sign, for example +905551112233."
 msgstr ""
-
-#: includes/admin/settings-page.php:116
-msgid "Enter a valid email address, for example info@example.com."
-msgstr ""
-
-#: includes/admin/settings-page.php:117
-msgid "Enter a full web address including the protocol."
-msgstr ""
+"قد تتضمن أرقام الهواتف علامة زائد في البداية، على سبيل المثال +905551112233."
 
 #: includes/admin/settings-page.php:118
-msgid "Use international format without spaces. Example: 905551112233."
-msgstr ""
+msgid "Enter a valid email address, for example info@example.com."
+msgstr "أدخل عنوان بريد إلكتروني صالحًا، على سبيل المثال info@example.com."
 
 #: includes/admin/settings-page.php:119
-msgid "Enter a valid phone number. Example: +905551112233."
-msgstr ""
+msgid "Enter a full web address including the protocol."
+msgstr "أدخل عنوان ويب كاملاً بما في ذلك البروتوكول."
 
 #: includes/admin/settings-page.php:120
-msgid "Enter a valid email address. Example: info@example.com."
-msgstr ""
+msgid "Use international format without spaces. Example: 905551112233."
+msgstr "استخدم التنسيق الدولي بدون مسافات. مثال: 905551112233."
 
 #: includes/admin/settings-page.php:121
+msgid "Enter a valid phone number. Example: +905551112233."
+msgstr "أدخل رقم هاتف صالحًا. مثال: +905551112233."
+
+#: includes/admin/settings-page.php:122
+msgid "Enter a valid email address. Example: info@example.com."
+msgstr "أدخل عنوان بريد إلكتروني صالحًا. مثال: info@example.com."
+
+#: includes/admin/settings-page.php:123
 msgid ""
 "Enter a full address including the protocol. Example: https://example.com/"
 "contact."
 msgstr ""
-
-#: includes/admin/settings-page.php:123
-msgid "WhatsApp Number"
-msgstr ""
-
-#: includes/admin/settings-page.php:124
-msgid "Phone Number"
-msgstr ""
+"أدخل عنوانًا كاملاً بما في ذلك البروتوكول. مثال: https://example.com/contact."
 
 #: includes/admin/settings-page.php:125
-msgid "Email Address"
-msgstr ""
+msgid "WhatsApp Number"
+msgstr "رقم واتساب"
 
 #: includes/admin/settings-page.php:126
-msgid "URL"
-msgstr ""
+msgid "Phone Number"
+msgstr "رقم الهاتف"
 
 #: includes/admin/settings-page.php:127
-msgid "Default color"
-msgstr ""
+msgid "Email Address"
+msgstr "عنوان البريد الإلكتروني"
 
 #: includes/admin/settings-page.php:128
+msgid "URL"
+msgstr "رابط URL"
+
+#: includes/admin/settings-page.php:129
+msgid "Default color"
+msgstr "اللون الافتراضي"
+
+#: includes/admin/settings-page.php:130
 msgid "Custom color"
-msgstr ""
-
-#: includes/admin/settings-page.php:131
-msgid "Build a CTA button with guided fields and instant preview."
-msgstr ""
-
-#: includes/admin/settings-page.php:132
-#, fuzzy
-msgid "Edit CTA Button"
-msgstr "Idafat hisab jadid"
+msgstr "لون مخصص"
 
 #: includes/admin/settings-page.php:133
-msgid "Update the selected CTA button and save the changes back into the list."
-msgstr ""
+msgid "Build a CTA button with guided fields and instant preview."
+msgstr "أنشئ زر CTA بحقول إرشادية ومعاينة فورية."
 
 #: includes/admin/settings-page.php:134
-#, fuzzy
-msgid "Editing CTA Button"
-msgstr "Idafat hisab jadid"
+msgid "Edit CTA Button"
+msgstr "تعديل زر CTA"
 
 #: includes/admin/settings-page.php:135
-msgid "CTA button added."
-msgstr ""
+msgid "Update the selected CTA button and save the changes back into the list."
+msgstr "قم بتحديث زر CTA المحدد وحفظ التغييرات في القائمة."
 
 #: includes/admin/settings-page.php:136
-msgid "CTA button updated."
-msgstr ""
+msgid "Editing CTA Button"
+msgstr "تعديل زر CTA جارٍ"
+
+#: includes/admin/settings-page.php:137
+msgid "CTA button added."
+msgstr "تم إضافة زر CTA."
 
 #: includes/admin/settings-page.php:138
-#, fuzzy
+msgid "CTA button updated."
+msgstr "تم تحديث زر CTA."
+
+#: includes/admin/settings-page.php:140
 msgid "Save CTA Button"
-msgstr "Idafat hisab jadid"
+msgstr "حفظ زر CTA"
 
-#: includes/admin/settings-page.php:139
+#: includes/admin/settings-page.php:141
 msgid "Cancel Edit"
-msgstr ""
+msgstr "إلغاء التعديل"
 
-#: includes/admin/settings-page.php:142
+#: includes/admin/settings-page.php:144
 msgid "Visible"
-msgstr ""
+msgstr "مرئي"
 
-#: includes/admin/settings-page.php:143
+#: includes/admin/settings-page.php:145
 msgid "Hidden"
-msgstr ""
+msgstr "خفي"
 
 #. translators: 1: Social Icons placement label, 2: CTA Buttons placement label.
-#: includes/admin/settings-page.php:147
+#: includes/admin/settings-page.php:149
 #, php-format
 msgid ""
 "Placement adjusted to avoid overlap: Social Icons %1$s, CTA Buttons %2$s."
 msgstr ""
+"تم ضبط الموضع لتجنب التداخل: أيقونات التواصل الاجتماعي %1$s، أزرار CTA %2$s."
 
 #. translators: 1: Design name, 2: CTA placement label.
-#: includes/admin/settings-page.php:149
+#: includes/admin/settings-page.php:151
 #, php-format
 msgid "Design: %1$s. CTA placement: %2$s."
-msgstr ""
+msgstr "التصميم: %1$s. موضع CTA: %2$s."
 
-#: includes/admin/settings-page.php:167 includes/admin/settings-page.php:233
+#: includes/admin/settings-page.php:169 includes/admin/settings-page.php:235
 msgid "Design"
 msgstr "Al-tasmim"
 
-#: includes/admin/settings-page.php:168
+#: includes/admin/settings-page.php:170
 msgid "Social Accounts"
 msgstr "Al-hisabat al-ijtimaeia"
 
-#: includes/admin/settings-page.php:170 includes/admin/settings-page.php:297
+#: includes/admin/settings-page.php:172 includes/admin/settings-page.php:299
 msgid "Appearance"
 msgstr "Al-mazhar"
 
-#: includes/admin/settings-page.php:185
+#: includes/admin/settings-page.php:187
 msgid "Demo/Documentation"
 msgstr "Demo/Documentation"
 
-#: includes/admin/settings-page.php:287
-msgid "Compact"
-msgstr ""
-
-#: includes/admin/settings-page.php:288
-msgid "Default"
-msgstr ""
-
 #: includes/admin/settings-page.php:289
+msgid "Compact"
+msgstr "مدمج"
+
+#: includes/admin/settings-page.php:290
+msgid "Default"
+msgstr "الافتراضي"
+
+#: includes/admin/settings-page.php:291
 msgid "Large"
-msgstr ""
-
-#: includes/admin/settings-page.php:292
-msgid "Natural"
-msgstr ""
-
-#: includes/admin/settings-page.php:293
-msgid "Fixed"
-msgstr ""
+msgstr "كبير"
 
 #: includes/admin/settings-page.php:294
+msgid "Natural"
+msgstr "طبيعي"
+
+#: includes/admin/settings-page.php:295
+msgid "Fixed"
+msgstr "ثابت"
+
+#: includes/admin/settings-page.php:296
 msgid "Full"
-msgstr ""
+msgstr "كامل"
 
-#: includes/admin/settings-page.php:298
+#: includes/admin/settings-page.php:300
 msgid "Social Icons"
-msgstr ""
+msgstr "أيقونات التواصل الاجتماعي"
 
-#: includes/admin/settings-page.php:303
+#: includes/admin/settings-page.php:305
 msgid "Controls the size, spacing, shape, and hover labels for social icons."
 msgstr ""
+"يتحكم في الحجم والتباعد والشكل والتسميات التوضيحية عند التمرير لأيقونات "
+"التواصل الاجتماعي."
 
-#: includes/admin/settings-page.php:304
+#: includes/admin/settings-page.php:306
 msgid ""
 "Social icons are currently hidden on the frontend, but these settings are "
 "kept."
 msgstr ""
+"أيقونات التواصل الاجتماعي مخفية حاليًا في الواجهة الأمامية، ولكن يتم الاحتفاظ "
+"بهذه الإعدادات."
 
-#: includes/admin/settings-page.php:312
+#: includes/admin/settings-page.php:314
 msgid "Social Icon Size (px)"
-msgstr ""
+msgstr "حجم أيقونة التواصل الاجتماعي (بكسل)"
 
-#: includes/admin/settings-page.php:324
+#: includes/admin/settings-page.php:326
 msgid "Social icon size in pixels (24-96)."
-msgstr ""
+msgstr "حجم أيقونة التواصل الاجتماعي بالبكسل (24-96)."
 
-#: includes/admin/settings-page.php:328
+#: includes/admin/settings-page.php:330
 msgid "Social Icon Spacing (px)"
-msgstr ""
+msgstr "تباعد أيقونة التواصل الاجتماعي (بكسل)"
 
-#: includes/admin/settings-page.php:340
+#: includes/admin/settings-page.php:342
 msgid "Space between social icons in pixels (0-48)."
-msgstr ""
+msgstr "المسافة بين أيقونات التواصل الاجتماعي بالبكسل (0-48)."
 
-#: includes/admin/settings-page.php:346
+#: includes/admin/settings-page.php:348
 msgid "Social Icon Style"
-msgstr ""
+msgstr "نمط أيقونة التواصل الاجتماعي"
 
-#: includes/admin/settings-page.php:351
+#: includes/admin/settings-page.php:353
 msgid "Rounded"
 msgstr "Mudawwar"
 
-#: includes/admin/settings-page.php:355
+#: includes/admin/settings-page.php:357
 msgid "Square"
 msgstr "Murabba"
 
-#: includes/admin/settings-page.php:362
+#: includes/admin/settings-page.php:364
 msgid "Social Tooltips"
-msgstr ""
+msgstr "تلميحات أدوات التواصل الاجتماعي"
 
-#: includes/admin/settings-page.php:367
+#: includes/admin/settings-page.php:369
 msgid "On"
 msgstr "Tashghil"
 
-#: includes/admin/settings-page.php:371
+#: includes/admin/settings-page.php:373
 msgid "Off"
 msgstr "Iiqaf"
 
-#: includes/admin/settings-page.php:384
+#: includes/admin/settings-page.php:386
 msgid "Controls CTA button density, spacing, and width behavior."
-msgstr ""
+msgstr "يتحكم في كثافة زر CTA والتباعد وسلوك العرض."
 
-#: includes/admin/settings-page.php:385
+#: includes/admin/settings-page.php:387
 msgid ""
 "CTA buttons are currently hidden on the frontend, but these settings are "
 "kept."
 msgstr ""
+"أزرار CTA مخفية حاليًا في الواجهة الأمامية، ولكن يتم الاحتفاظ بهذه الإعدادات."
 
-#: includes/admin/settings-page.php:393
+#: includes/admin/settings-page.php:395
 msgid "CTA Button Size"
-msgstr ""
+msgstr "حجم زر CTA"
 
-#: includes/admin/settings-page.php:407
+#: includes/admin/settings-page.php:409
 msgid "CTA Button Spacing (px)"
-msgstr ""
+msgstr "تباعد زر CTA (بكسل)"
 
-#: includes/admin/settings-page.php:419
+#: includes/admin/settings-page.php:421
 msgid "Space between CTA buttons in pixels (0-48)."
-msgstr ""
+msgstr "المسافة بين أزرار CTA بالبكسل (0-48)."
 
-#: includes/admin/settings-page.php:423
+#: includes/admin/settings-page.php:425
 msgid "CTA Button Width"
-msgstr ""
+msgstr "عرض زر CTA"
 
-#: includes/admin/settings-page.php:434
+#: includes/admin/settings-page.php:436
 msgid "Mobile CTA labels stay on one line and shorten when needed."
-msgstr ""
+msgstr "تظل تسميات CTA للجوال على سطر واحد وتقصر عند الحاجة."
 
-#: includes/admin/settings-page.php:439
+#: includes/admin/settings-page.php:441
 msgid "Link Behavior"
-msgstr ""
+msgstr "سلوك الرابط"
 
-#: includes/admin/settings-page.php:443
+#: includes/admin/settings-page.php:445
 msgid "Link Target"
 msgstr "Hadaf al-rabit"
 
-#: includes/admin/settings-page.php:448
+#: includes/admin/settings-page.php:450
 msgid "Same Tab"
 msgstr "Nafs al-tabwib"
 
-#: includes/admin/settings-page.php:452
+#: includes/admin/settings-page.php:454
 msgid "New Tab"
 msgstr "Tabwib jadid"
 
-#: includes/admin/settings-page.php:456
+#: includes/admin/settings-page.php:458
 msgid "Applies to social links and CTA buttons."
-msgstr ""
-
-#: includes/admin/settings-page.php:461
-msgid "Colors"
-msgstr ""
+msgstr "ينطبق على روابط التواصل الاجتماعي وأزرار CTA."
 
 #: includes/admin/settings-page.php:463
+msgid "Colors"
+msgstr "الألوان"
+
+#: includes/admin/settings-page.php:465
 msgid ""
 "Override social platform colors and shared design colors. CTA button colors "
 "are managed per button in the CTA Buttons tab."
 msgstr ""
+"تجاوز ألوان منصات التواصل الاجتماعي وألوان التصميم المشتركة. يتم إدارة ألوان "
+"أزرار CTA لكل زر في علامة تبويب أزرار CTA."
 
-#: includes/admin/settings-page.php:467
+#: includes/admin/settings-page.php:469
 msgid "Bar Background (Ribbon / Pillar)"
 msgstr "Khalfiyat al-sharit (Sharit / Amud)"
 
-#: includes/admin/settings-page.php:478
+#: includes/admin/settings-page.php:480
 msgid "Transparent"
 msgstr "Shafaf"
 
-#: includes/admin/settings-page.php:483
+#: includes/admin/settings-page.php:485
 msgid "Main Button (Orbit)"
 msgstr "Al-zirr al-raisi (Madar)"
 
-#: includes/admin/settings-page.php:509
+#: includes/admin/settings-page.php:511
 msgid "Reset All Colors"
 msgstr "Ieadat dae kul al-alwan"
 
@@ -577,11 +574,11 @@ msgstr ""
 
 #: includes/admin/social-list-table.php:104
 msgid "Social icons are visible on the frontend."
-msgstr ""
+msgstr "أيقونات التواصل الاجتماعي مرئية في الواجهة الأمامية."
 
 #: includes/admin/social-list-table.php:111
 msgid "Social accounts are saved but hidden on the frontend."
-msgstr ""
+msgstr "حسابات التواصل الاجتماعي محفوظة ولكنها مخفية في الواجهة الأمامية."
 
 #: includes/admin/social-list-table.php:130
 #: includes/admin/social-list-table.php:133
@@ -598,11 +595,11 @@ msgstr "Rabit al-milaf al-shakhsi"
 
 #: includes/core/cta-buttons.php:20
 msgid "WhatsApp"
-msgstr ""
+msgstr "واتساب"
 
 #: includes/core/cta-buttons.php:21
 msgid "Direct message with pre-filled text."
-msgstr ""
+msgstr "رسالة مباشرة بنص معبأ مسبقًا."
 
 #. translators: %s: example WhatsApp number.
 #. translators: %s: example phone number.
@@ -612,35 +609,35 @@ msgstr ""
 #: includes/core/cta-buttons.php:39 includes/core/cta-buttons.php:47
 #, php-format
 msgid "Example: %s"
-msgstr ""
+msgstr "مثال: %s"
 
 #: includes/core/cta-buttons.php:28
 msgid "Phone"
-msgstr ""
+msgstr "الهاتف"
 
 #: includes/core/cta-buttons.php:29
 msgid "Single tap to call."
-msgstr ""
+msgstr "نقرة واحدة للاتصال."
 
 #: includes/core/cta-buttons.php:36
 msgid "Email"
-msgstr ""
+msgstr "البريد الإلكتروني"
 
 #: includes/core/cta-buttons.php:37
 msgid "Opens email client."
-msgstr ""
+msgstr "يفتح عميل البريد الإلكتروني."
 
 #: includes/core/cta-buttons.php:44
 msgid "Custom URL"
-msgstr ""
+msgstr "رابط مخصص"
 
 #: includes/core/cta-buttons.php:45
 msgid "Redirect to any webpage."
-msgstr ""
+msgstr "إعادة التوجيه إلى أي صفحة ويب."
 
 #: includes/core/cta-buttons.php:67
 msgid "CTA"
-msgstr ""
+msgstr "CTA"
 
 #: includes/core/options.php:470
 msgid "Bottom Left"
@@ -658,3 +655,11 @@ msgstr "Asfal al-wasat"
 #: includes/frontend/render-icons.php:206
 msgid "Social Media Links"
 msgstr "Rawabit wasail al-tawasul al-ijtimaei"
+
+#: telkari.php:49
+msgid "Settings"
+msgstr "Al-iidadat"
+
+#: telkari.php:71
+msgid "Documentation"
+msgstr "Al-wathaeq"

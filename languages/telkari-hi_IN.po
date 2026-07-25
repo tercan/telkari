@@ -1,12 +1,12 @@
-# Hindi translation for Telkari plugin.
+# Hindi translation for Telkari - Floating Social Icons & CTAs plugin.
 # Copyright (C) 2026 Tercan Keskin
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Telkari 1.0.0\n"
+"Project-Id-Version: Telkari - Floating Social Icons & CTAs 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-11 02:18+0300\n"
-"PO-Revision-Date: 2026-02-19 18:26\n"
+"POT-Creation-Date: 2026-07-24 19:36+0300\n"
+"PO-Revision-Date: 2026-07-24 19:36+0300\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "Language: hi_IN\n"
@@ -15,163 +15,148 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: telkari.php:49
-msgid "Settings"
-msgstr "Settings"
-
-#: telkari.php:71
-msgid "Documentation"
-msgstr "Dastavez"
-
-#: includes/admin/cta-list-table.php:79 includes/admin/settings-page.php:169
-#: includes/admin/settings-page.php:379 includes/frontend/render-icons.php:225
+#: includes/admin/cta-list-table.php:79 includes/admin/settings-page.php:171
+#: includes/admin/settings-page.php:381 includes/frontend/render-icons.php:225
 msgid "CTA Buttons"
-msgstr ""
+msgstr "सीटीए बटन"
 
 #: includes/admin/cta-list-table.php:80
-#, fuzzy
 msgid "Add, reorder, and manage your CTA buttons. Drag to reorder."
 msgstr ""
-"Apne social media khate joden, kram badlen aur prabandhit karen. Kram "
-"badalne ke liye drag karen."
+"अपने सीटीए बटन जोड़ें, पुनर्व्यवस्थित करें और प्रबंधित करें। पुनर्व्यवस्थित करने के लिए खींचें।"
 
 #: includes/admin/cta-list-table.php:86
 msgid "CTA buttons are visible on the frontend."
-msgstr ""
+msgstr "सीटीए बटन फ्रंटएंड पर दिखाई दे रहे हैं।"
 
 #: includes/admin/cta-list-table.php:88
 #: includes/admin/social-list-table.php:106
 msgid "You can disable them from the Design tab"
-msgstr ""
+msgstr "आप उन्हें डिज़ाइन टैब से अक्षम कर सकते हैं"
 
 #: includes/admin/cta-list-table.php:93
 msgid "CTA buttons are saved but hidden on the frontend."
-msgstr ""
+msgstr "सीटीए बटन सहेजे गए हैं लेकिन फ्रंटएंड पर छिपे हुए हैं।"
 
 #: includes/admin/cta-list-table.php:95
 #: includes/admin/social-list-table.php:113
 msgid "You can make it visible from the Design tab"
-msgstr ""
+msgstr "आप इसे डिज़ाइन टैब से दृश्यमान बना सकते हैं"
 
 #: includes/admin/cta-list-table.php:112 includes/admin/cta-list-table.php:115
-#, fuzzy
 msgid "CTA list is empty. Add your first CTA button below."
-msgstr ""
-"Abhi tak koi social khata nahi joda gaya hai. Neeche apna pehla khata joden."
+msgstr "सीटीए सूची खाली है। नीचे अपना पहला सीटीए बटन जोड़ें।"
 
-#: includes/admin/cta-list-table.php:158 includes/admin/settings-page.php:129
+#: includes/admin/cta-list-table.php:158 includes/admin/settings-page.php:131
 #: includes/admin/social-list-table.php:173
 msgid "Edit"
 msgstr "Sampadit karen"
 
-#: includes/admin/cta-list-table.php:159 includes/admin/settings-page.php:144
+#: includes/admin/cta-list-table.php:159 includes/admin/settings-page.php:146
 #: includes/admin/social-list-table.php:174
 msgid "Delete"
 msgstr "Hataen"
 
-#: includes/admin/cta-list-table.php:160 includes/admin/settings-page.php:141
+#: includes/admin/cta-list-table.php:160 includes/admin/settings-page.php:143
 #: includes/admin/social-list-table.php:175
 msgid "Enabled"
 msgstr "Sakriya"
 
-#: includes/admin/cta-list-table.php:251 includes/admin/settings-page.php:130
-#, fuzzy
+#: includes/admin/cta-list-table.php:251 includes/admin/settings-page.php:132
 msgid "Add New CTA Button"
-msgstr "Naya khata joden"
+msgstr "नया सीटीए बटन जोड़ें"
 
 #: includes/admin/cta-list-table.php:256
 msgid "CTA Type"
-msgstr ""
+msgstr "सीटीए प्रकार"
 
 #: includes/admin/cta-list-table.php:292
 msgid "Button Label"
-msgstr ""
+msgstr "बटन लेबल"
 
-#: includes/admin/cta-list-table.php:301 includes/admin/settings-page.php:122
+#: includes/admin/cta-list-table.php:301 includes/admin/settings-page.php:124
 msgid "Destination Value"
-msgstr ""
+msgstr "गंतव्य मान"
 
 #: includes/admin/cta-list-table.php:305 includes/admin/cta-list-table.php:306
-#: includes/admin/settings-page.php:113
+#: includes/admin/settings-page.php:115
 msgid "Choose a CTA type to see the expected format."
-msgstr ""
+msgstr "अपेक्षित प्रारूप देखने के लिए एक सीटीए प्रकार चुनें।"
 
 #: includes/admin/cta-list-table.php:312
 msgid "WhatsApp Message"
-msgstr ""
+msgstr "व्हाट्सएप संदेश"
 
 #: includes/admin/cta-list-table.php:314
 msgid "Optional. Only used for WhatsApp buttons."
-msgstr ""
+msgstr "वैकल्पिक। केवल व्हाट्सएप बटन के लिए उपयोग किया जाता है।"
 
 #: includes/admin/cta-list-table.php:318
-#, fuzzy
 msgid "Button Color"
-msgstr "Icon rang"
+msgstr "बटन का रंग"
 
 #: includes/admin/cta-list-table.php:326
 msgid "Optional. Leave empty to use the default CTA color."
-msgstr ""
+msgstr "वैकल्पिक। डिफ़ॉल्ट सीटीए रंग का उपयोग करने के लिए खाली छोड़ दें।"
 
-#: includes/admin/cta-list-table.php:334 includes/admin/settings-page.php:140
+#: includes/admin/cta-list-table.php:334 includes/admin/settings-page.php:142
 #: includes/admin/social-list-table.php:301
-#, fuzzy
 msgid "Reset Form"
-msgstr "Sabhi rang reset karen"
+msgstr "फ़ॉर्म रीसेट करें"
 
-#: includes/admin/cta-list-table.php:337 includes/admin/settings-page.php:137
+#: includes/admin/cta-list-table.php:337 includes/admin/settings-page.php:139
 msgid "Add CTA Button"
-msgstr ""
+msgstr "सीटीए बटन जोड़ें"
 
 #: includes/admin/cta-list-table.php:368 includes/admin/cta-list-table.php:369
 msgid "Choose a CTA type"
-msgstr ""
+msgstr "एक सीटीए प्रकार चुनें"
 
 #: includes/admin/cta-list-table.php:378 includes/admin/cta-list-table.php:379
 msgid "Live Preview"
-msgstr ""
+msgstr "लाइव पूर्वावलोकन"
 
 #: includes/admin/cta-list-table.php:382 includes/admin/cta-list-table.php:383
 msgid "The CTA label, value, and color preview appear here."
-msgstr ""
+msgstr "सीटीए लेबल, मान और रंग पूर्वावलोकन यहां दिखाई देता है।"
 
 #: includes/admin/cta-list-table.php:387 includes/admin/cta-list-table.php:388
 msgid "Your CTA preview updates as you edit the fields."
-msgstr ""
+msgstr "जैसे ही आप फ़ील्ड संपादित करते हैं, आपका सीटीए पूर्वावलोकन अपडेट हो जाता है।"
 
 #: includes/admin/design-selector.php:35
 msgid "Display Groups"
-msgstr ""
+msgstr "प्रदर्शन समूह"
 
 #: includes/admin/design-selector.php:42
 msgid "Show Social Icons"
-msgstr ""
+msgstr "सोशल आइकन दिखाएं"
 
 #: includes/admin/design-selector.php:43
 msgid "Display saved social accounts on the frontend."
-msgstr ""
+msgstr "सहेजे गए सोशल खातों को फ्रंटएंड पर प्रदर्शित करें।"
 
 #: includes/admin/design-selector.php:54
 msgid "Show CTA Buttons"
-msgstr ""
+msgstr "सीटीए बटन दिखाएं"
 
 #: includes/admin/design-selector.php:55
 msgid "Display saved CTA buttons on the frontend."
-msgstr ""
+msgstr "सहेजे गए सीटीए बटनों को फ्रंटएंड पर प्रदर्शित करें।"
 
-#: includes/admin/design-selector.php:74 includes/admin/settings-page.php:145
+#: includes/admin/design-selector.php:74 includes/admin/settings-page.php:147
 msgid "Enable Social Icons or CTA Buttons to configure placement."
-msgstr ""
+msgstr "प्लेसमेंट कॉन्फ़िगर करने के लिए सोशल आइकन या सीटीए बटन सक्षम करें।"
 
 #: includes/admin/design-selector.php:80
 msgid "Design Style"
-msgstr ""
+msgstr "डिज़ाइन शैली"
 
 #: includes/admin/design-selector.php:167
 msgid "Placement"
-msgstr ""
+msgstr "प्लेसमेंट"
 
-#: includes/admin/design-selector.php:250 includes/admin/settings-page.php:90
+#: includes/admin/design-selector.php:250 includes/admin/settings-page.php:92
 msgid "Orbit"
 msgstr "Orbit"
 
@@ -180,8 +165,9 @@ msgid ""
 "Corner trigger with social orbit behavior and CTA buttons near the selected "
 "edge."
 msgstr ""
+"कोने का ट्रिगर जिसमें सोशल ऑर्बिट व्यवहार है और चयनित किनारे के पास सीटीए बटन हैं।"
 
-#: includes/admin/design-selector.php:258 includes/admin/settings-page.php:91
+#: includes/admin/design-selector.php:258 includes/admin/settings-page.php:93
 msgid "Ribbon"
 msgstr "Ribbon"
 
@@ -190,8 +176,10 @@ msgid ""
 "Bottom ribbon where social icons stay in one row and CTA buttons can use a "
 "separate placement."
 msgstr ""
+"नीचे का रिबन जहां सोशल आइकन एक पंक्ति में रहते हैं और सीटीए बटन एक अलग प्लेसमेंट का उपयोग "
+"कर सकते हैं।"
 
-#: includes/admin/design-selector.php:267 includes/admin/settings-page.php:92
+#: includes/admin/design-selector.php:267 includes/admin/settings-page.php:94
 msgid "Pillar"
 msgstr "Pillar"
 
@@ -199,369 +187,369 @@ msgstr "Pillar"
 msgid ""
 "Vertical side strip where social icons and CTA buttons can sit on opposite "
 "edges."
-msgstr ""
+msgstr "लंबवत साइड स्ट्रिप जहां सोशल आइकन और सीटीए बटन विपरीत किनारों पर बैठ सकते हैं।"
 
-#: includes/admin/settings-page.php:17 includes/admin/settings-page.php:18
+#: includes/admin/settings-page.php:19
+msgid "Telkari - Floating Social Icons & CTAs"
+msgstr "Telkari - Floating Social Icons & CTAs"
+
+#: includes/admin/settings-page.php:20
 msgid "Telkari"
 msgstr "Telkari"
 
-#: includes/admin/settings-page.php:97
+#: includes/admin/settings-page.php:99
 msgid "Select Platform"
 msgstr "Platform chunen"
 
-#: includes/admin/settings-page.php:98
+#: includes/admin/settings-page.php:100
 msgid "Are you sure you want to delete this account?"
 msgstr "Kya aap vaastav me is khate ko hatana chahte hain?"
 
-#: includes/admin/settings-page.php:99
+#: includes/admin/settings-page.php:101
 msgid "Please select a platform and enter a valid URL."
 msgstr "Kripya ek platform chunen aur valid URL darj karen."
 
-#: includes/admin/settings-page.php:100
+#: includes/admin/settings-page.php:102
 #: includes/admin/social-list-table.php:249
 msgid "Add New Account"
 msgstr "Naya khata joden"
 
-#: includes/admin/settings-page.php:101
+#: includes/admin/settings-page.php:103
 #: includes/admin/social-list-table.php:304
 msgid "Add Account"
 msgstr "Khata joden"
 
-#: includes/admin/settings-page.php:102
-#, fuzzy
-msgid "Select a platform and enter the public profile URL."
-msgstr "Kripya ek platform chunen aur valid URL darj karen."
-
-#: includes/admin/settings-page.php:103
-#, fuzzy
-msgid "Edit Social Account"
-msgstr "Social khate"
-
 #: includes/admin/settings-page.php:104
-msgid ""
-"Update the selected social account and save the changes back into the list."
-msgstr ""
+msgid "Select a platform and enter the public profile URL."
+msgstr "एक प्लेटफ़ॉर्म चुनें और सार्वजनिक प्रोफ़ाइल URL दर्ज करें।"
 
 #: includes/admin/settings-page.php:105
-#, fuzzy
-msgid "Editing Social Account"
-msgstr "Social khate"
+msgid "Edit Social Account"
+msgstr "सोशल खाता संपादित करें"
 
 #: includes/admin/settings-page.php:106
-msgid "Social account added."
-msgstr ""
+msgid ""
+"Update the selected social account and save the changes back into the list."
+msgstr "चयनित सोशल खाते को अपडेट करें और परिवर्तनों को सूची में वापस सहेजें।"
 
 #: includes/admin/settings-page.php:107
-msgid "Social account updated."
-msgstr ""
+msgid "Editing Social Account"
+msgstr "सोशल खाता संपादित किया जा रहा है"
 
 #: includes/admin/settings-page.php:108
+msgid "Social account added."
+msgstr "सोशल खाता जोड़ा गया।"
+
+#: includes/admin/settings-page.php:109
+msgid "Social account updated."
+msgstr "सोशल खाता अपडेट किया गया।"
+
+#: includes/admin/settings-page.php:110
 msgid ""
 "A similar social account already exists. You can still save this one if "
 "needed."
 msgstr ""
-
-#: includes/admin/settings-page.php:109
-#, fuzzy
-msgid "Save Account"
-msgstr "Social khate"
-
-#: includes/admin/settings-page.php:110
-msgid "Select CTA Type"
-msgstr ""
+"ऐसा ही एक सोशल खाता पहले से मौजूद है। यदि आवश्यक हो तो आप इसे अभी भी सहेज सकते हैं।"
 
 #: includes/admin/settings-page.php:111
-#, fuzzy
-msgid "Are you sure you want to delete this CTA button?"
-msgstr "Kya aap vaastav me is khate ko hatana chahte hain?"
+msgid "Save Account"
+msgstr "खाता सहेजें"
 
 #: includes/admin/settings-page.php:112
-#, fuzzy
-msgid "Please select a CTA type and enter a valid value."
-msgstr "Kripya ek platform chunen aur valid URL darj karen."
+msgid "Select CTA Type"
+msgstr "सीटीए प्रकार चुनें"
+
+#: includes/admin/settings-page.php:113
+msgid "Are you sure you want to delete this CTA button?"
+msgstr "क्या आप वाकई इस सीटीए बटन को हटाना चाहते हैं?"
 
 #: includes/admin/settings-page.php:114
-msgid "Use international format without spaces, for example 905551112233."
-msgstr ""
+msgid "Please select a CTA type and enter a valid value."
+msgstr "कृपया सीटीए प्रकार चुनें और एक वैध मान दर्ज करें।"
 
-#: includes/admin/settings-page.php:115
+#: includes/admin/settings-page.php:116
+msgid "Use international format without spaces, for example 905551112233."
+msgstr "बिना स्पेस के अंतर्राष्ट्रीय प्रारूप का उपयोग करें, उदाहरण के लिए 905551112233।"
+
+#: includes/admin/settings-page.php:117
 msgid ""
 "Phone numbers may include a leading plus sign, for example +905551112233."
 msgstr ""
-
-#: includes/admin/settings-page.php:116
-msgid "Enter a valid email address, for example info@example.com."
-msgstr ""
-
-#: includes/admin/settings-page.php:117
-msgid "Enter a full web address including the protocol."
-msgstr ""
+"फ़ोन नंबरों में एक प्रमुख प्लस चिह्न शामिल हो सकता है, उदाहरण के लिए +905551112233।"
 
 #: includes/admin/settings-page.php:118
-msgid "Use international format without spaces. Example: 905551112233."
-msgstr ""
+msgid "Enter a valid email address, for example info@example.com."
+msgstr "एक वैध ईमेल पता दर्ज करें, उदाहरण के लिए info@example.com।"
 
 #: includes/admin/settings-page.php:119
-msgid "Enter a valid phone number. Example: +905551112233."
-msgstr ""
+msgid "Enter a full web address including the protocol."
+msgstr "प्रोटोकॉल सहित पूरा वेब पता दर्ज करें।"
 
 #: includes/admin/settings-page.php:120
-msgid "Enter a valid email address. Example: info@example.com."
-msgstr ""
+msgid "Use international format without spaces. Example: 905551112233."
+msgstr "बिना स्पेस के अंतर्राष्ट्रीय प्रारूप का उपयोग करें। उदाहरण: 905551112233।"
 
 #: includes/admin/settings-page.php:121
+msgid "Enter a valid phone number. Example: +905551112233."
+msgstr "एक वैध फ़ोन नंबर दर्ज करें। उदाहरण: +905551112233।"
+
+#: includes/admin/settings-page.php:122
+msgid "Enter a valid email address. Example: info@example.com."
+msgstr "एक वैध ईमेल पता दर्ज करें। उदाहरण: info@example.com।"
+
+#: includes/admin/settings-page.php:123
 msgid ""
 "Enter a full address including the protocol. Example: https://example.com/"
 "contact."
-msgstr ""
-
-#: includes/admin/settings-page.php:123
-msgid "WhatsApp Number"
-msgstr ""
-
-#: includes/admin/settings-page.php:124
-msgid "Phone Number"
-msgstr ""
+msgstr "प्रोटोकॉल सहित एक पूरा पता दर्ज करें। उदाहरण: https://example.com/contact।"
 
 #: includes/admin/settings-page.php:125
-msgid "Email Address"
-msgstr ""
+msgid "WhatsApp Number"
+msgstr "व्हाट्सएप नंबर"
 
 #: includes/admin/settings-page.php:126
-msgid "URL"
-msgstr ""
+msgid "Phone Number"
+msgstr "फ़ोन नंबर"
 
 #: includes/admin/settings-page.php:127
-msgid "Default color"
-msgstr ""
+msgid "Email Address"
+msgstr "ईमेल पता"
 
 #: includes/admin/settings-page.php:128
+msgid "URL"
+msgstr "यूआरएल"
+
+#: includes/admin/settings-page.php:129
+msgid "Default color"
+msgstr "डिफ़ॉल्ट रंग"
+
+#: includes/admin/settings-page.php:130
 msgid "Custom color"
-msgstr ""
-
-#: includes/admin/settings-page.php:131
-msgid "Build a CTA button with guided fields and instant preview."
-msgstr ""
-
-#: includes/admin/settings-page.php:132
-#, fuzzy
-msgid "Edit CTA Button"
-msgstr "Naya khata joden"
+msgstr "कस्टम रंग"
 
 #: includes/admin/settings-page.php:133
-msgid "Update the selected CTA button and save the changes back into the list."
-msgstr ""
+msgid "Build a CTA button with guided fields and instant preview."
+msgstr "निर्देशित फ़ील्ड और त्वरित पूर्वावलोकन के साथ एक सीटीए बटन बनाएं।"
 
 #: includes/admin/settings-page.php:134
-#, fuzzy
-msgid "Editing CTA Button"
-msgstr "Naya khata joden"
+msgid "Edit CTA Button"
+msgstr "सीटीए बटन संपादित करें"
 
 #: includes/admin/settings-page.php:135
-msgid "CTA button added."
-msgstr ""
+msgid "Update the selected CTA button and save the changes back into the list."
+msgstr "चयनित सीटीए बटन को अपडेट करें और परिवर्तनों को सूची में वापस सहेजें।"
 
 #: includes/admin/settings-page.php:136
-msgid "CTA button updated."
-msgstr ""
+msgid "Editing CTA Button"
+msgstr "सीटीए बटन संपादित किया जा रहा है"
+
+#: includes/admin/settings-page.php:137
+msgid "CTA button added."
+msgstr "सीटीए बटन जोड़ा गया।"
 
 #: includes/admin/settings-page.php:138
-#, fuzzy
+msgid "CTA button updated."
+msgstr "सीटीए बटन अपडेट किया गया।"
+
+#: includes/admin/settings-page.php:140
 msgid "Save CTA Button"
-msgstr "Naya khata joden"
+msgstr "सीटीए बटन सहेजें"
 
-#: includes/admin/settings-page.php:139
+#: includes/admin/settings-page.php:141
 msgid "Cancel Edit"
-msgstr ""
+msgstr "संपादित रद्द करें"
 
-#: includes/admin/settings-page.php:142
+#: includes/admin/settings-page.php:144
 msgid "Visible"
-msgstr ""
+msgstr "दृश्यमान"
 
-#: includes/admin/settings-page.php:143
+#: includes/admin/settings-page.php:145
 msgid "Hidden"
-msgstr ""
+msgstr "छिपा हुआ"
 
 #. translators: 1: Social Icons placement label, 2: CTA Buttons placement label.
-#: includes/admin/settings-page.php:147
+#: includes/admin/settings-page.php:149
 #, php-format
 msgid ""
 "Placement adjusted to avoid overlap: Social Icons %1$s, CTA Buttons %2$s."
 msgstr ""
+"ओवरलैप से बचने के लिए प्लेसमेंट समायोजित किया गया: सोशल आइकन %1$s, सीटीए बटन %2$s।"
 
 #. translators: 1: Design name, 2: CTA placement label.
-#: includes/admin/settings-page.php:149
+#: includes/admin/settings-page.php:151
 #, php-format
 msgid "Design: %1$s. CTA placement: %2$s."
-msgstr ""
+msgstr "डिज़ाइन: %1$s। सीटीए प्लेसमेंट: %2$s।"
 
-#: includes/admin/settings-page.php:167 includes/admin/settings-page.php:233
+#: includes/admin/settings-page.php:169 includes/admin/settings-page.php:235
 msgid "Design"
 msgstr "Design"
 
-#: includes/admin/settings-page.php:168
+#: includes/admin/settings-page.php:170
 msgid "Social Accounts"
 msgstr "Social khate"
 
-#: includes/admin/settings-page.php:170 includes/admin/settings-page.php:297
+#: includes/admin/settings-page.php:172 includes/admin/settings-page.php:299
 msgid "Appearance"
 msgstr "Roop-rang"
 
-#: includes/admin/settings-page.php:185
+#: includes/admin/settings-page.php:187
 msgid "Demo/Documentation"
 msgstr "Demo/Documentation"
 
-#: includes/admin/settings-page.php:287
-msgid "Compact"
-msgstr ""
-
-#: includes/admin/settings-page.php:288
-msgid "Default"
-msgstr ""
-
 #: includes/admin/settings-page.php:289
+msgid "Compact"
+msgstr "कॉम्पैक्ट"
+
+#: includes/admin/settings-page.php:290
+msgid "Default"
+msgstr "डिफ़ॉल्ट"
+
+#: includes/admin/settings-page.php:291
 msgid "Large"
-msgstr ""
-
-#: includes/admin/settings-page.php:292
-msgid "Natural"
-msgstr ""
-
-#: includes/admin/settings-page.php:293
-msgid "Fixed"
-msgstr ""
+msgstr "बड़ा"
 
 #: includes/admin/settings-page.php:294
+msgid "Natural"
+msgstr "प्राकृतिक"
+
+#: includes/admin/settings-page.php:295
+msgid "Fixed"
+msgstr "निश्चित"
+
+#: includes/admin/settings-page.php:296
 msgid "Full"
-msgstr ""
+msgstr "पूर्ण"
 
-#: includes/admin/settings-page.php:298
+#: includes/admin/settings-page.php:300
 msgid "Social Icons"
-msgstr ""
+msgstr "सोशल आइकन"
 
-#: includes/admin/settings-page.php:303
+#: includes/admin/settings-page.php:305
 msgid "Controls the size, spacing, shape, and hover labels for social icons."
-msgstr ""
+msgstr "सोशल आइकन के आकार, रिक्ति, आकार और होवर लेबल को नियंत्रित करता है।"
 
-#: includes/admin/settings-page.php:304
+#: includes/admin/settings-page.php:306
 msgid ""
 "Social icons are currently hidden on the frontend, but these settings are "
 "kept."
-msgstr ""
+msgstr "सोशल आइकन वर्तमान में फ्रंटएंड पर छिपे हुए हैं, लेकिन ये सेटिंग्स रखी गई हैं।"
 
-#: includes/admin/settings-page.php:312
+#: includes/admin/settings-page.php:314
 msgid "Social Icon Size (px)"
-msgstr ""
+msgstr "सोशल आइकन आकार (px)"
 
-#: includes/admin/settings-page.php:324
+#: includes/admin/settings-page.php:326
 msgid "Social icon size in pixels (24-96)."
-msgstr ""
+msgstr "पिक्सेल में सोशल आइकन का आकार (24-96)।"
 
-#: includes/admin/settings-page.php:328
+#: includes/admin/settings-page.php:330
 msgid "Social Icon Spacing (px)"
-msgstr ""
+msgstr "सोशल आइकन रिक्ति (px)"
 
-#: includes/admin/settings-page.php:340
+#: includes/admin/settings-page.php:342
 msgid "Space between social icons in pixels (0-48)."
-msgstr ""
+msgstr "पिक्सेल में सोशल आइकन के बीच की जगह (0-48)।"
 
-#: includes/admin/settings-page.php:346
+#: includes/admin/settings-page.php:348
 msgid "Social Icon Style"
-msgstr ""
+msgstr "सोशल आइकन शैली"
 
-#: includes/admin/settings-page.php:351
+#: includes/admin/settings-page.php:353
 msgid "Rounded"
 msgstr "Gol"
 
-#: includes/admin/settings-page.php:355
+#: includes/admin/settings-page.php:357
 msgid "Square"
 msgstr "Chaukor"
 
-#: includes/admin/settings-page.php:362
+#: includes/admin/settings-page.php:364
 msgid "Social Tooltips"
-msgstr ""
+msgstr "सोशल टूलटिप्स"
 
-#: includes/admin/settings-page.php:367
+#: includes/admin/settings-page.php:369
 msgid "On"
 msgstr "Chalu"
 
-#: includes/admin/settings-page.php:371
+#: includes/admin/settings-page.php:373
 msgid "Off"
 msgstr "Band"
 
-#: includes/admin/settings-page.php:384
+#: includes/admin/settings-page.php:386
 msgid "Controls CTA button density, spacing, and width behavior."
-msgstr ""
+msgstr "सीटीए बटन घनत्व, रिक्ति और चौड़ाई व्यवहार को नियंत्रित करता है।"
 
-#: includes/admin/settings-page.php:385
+#: includes/admin/settings-page.php:387
 msgid ""
 "CTA buttons are currently hidden on the frontend, but these settings are "
 "kept."
-msgstr ""
+msgstr "सीटीए बटन वर्तमान में फ्रंटएंड पर छिपे हुए हैं, लेकिन ये सेटिंग्स रखी गई हैं।"
 
-#: includes/admin/settings-page.php:393
+#: includes/admin/settings-page.php:395
 msgid "CTA Button Size"
-msgstr ""
+msgstr "सीटीए बटन का आकार"
 
-#: includes/admin/settings-page.php:407
+#: includes/admin/settings-page.php:409
 msgid "CTA Button Spacing (px)"
-msgstr ""
+msgstr "सीटीए बटन रिक्ति (px)"
 
-#: includes/admin/settings-page.php:419
+#: includes/admin/settings-page.php:421
 msgid "Space between CTA buttons in pixels (0-48)."
-msgstr ""
+msgstr "पिक्सेल में सीटीए बटनों के बीच की जगह (0-48)।"
 
-#: includes/admin/settings-page.php:423
+#: includes/admin/settings-page.php:425
 msgid "CTA Button Width"
-msgstr ""
+msgstr "सीटीए बटन की चौड़ाई"
 
-#: includes/admin/settings-page.php:434
+#: includes/admin/settings-page.php:436
 msgid "Mobile CTA labels stay on one line and shorten when needed."
-msgstr ""
+msgstr "मोबाइल सीटीए लेबल एक पंक्ति में रहते हैं और आवश्यकतानुसार छोटे हो जाते हैं।"
 
-#: includes/admin/settings-page.php:439
+#: includes/admin/settings-page.php:441
 msgid "Link Behavior"
-msgstr ""
+msgstr "लिंक व्यवहार"
 
-#: includes/admin/settings-page.php:443
+#: includes/admin/settings-page.php:445
 msgid "Link Target"
 msgstr "Link target"
 
-#: includes/admin/settings-page.php:448
+#: includes/admin/settings-page.php:450
 msgid "Same Tab"
 msgstr "Wahi tab"
 
-#: includes/admin/settings-page.php:452
+#: includes/admin/settings-page.php:454
 msgid "New Tab"
 msgstr "Naya tab"
 
-#: includes/admin/settings-page.php:456
+#: includes/admin/settings-page.php:458
 msgid "Applies to social links and CTA buttons."
-msgstr ""
-
-#: includes/admin/settings-page.php:461
-msgid "Colors"
-msgstr ""
+msgstr "सोशल लिंक और सीटीए बटन पर लागू होता है।"
 
 #: includes/admin/settings-page.php:463
+msgid "Colors"
+msgstr "रंग"
+
+#: includes/admin/settings-page.php:465
 msgid ""
 "Override social platform colors and shared design colors. CTA button colors "
 "are managed per button in the CTA Buttons tab."
 msgstr ""
+"सोशल प्लेटफ़ॉर्म के रंगों और साझा डिज़ाइन रंगों को ओवरराइड करें। सीटीए बटन के रंग सीटीए "
+"बटन टैब में प्रति बटन प्रबंधित किए जाते हैं।"
 
-#: includes/admin/settings-page.php:467
+#: includes/admin/settings-page.php:469
 msgid "Bar Background (Ribbon / Pillar)"
 msgstr "Bar background (Ribbon / Pillar)"
 
-#: includes/admin/settings-page.php:478
+#: includes/admin/settings-page.php:480
 msgid "Transparent"
 msgstr "Paradarshi"
 
-#: includes/admin/settings-page.php:483
+#: includes/admin/settings-page.php:485
 msgid "Main Button (Orbit)"
 msgstr "Mukhya button (Orbit)"
 
-#: includes/admin/settings-page.php:509
+#: includes/admin/settings-page.php:511
 msgid "Reset All Colors"
 msgstr "Sabhi rang reset karen"
 
@@ -577,11 +565,11 @@ msgstr ""
 
 #: includes/admin/social-list-table.php:104
 msgid "Social icons are visible on the frontend."
-msgstr ""
+msgstr "सोशल आइकन फ्रंटएंड पर दिखाई दे रहे हैं।"
 
 #: includes/admin/social-list-table.php:111
 msgid "Social accounts are saved but hidden on the frontend."
-msgstr ""
+msgstr "सोशल खाते सहेजे गए हैं लेकिन फ्रंटएंड पर छिपे हुए हैं।"
 
 #: includes/admin/social-list-table.php:130
 #: includes/admin/social-list-table.php:133
@@ -599,11 +587,11 @@ msgstr "Profile URL"
 
 #: includes/core/cta-buttons.php:20
 msgid "WhatsApp"
-msgstr ""
+msgstr "व्हाट्सएप"
 
 #: includes/core/cta-buttons.php:21
 msgid "Direct message with pre-filled text."
-msgstr ""
+msgstr "पूर्व-भरे हुए पाठ के साथ सीधा संदेश।"
 
 #. translators: %s: example WhatsApp number.
 #. translators: %s: example phone number.
@@ -613,35 +601,35 @@ msgstr ""
 #: includes/core/cta-buttons.php:39 includes/core/cta-buttons.php:47
 #, php-format
 msgid "Example: %s"
-msgstr ""
+msgstr "उदाहरण: %s"
 
 #: includes/core/cta-buttons.php:28
 msgid "Phone"
-msgstr ""
+msgstr "फ़ोन"
 
 #: includes/core/cta-buttons.php:29
 msgid "Single tap to call."
-msgstr ""
+msgstr "कॉल करने के लिए सिंगल टैप।"
 
 #: includes/core/cta-buttons.php:36
 msgid "Email"
-msgstr ""
+msgstr "ईमेल"
 
 #: includes/core/cta-buttons.php:37
 msgid "Opens email client."
-msgstr ""
+msgstr "ईमेल क्लाइंट खोलता है।"
 
 #: includes/core/cta-buttons.php:44
 msgid "Custom URL"
-msgstr ""
+msgstr "कस्टम यूआरएल"
 
 #: includes/core/cta-buttons.php:45
 msgid "Redirect to any webpage."
-msgstr ""
+msgstr "किसी भी वेबपेज पर पुन्रेषित करें।"
 
 #: includes/core/cta-buttons.php:67
 msgid "CTA"
-msgstr ""
+msgstr "सीटीए"
 
 #: includes/core/options.php:470
 msgid "Bottom Left"
@@ -659,3 +647,11 @@ msgstr "Neeche beech"
 #: includes/frontend/render-icons.php:206
 msgid "Social Media Links"
 msgstr "Social media links"
+
+#: telkari.php:49
+msgid "Settings"
+msgstr "Settings"
+
+#: telkari.php:71
+msgid "Documentation"
+msgstr "Dastavez"

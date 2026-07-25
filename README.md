@@ -1,8 +1,8 @@
-# Telkari
+# Telkari - Floating Social Icons & CTAs
 
-Theme-independent WordPress plugin for floating social media links and CTA buttons. Telkari lets site owners show social icons, CTA buttons, or both in fixed frontend layouts with independent visibility, placement, colors, and responsive mobile behavior.
+Floating social icons and CTA buttons for WhatsApp, phone, email, and custom links with responsive layouts and no external services. Telkari lets site owners show social icons, CTA buttons, or both in fixed frontend layouts with independent visibility, placement, colors, and responsive mobile behavior.
 
-**Version:** 1.0.0
+**Version:** 1.0.1
 **Requires WordPress:** 5.9+
 **Requires PHP:** 7.4+
 **License:** GPLv2 or later

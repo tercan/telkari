@@ -51,7 +51,7 @@
 
 .telkari-design-1 .telkari-cta-wrapper {
 	flex-direction: column;
-	padding: 0 0.5rem;
+	padding: 0;
 }
 
 .telkari-design-1.telkari-position-bottom-right .telkari-cta-wrapper {

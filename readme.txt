@@ -1,19 +1,19 @@
-=== Telkari ===
+=== Telkari - Floating Social Icons & CTAs ===
 Contributors: tercan
 Donate link: https://tercan.net/
-Tags: social media, social links, floating bar, social buttons, call to action
+Tags: social icons, floating button, social links, whatsapp button, call to action
 Requires at least: 5.9
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Theme-independent floating social media links and CTA buttons with multiple design layouts, customizable positions, and per-item colors.
+Floating social icons and CTA buttons for WhatsApp, phone, email, and custom links with responsive layouts and no external services.
 
 == Description ==
 
-Telkari displays floating social media links and CTA buttons on your WordPress site. You can show Social Icons, CTA Buttons, or both, then control their layout, placement, colors, and mobile behavior from a dedicated admin page.
+Telkari adds floating social icons and CTA buttons for WhatsApp, phone, email, and custom links. Choose Orbit, Ribbon, or Pillar layouts, control each group independently, and keep assets local with no external service or CDN.
 
 = Key Features =
 
@@ -130,9 +130,13 @@ Yes. Telkari uses WordPress internationalization functions and includes translat
 1. Frontend floating layout with configured social icons and CTA buttons.
 2. Design tab with Display Groups, placement controls, and visual layout previews.
 3. Social Accounts tab with account rows, drag-and-drop ordering, and add form.
-4. CTA Buttons and Appearance controls for button setup, sizing, colors, and link behavior.
+4. CTA Buttons tab with button rows, drag-and-drop ordering, guided builder, color controls, and live preview.
+5. Appearance controls for social icons, CTA sizing, colors, tooltips, and link behavior.
 
 == Changelog ==
+
+= 1.0.1 =
+* Updated the plugin name and WordPress compatibility information.
 
 = 1.0.0 =
 * Added CTA button management with WhatsApp, phone, email, and custom URL button types.
@@ -170,6 +174,9 @@ Yes. Telkari uses WordPress internationalization functions and includes translat
 * Added bundled translations.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Updates the plugin name and WordPress compatibility information.
 
 = 1.0.0 =
 Adds CTA buttons, independent display group visibility, separate CTA placement, and updated mobile layouts. Review the Design and Appearance tabs after updating.

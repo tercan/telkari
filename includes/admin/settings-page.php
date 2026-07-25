@@ -13,14 +13,16 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register top-level admin menu item.
  */
 function telkari_add_admin_menu() {
+	$menu_position = 32.2; // Telmih uses 32 and Nigehban uses 32.1.
+
 	add_menu_page(
-		__( 'Telkari', 'telkari' ),
+		__( 'Telkari - Floating Social Icons & CTAs', 'telkari' ),
 		__( 'Telkari', 'telkari' ),
 		'manage_options',
 		'telkari-settings',
 		'telkari_render_settings_page',
 		'dashicons-share',
-		66
+		$menu_position
 	);
 }
 add_action( 'admin_menu', 'telkari_add_admin_menu' );

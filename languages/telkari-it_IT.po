@@ -1,12 +1,12 @@
-# Italian translation for Telkari plugin.
+# Italian translation for Telkari - Floating Social Icons & CTAs plugin.
 # Copyright (C) 2026 Tercan Keskin
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Telkari 1.0.0\n"
+"Project-Id-Version: Telkari - Floating Social Icons & CTAs 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-11 02:18+0300\n"
-"PO-Revision-Date: 2026-02-19 18:26\n"
+"POT-Creation-Date: 2026-07-24 19:36+0300\n"
+"PO-Revision-Date: 2026-07-24 19:36+0300\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -15,163 +15,150 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: telkari.php:49
-msgid "Settings"
-msgstr "Impostazioni"
-
-#: telkari.php:71
-msgid "Documentation"
-msgstr "Documentazione"
-
-#: includes/admin/cta-list-table.php:79 includes/admin/settings-page.php:169
-#: includes/admin/settings-page.php:379 includes/frontend/render-icons.php:225
+#: includes/admin/cta-list-table.php:79 includes/admin/settings-page.php:171
+#: includes/admin/settings-page.php:381 includes/frontend/render-icons.php:225
 msgid "CTA Buttons"
-msgstr ""
+msgstr "Pulsanti CTA"
 
 #: includes/admin/cta-list-table.php:80
-#, fuzzy
 msgid "Add, reorder, and manage your CTA buttons. Drag to reorder."
 msgstr ""
-"Aggiungi, riordina e gestisci i tuoi account social media. Trascina per "
-"riordinare."
+"Aggiungi, riordina e gestisci i tuoi pulsanti CTA. Trascina per riordinare."
 
 #: includes/admin/cta-list-table.php:86
 msgid "CTA buttons are visible on the frontend."
-msgstr ""
+msgstr "I pulsanti CTA sono visibili sul frontend."
 
 #: includes/admin/cta-list-table.php:88
 #: includes/admin/social-list-table.php:106
 msgid "You can disable them from the Design tab"
-msgstr ""
+msgstr "Puoi disabilitarli dalla scheda Design"
 
 #: includes/admin/cta-list-table.php:93
 msgid "CTA buttons are saved but hidden on the frontend."
-msgstr ""
+msgstr "I pulsanti CTA sono salvati ma nascosti sul frontend."
 
 #: includes/admin/cta-list-table.php:95
 #: includes/admin/social-list-table.php:113
 msgid "You can make it visible from the Design tab"
-msgstr ""
+msgstr "Puoi renderli visibili dalla scheda Design"
 
 #: includes/admin/cta-list-table.php:112 includes/admin/cta-list-table.php:115
-#, fuzzy
 msgid "CTA list is empty. Add your first CTA button below."
-msgstr ""
-"Nessun account social aggiunto. Aggiungi il tuo primo account qui sotto."
+msgstr "L'elenco CTA è vuoto. Aggiungi il tuo primo pulsante CTA qui sotto."
 
-#: includes/admin/cta-list-table.php:158 includes/admin/settings-page.php:129
+#: includes/admin/cta-list-table.php:158 includes/admin/settings-page.php:131
 #: includes/admin/social-list-table.php:173
 msgid "Edit"
 msgstr "Modifica"
 
-#: includes/admin/cta-list-table.php:159 includes/admin/settings-page.php:144
+#: includes/admin/cta-list-table.php:159 includes/admin/settings-page.php:146
 #: includes/admin/social-list-table.php:174
 msgid "Delete"
 msgstr "Elimina"
 
-#: includes/admin/cta-list-table.php:160 includes/admin/settings-page.php:141
+#: includes/admin/cta-list-table.php:160 includes/admin/settings-page.php:143
 #: includes/admin/social-list-table.php:175
 msgid "Enabled"
 msgstr "Abilitato"
 
-#: includes/admin/cta-list-table.php:251 includes/admin/settings-page.php:130
-#, fuzzy
+#: includes/admin/cta-list-table.php:251 includes/admin/settings-page.php:132
 msgid "Add New CTA Button"
-msgstr "Aggiungi nuovo account"
+msgstr "Aggiungi nuovo pulsante CTA"
 
 #: includes/admin/cta-list-table.php:256
 msgid "CTA Type"
-msgstr ""
+msgstr "Tipo di CTA"
 
 #: includes/admin/cta-list-table.php:292
 msgid "Button Label"
-msgstr ""
+msgstr "Etichetta pulsante"
 
-#: includes/admin/cta-list-table.php:301 includes/admin/settings-page.php:122
+#: includes/admin/cta-list-table.php:301 includes/admin/settings-page.php:124
 msgid "Destination Value"
-msgstr ""
+msgstr "Valore di destinazione"
 
 #: includes/admin/cta-list-table.php:305 includes/admin/cta-list-table.php:306
-#: includes/admin/settings-page.php:113
+#: includes/admin/settings-page.php:115
 msgid "Choose a CTA type to see the expected format."
-msgstr ""
+msgstr "Scegli un tipo di CTA per vedere il formato previsto."
 
 #: includes/admin/cta-list-table.php:312
 msgid "WhatsApp Message"
-msgstr ""
+msgstr "Messaggio WhatsApp"
 
 #: includes/admin/cta-list-table.php:314
 msgid "Optional. Only used for WhatsApp buttons."
-msgstr ""
+msgstr "Opzionale. Usato solo per i pulsanti WhatsApp."
 
 #: includes/admin/cta-list-table.php:318
-#, fuzzy
 msgid "Button Color"
-msgstr "Colori delle icone"
+msgstr "Colore pulsante"
 
 #: includes/admin/cta-list-table.php:326
 msgid "Optional. Leave empty to use the default CTA color."
-msgstr ""
+msgstr "Opzionale. Lascia vuoto per utilizzare il colore CTA predefinito."
 
-#: includes/admin/cta-list-table.php:334 includes/admin/settings-page.php:140
+#: includes/admin/cta-list-table.php:334 includes/admin/settings-page.php:142
 #: includes/admin/social-list-table.php:301
-#, fuzzy
 msgid "Reset Form"
-msgstr "Reimposta tutti i colori"
+msgstr "Reimposta modulo"
 
-#: includes/admin/cta-list-table.php:337 includes/admin/settings-page.php:137
+#: includes/admin/cta-list-table.php:337 includes/admin/settings-page.php:139
 msgid "Add CTA Button"
-msgstr ""
+msgstr "Aggiungi pulsante CTA"
 
 #: includes/admin/cta-list-table.php:368 includes/admin/cta-list-table.php:369
 msgid "Choose a CTA type"
-msgstr ""
+msgstr "Scegli un tipo di CTA"
 
 #: includes/admin/cta-list-table.php:378 includes/admin/cta-list-table.php:379
 msgid "Live Preview"
-msgstr ""
+msgstr "Anteprima live"
 
 #: includes/admin/cta-list-table.php:382 includes/admin/cta-list-table.php:383
 msgid "The CTA label, value, and color preview appear here."
 msgstr ""
+"L'anteprima dell'etichetta, del valore e del colore della CTA appare qui."
 
 #: includes/admin/cta-list-table.php:387 includes/admin/cta-list-table.php:388
 msgid "Your CTA preview updates as you edit the fields."
-msgstr ""
+msgstr "L'anteprima della CTA si aggiorna man mano che modifichi i campi."
 
 #: includes/admin/design-selector.php:35
 msgid "Display Groups"
-msgstr ""
+msgstr "Gruppi di visualizzazione"
 
 #: includes/admin/design-selector.php:42
 msgid "Show Social Icons"
-msgstr ""
+msgstr "Mostra icone social"
 
 #: includes/admin/design-selector.php:43
 msgid "Display saved social accounts on the frontend."
-msgstr ""
+msgstr "Mostra gli account social salvati sul frontend."
 
 #: includes/admin/design-selector.php:54
 msgid "Show CTA Buttons"
-msgstr ""
+msgstr "Mostra pulsanti CTA"
 
 #: includes/admin/design-selector.php:55
 msgid "Display saved CTA buttons on the frontend."
-msgstr ""
+msgstr "Mostra i pulsanti CTA salvati sul frontend."
 
-#: includes/admin/design-selector.php:74 includes/admin/settings-page.php:145
+#: includes/admin/design-selector.php:74 includes/admin/settings-page.php:147
 msgid "Enable Social Icons or CTA Buttons to configure placement."
 msgstr ""
+"Abilita le icone social o i pulsanti CTA per configurare il posizionamento."
 
 #: includes/admin/design-selector.php:80
 msgid "Design Style"
-msgstr ""
+msgstr "Stile del design"
 
 #: includes/admin/design-selector.php:167
 msgid "Placement"
-msgstr ""
+msgstr "Posizionamento"
 
-#: includes/admin/design-selector.php:250 includes/admin/settings-page.php:90
+#: includes/admin/design-selector.php:250 includes/admin/settings-page.php:92
 msgid "Orbit"
 msgstr "Orbita"
 
@@ -180,8 +167,10 @@ msgid ""
 "Corner trigger with social orbit behavior and CTA buttons near the selected "
 "edge."
 msgstr ""
+"Attivatore ad angolo con comportamento orbitale social e pulsanti CTA vicino "
+"al bordo selezionato."
 
-#: includes/admin/design-selector.php:258 includes/admin/settings-page.php:91
+#: includes/admin/design-selector.php:258 includes/admin/settings-page.php:93
 msgid "Ribbon"
 msgstr "Nastro"
 
@@ -190,8 +179,10 @@ msgid ""
 "Bottom ribbon where social icons stay in one row and CTA buttons can use a "
 "separate placement."
 msgstr ""
+"Nastro inferiore in cui le icone social rimangono su un'unica riga e i "
+"pulsanti CTA possono utilizzare un posizionamento separato."
 
-#: includes/admin/design-selector.php:267 includes/admin/settings-page.php:92
+#: includes/admin/design-selector.php:267 includes/admin/settings-page.php:94
 msgid "Pillar"
 msgstr "Pilastro"
 
@@ -200,368 +191,387 @@ msgid ""
 "Vertical side strip where social icons and CTA buttons can sit on opposite "
 "edges."
 msgstr ""
+"Striscia laterale verticale in cui le icone social e i pulsanti CTA possono "
+"trovarsi su bordi opposti."
 
-#: includes/admin/settings-page.php:17 includes/admin/settings-page.php:18
+#: includes/admin/settings-page.php:19
+msgid "Telkari - Floating Social Icons & CTAs"
+msgstr "Telkari - Floating Social Icons & CTAs"
+
+#: includes/admin/settings-page.php:20
 msgid "Telkari"
 msgstr "Telkari"
 
-#: includes/admin/settings-page.php:97
+#: includes/admin/settings-page.php:99
 msgid "Select Platform"
 msgstr "Seleziona piattaforma"
 
-#: includes/admin/settings-page.php:98
+#: includes/admin/settings-page.php:100
 msgid "Are you sure you want to delete this account?"
 msgstr "Sei sicuro di voler eliminare questo account?"
 
-#: includes/admin/settings-page.php:99
+#: includes/admin/settings-page.php:101
 msgid "Please select a platform and enter a valid URL."
 msgstr "Seleziona una piattaforma e inserisci un URL valido."
 
-#: includes/admin/settings-page.php:100
+#: includes/admin/settings-page.php:102
 #: includes/admin/social-list-table.php:249
 msgid "Add New Account"
 msgstr "Aggiungi nuovo account"
 
-#: includes/admin/settings-page.php:101
+#: includes/admin/settings-page.php:103
 #: includes/admin/social-list-table.php:304
 msgid "Add Account"
 msgstr "Aggiungi account"
 
-#: includes/admin/settings-page.php:102
-#, fuzzy
-msgid "Select a platform and enter the public profile URL."
-msgstr "Seleziona una piattaforma e inserisci un URL valido."
-
-#: includes/admin/settings-page.php:103
-#, fuzzy
-msgid "Edit Social Account"
-msgstr "Account social"
-
 #: includes/admin/settings-page.php:104
+msgid "Select a platform and enter the public profile URL."
+msgstr "Seleziona una piattaforma e inserisci l'URL del profilo pubblico."
+
+#: includes/admin/settings-page.php:105
+msgid "Edit Social Account"
+msgstr "Modifica account social"
+
+#: includes/admin/settings-page.php:106
 msgid ""
 "Update the selected social account and save the changes back into the list."
 msgstr ""
-
-#: includes/admin/settings-page.php:105
-#, fuzzy
-msgid "Editing Social Account"
-msgstr "Account social"
-
-#: includes/admin/settings-page.php:106
-msgid "Social account added."
-msgstr ""
+"Aggiorna l'account social selezionato e salva le modifiche nell'elenco."
 
 #: includes/admin/settings-page.php:107
-msgid "Social account updated."
-msgstr ""
+msgid "Editing Social Account"
+msgstr "Modifica dell'account social"
 
 #: includes/admin/settings-page.php:108
+msgid "Social account added."
+msgstr "Account social aggiunto."
+
+#: includes/admin/settings-page.php:109
+msgid "Social account updated."
+msgstr "Account social aggiornato."
+
+#: includes/admin/settings-page.php:110
 msgid ""
 "A similar social account already exists. You can still save this one if "
 "needed."
 msgstr ""
-
-#: includes/admin/settings-page.php:109
-#, fuzzy
-msgid "Save Account"
-msgstr "Account social"
-
-#: includes/admin/settings-page.php:110
-msgid "Select CTA Type"
-msgstr ""
+"Esiste già un account social simile. Puoi comunque salvare questo se "
+"necessario."
 
 #: includes/admin/settings-page.php:111
-#, fuzzy
-msgid "Are you sure you want to delete this CTA button?"
-msgstr "Sei sicuro di voler eliminare questo account?"
+msgid "Save Account"
+msgstr "Salva account"
 
 #: includes/admin/settings-page.php:112
-#, fuzzy
-msgid "Please select a CTA type and enter a valid value."
-msgstr "Seleziona una piattaforma e inserisci un URL valido."
+msgid "Select CTA Type"
+msgstr "Seleziona tipo di CTA"
+
+#: includes/admin/settings-page.php:113
+msgid "Are you sure you want to delete this CTA button?"
+msgstr "Sei sicuro di voler eliminare questo pulsante CTA?"
 
 #: includes/admin/settings-page.php:114
-msgid "Use international format without spaces, for example 905551112233."
-msgstr ""
+msgid "Please select a CTA type and enter a valid value."
+msgstr "Seleziona un tipo di CTA e inserisci un valore valido."
 
-#: includes/admin/settings-page.php:115
+#: includes/admin/settings-page.php:116
+msgid "Use international format without spaces, for example 905551112233."
+msgstr "Usa il formato internazionale senza spazi, ad esempio 905551112233."
+
+#: includes/admin/settings-page.php:117
 msgid ""
 "Phone numbers may include a leading plus sign, for example +905551112233."
 msgstr ""
-
-#: includes/admin/settings-page.php:116
-msgid "Enter a valid email address, for example info@example.com."
-msgstr ""
-
-#: includes/admin/settings-page.php:117
-msgid "Enter a full web address including the protocol."
-msgstr ""
+"I numeri di telefono possono includere un segno più iniziale, ad esempio "
+"+905551112233."
 
 #: includes/admin/settings-page.php:118
-msgid "Use international format without spaces. Example: 905551112233."
-msgstr ""
+msgid "Enter a valid email address, for example info@example.com."
+msgstr "Inserisci un indirizzo email valido, ad esempio info@example.com."
 
 #: includes/admin/settings-page.php:119
-msgid "Enter a valid phone number. Example: +905551112233."
-msgstr ""
+msgid "Enter a full web address including the protocol."
+msgstr "Inserisci un indirizzo web completo, incluso il protocollo."
 
 #: includes/admin/settings-page.php:120
-msgid "Enter a valid email address. Example: info@example.com."
-msgstr ""
+msgid "Use international format without spaces. Example: 905551112233."
+msgstr "Usa il formato internazionale senza spazi. Esempio: 905551112233."
 
 #: includes/admin/settings-page.php:121
+msgid "Enter a valid phone number. Example: +905551112233."
+msgstr "Inserisci un numero di telefono valido. Esempio: +905551112233."
+
+#: includes/admin/settings-page.php:122
+msgid "Enter a valid email address. Example: info@example.com."
+msgstr "Inserisci un indirizzo email valido. Esempio: info@example.com."
+
+#: includes/admin/settings-page.php:123
 msgid ""
 "Enter a full address including the protocol. Example: https://example.com/"
 "contact."
 msgstr ""
-
-#: includes/admin/settings-page.php:123
-msgid "WhatsApp Number"
-msgstr ""
-
-#: includes/admin/settings-page.php:124
-msgid "Phone Number"
-msgstr ""
+"Inserisci un indirizzo completo, incluso il protocollo. Esempio: https://"
+"example.com/contact."
 
 #: includes/admin/settings-page.php:125
-msgid "Email Address"
-msgstr ""
+msgid "WhatsApp Number"
+msgstr "Numero WhatsApp"
 
 #: includes/admin/settings-page.php:126
-msgid "URL"
-msgstr ""
+msgid "Phone Number"
+msgstr "Numero di telefono"
 
 #: includes/admin/settings-page.php:127
-msgid "Default color"
-msgstr ""
+msgid "Email Address"
+msgstr "Indirizzo email"
 
 #: includes/admin/settings-page.php:128
+msgid "URL"
+msgstr "URL"
+
+#: includes/admin/settings-page.php:129
+msgid "Default color"
+msgstr "Colore predefinito"
+
+#: includes/admin/settings-page.php:130
 msgid "Custom color"
-msgstr ""
-
-#: includes/admin/settings-page.php:131
-msgid "Build a CTA button with guided fields and instant preview."
-msgstr ""
-
-#: includes/admin/settings-page.php:132
-#, fuzzy
-msgid "Edit CTA Button"
-msgstr "Aggiungi nuovo account"
+msgstr "Colore personalizzato"
 
 #: includes/admin/settings-page.php:133
-msgid "Update the selected CTA button and save the changes back into the list."
-msgstr ""
+msgid "Build a CTA button with guided fields and instant preview."
+msgstr "Crea un pulsante CTA con campi guidati e anteprima istantanea."
 
 #: includes/admin/settings-page.php:134
-#, fuzzy
-msgid "Editing CTA Button"
-msgstr "Aggiungi nuovo account"
+msgid "Edit CTA Button"
+msgstr "Modifica pulsante CTA"
 
 #: includes/admin/settings-page.php:135
-msgid "CTA button added."
-msgstr ""
+msgid "Update the selected CTA button and save the changes back into the list."
+msgstr "Aggiorna il pulsante CTA selezionato e salva le modifiche nell'elenco."
 
 #: includes/admin/settings-page.php:136
-msgid "CTA button updated."
-msgstr ""
+msgid "Editing CTA Button"
+msgstr "Modifica del pulsante CTA"
+
+#: includes/admin/settings-page.php:137
+msgid "CTA button added."
+msgstr "Pulsante CTA aggiunto."
 
 #: includes/admin/settings-page.php:138
-#, fuzzy
+msgid "CTA button updated."
+msgstr "Pulsante CTA aggiornato."
+
+#: includes/admin/settings-page.php:140
 msgid "Save CTA Button"
-msgstr "Aggiungi nuovo account"
+msgstr "Salva pulsante CTA"
 
-#: includes/admin/settings-page.php:139
+#: includes/admin/settings-page.php:141
 msgid "Cancel Edit"
-msgstr ""
+msgstr "Annulla modifica"
 
-#: includes/admin/settings-page.php:142
+#: includes/admin/settings-page.php:144
 msgid "Visible"
-msgstr ""
+msgstr "Visibile"
 
-#: includes/admin/settings-page.php:143
+#: includes/admin/settings-page.php:145
 msgid "Hidden"
-msgstr ""
+msgstr "Nascosto"
 
 #. translators: 1: Social Icons placement label, 2: CTA Buttons placement label.
-#: includes/admin/settings-page.php:147
+#: includes/admin/settings-page.php:149
 #, php-format
 msgid ""
 "Placement adjusted to avoid overlap: Social Icons %1$s, CTA Buttons %2$s."
 msgstr ""
+"Posizionamento regolato per evitare sovrapposizioni: Icone social %1$s, "
+"pulsanti CTA %2$s."
 
 #. translators: 1: Design name, 2: CTA placement label.
-#: includes/admin/settings-page.php:149
+#: includes/admin/settings-page.php:151
 #, php-format
 msgid "Design: %1$s. CTA placement: %2$s."
-msgstr ""
+msgstr "Design: %1$s. Posizionamento CTA: %2$s."
 
-#: includes/admin/settings-page.php:167 includes/admin/settings-page.php:233
+#: includes/admin/settings-page.php:169 includes/admin/settings-page.php:235
 msgid "Design"
 msgstr "Design"
 
-#: includes/admin/settings-page.php:168
+#: includes/admin/settings-page.php:170
 msgid "Social Accounts"
 msgstr "Account social"
 
-#: includes/admin/settings-page.php:170 includes/admin/settings-page.php:297
+#: includes/admin/settings-page.php:172 includes/admin/settings-page.php:299
 msgid "Appearance"
 msgstr "Aspetto"
 
-#: includes/admin/settings-page.php:185
+#: includes/admin/settings-page.php:187
 msgid "Demo/Documentation"
 msgstr "Demo/Documentation"
 
-#: includes/admin/settings-page.php:287
-msgid "Compact"
-msgstr ""
-
-#: includes/admin/settings-page.php:288
-msgid "Default"
-msgstr ""
-
 #: includes/admin/settings-page.php:289
+msgid "Compact"
+msgstr "Compatto"
+
+#: includes/admin/settings-page.php:290
+msgid "Default"
+msgstr "Predefinito"
+
+#: includes/admin/settings-page.php:291
 msgid "Large"
-msgstr ""
-
-#: includes/admin/settings-page.php:292
-msgid "Natural"
-msgstr ""
-
-#: includes/admin/settings-page.php:293
-msgid "Fixed"
-msgstr ""
+msgstr "Grande"
 
 #: includes/admin/settings-page.php:294
+msgid "Natural"
+msgstr "Naturale"
+
+#: includes/admin/settings-page.php:295
+msgid "Fixed"
+msgstr "Fisso"
+
+#: includes/admin/settings-page.php:296
 msgid "Full"
-msgstr ""
+msgstr "Pieno"
 
-#: includes/admin/settings-page.php:298
+#: includes/admin/settings-page.php:300
 msgid "Social Icons"
-msgstr ""
+msgstr "Icone social"
 
-#: includes/admin/settings-page.php:303
+#: includes/admin/settings-page.php:305
 msgid "Controls the size, spacing, shape, and hover labels for social icons."
 msgstr ""
+"Controlla la dimensione, la spaziatura, la forma e le etichette al passaggio "
+"del mouse per le icone social."
 
-#: includes/admin/settings-page.php:304
+#: includes/admin/settings-page.php:306
 msgid ""
 "Social icons are currently hidden on the frontend, but these settings are "
 "kept."
 msgstr ""
+"Le icone social sono attualmente nascoste sul frontend, ma queste "
+"impostazioni vengono mantenute."
 
-#: includes/admin/settings-page.php:312
+#: includes/admin/settings-page.php:314
 msgid "Social Icon Size (px)"
-msgstr ""
+msgstr "Dimensione icone social (px)"
 
-#: includes/admin/settings-page.php:324
+#: includes/admin/settings-page.php:326
 msgid "Social icon size in pixels (24-96)."
-msgstr ""
+msgstr "Dimensione delle icone social in pixel (24-96)."
 
-#: includes/admin/settings-page.php:328
+#: includes/admin/settings-page.php:330
 msgid "Social Icon Spacing (px)"
-msgstr ""
+msgstr "Spaziatura icone social (px)"
 
-#: includes/admin/settings-page.php:340
+#: includes/admin/settings-page.php:342
 msgid "Space between social icons in pixels (0-48)."
-msgstr ""
+msgstr "Spazio tra le icone social in pixel (0-48)."
 
-#: includes/admin/settings-page.php:346
+#: includes/admin/settings-page.php:348
 msgid "Social Icon Style"
-msgstr ""
+msgstr "Stile icone social"
 
-#: includes/admin/settings-page.php:351
+#: includes/admin/settings-page.php:353
 msgid "Rounded"
 msgstr "Arrotondato"
 
-#: includes/admin/settings-page.php:355
+#: includes/admin/settings-page.php:357
 msgid "Square"
 msgstr "Quadrato"
 
-#: includes/admin/settings-page.php:362
+#: includes/admin/settings-page.php:364
 msgid "Social Tooltips"
-msgstr ""
+msgstr "Tooltip social"
 
-#: includes/admin/settings-page.php:367
+#: includes/admin/settings-page.php:369
 msgid "On"
 msgstr "On"
 
-#: includes/admin/settings-page.php:371
+#: includes/admin/settings-page.php:373
 msgid "Off"
 msgstr "Off"
 
-#: includes/admin/settings-page.php:384
+#: includes/admin/settings-page.php:386
 msgid "Controls CTA button density, spacing, and width behavior."
 msgstr ""
+"Controlla la densità, la spaziatura e il comportamento in larghezza dei "
+"pulsanti CTA."
 
-#: includes/admin/settings-page.php:385
+#: includes/admin/settings-page.php:387
 msgid ""
 "CTA buttons are currently hidden on the frontend, but these settings are "
 "kept."
 msgstr ""
+"I pulsanti CTA sono attualmente nascosti sul frontend, ma queste "
+"impostazioni vengono mantenute."
 
-#: includes/admin/settings-page.php:393
+#: includes/admin/settings-page.php:395
 msgid "CTA Button Size"
-msgstr ""
+msgstr "Dimensione pulsante CTA"
 
-#: includes/admin/settings-page.php:407
+#: includes/admin/settings-page.php:409
 msgid "CTA Button Spacing (px)"
-msgstr ""
+msgstr "Spaziatura pulsante CTA (px)"
 
-#: includes/admin/settings-page.php:419
+#: includes/admin/settings-page.php:421
 msgid "Space between CTA buttons in pixels (0-48)."
-msgstr ""
+msgstr "Spazio tra i pulsanti CTA in pixel (0-48)."
 
-#: includes/admin/settings-page.php:423
+#: includes/admin/settings-page.php:425
 msgid "CTA Button Width"
-msgstr ""
+msgstr "Larghezza pulsante CTA"
 
-#: includes/admin/settings-page.php:434
+#: includes/admin/settings-page.php:436
 msgid "Mobile CTA labels stay on one line and shorten when needed."
 msgstr ""
+"Le etichette delle CTA mobili rimangono su un'unica riga e si accorciano se "
+"necessario."
 
-#: includes/admin/settings-page.php:439
+#: includes/admin/settings-page.php:441
 msgid "Link Behavior"
-msgstr ""
+msgstr "Comportamento del link"
 
-#: includes/admin/settings-page.php:443
+#: includes/admin/settings-page.php:445
 msgid "Link Target"
 msgstr "Destinazione link"
 
-#: includes/admin/settings-page.php:448
+#: includes/admin/settings-page.php:450
 msgid "Same Tab"
 msgstr "Stessa scheda"
 
-#: includes/admin/settings-page.php:452
+#: includes/admin/settings-page.php:454
 msgid "New Tab"
 msgstr "Nuova scheda"
 
-#: includes/admin/settings-page.php:456
+#: includes/admin/settings-page.php:458
 msgid "Applies to social links and CTA buttons."
-msgstr ""
-
-#: includes/admin/settings-page.php:461
-msgid "Colors"
-msgstr ""
+msgstr "Si applica ai link social e ai pulsanti CTA."
 
 #: includes/admin/settings-page.php:463
+msgid "Colors"
+msgstr "Colori"
+
+#: includes/admin/settings-page.php:465
 msgid ""
 "Override social platform colors and shared design colors. CTA button colors "
 "are managed per button in the CTA Buttons tab."
 msgstr ""
+"Sovrascrivi i colori delle piattaforme social e i colori del design "
+"condiviso. I colori dei pulsanti CTA sono gestiti per pulsante nella scheda "
+"Pulsanti CTA."
 
-#: includes/admin/settings-page.php:467
+#: includes/admin/settings-page.php:469
 msgid "Bar Background (Ribbon / Pillar)"
 msgstr "Sfondo barra (Nastro / Pilastro)"
 
-#: includes/admin/settings-page.php:478
+#: includes/admin/settings-page.php:480
 msgid "Transparent"
 msgstr "Trasparente"
 
-#: includes/admin/settings-page.php:483
+#: includes/admin/settings-page.php:485
 msgid "Main Button (Orbit)"
 msgstr "Pulsante principale (Orbita)"
 
-#: includes/admin/settings-page.php:509
+#: includes/admin/settings-page.php:511
 msgid "Reset All Colors"
 msgstr "Reimposta tutti i colori"
 
@@ -577,11 +587,11 @@ msgstr ""
 
 #: includes/admin/social-list-table.php:104
 msgid "Social icons are visible on the frontend."
-msgstr ""
+msgstr "Le icone social sono visibili sul frontend."
 
 #: includes/admin/social-list-table.php:111
 msgid "Social accounts are saved but hidden on the frontend."
-msgstr ""
+msgstr "Gli account social sono salvati ma nascosti sul frontend."
 
 #: includes/admin/social-list-table.php:130
 #: includes/admin/social-list-table.php:133
@@ -599,11 +609,11 @@ msgstr "URL del profilo"
 
 #: includes/core/cta-buttons.php:20
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 #: includes/core/cta-buttons.php:21
 msgid "Direct message with pre-filled text."
-msgstr ""
+msgstr "Messaggio diretto con testo precompilato."
 
 #. translators: %s: example WhatsApp number.
 #. translators: %s: example phone number.
@@ -613,35 +623,35 @@ msgstr ""
 #: includes/core/cta-buttons.php:39 includes/core/cta-buttons.php:47
 #, php-format
 msgid "Example: %s"
-msgstr ""
+msgstr "Esempio: %s"
 
 #: includes/core/cta-buttons.php:28
 msgid "Phone"
-msgstr ""
+msgstr "Telefono"
 
 #: includes/core/cta-buttons.php:29
 msgid "Single tap to call."
-msgstr ""
+msgstr "Un solo tocco per chiamare."
 
 #: includes/core/cta-buttons.php:36
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: includes/core/cta-buttons.php:37
 msgid "Opens email client."
-msgstr ""
+msgstr "Apre il client di posta elettronica."
 
 #: includes/core/cta-buttons.php:44
 msgid "Custom URL"
-msgstr ""
+msgstr "URL personalizzato"
 
 #: includes/core/cta-buttons.php:45
 msgid "Redirect to any webpage."
-msgstr ""
+msgstr "Reindirizza a qualsiasi pagina web."
 
 #: includes/core/cta-buttons.php:67
 msgid "CTA"
-msgstr ""
+msgstr "CTA"
 
 #: includes/core/options.php:470
 msgid "Bottom Left"
@@ -659,3 +669,11 @@ msgstr "In basso al centro"
 #: includes/frontend/render-icons.php:206
 msgid "Social Media Links"
 msgstr "Link social media"
+
+#: telkari.php:49
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: telkari.php:71
+msgid "Documentation"
+msgstr "Documentazione"

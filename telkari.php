@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Telkari
+ * Plugin Name: Telkari - Floating Social Icons & CTAs
  * Plugin URI: https://tercan.net/telkari
- * Description: Theme-independent WordPress floating social media links and CTA buttons plugin.
- * Version: 1.0.0
+ * Description: Floating social icons and CTA buttons for WhatsApp, phone, email, and custom links with responsive layouts and no external services.
+ * Version: 1.0.1
  * Requires at least: 5.9
  * Requires PHP: 7.4
  * Author: Tercan Keskin
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TELKARI_VERSION', '1.0.0' );
+define( 'TELKARI_VERSION', '1.0.1' );
 define( 'TELKARI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TELKARI_URL', plugin_dir_url( __FILE__ ) );
 define( 'TELKARI_BASENAME', plugin_basename( __FILE__ ) );

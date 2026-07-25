@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.1] - 2026-07-24 19:34
+
+### Changed
+
+- Updated the plugin name and WordPress compatibility information.
+
 ## [1.0.0] - 2026-05-11 02:30
 
 ### Added
@@ -20,7 +26,7 @@
 - Improved mobile layouts for CTA buttons and social icons across all frontend designs.
 - Updated WordPress.org `readme.txt` metadata, FAQ, screenshots, privacy notes, and source documentation.
 - Updated `README.md` to reflect Display Groups, CTA placement, CTA appearance controls, privacy behavior, and bundled asset details.
-- Updated translations and localization templates for the expanded admin and CTA feature set.
+- Completed and compiled all translations (108 strings per language) for Arabic, Bengali, German, Spanish, French, Hindi, Italian, Portuguese, Russian, and Simplified Chinese.
 
 ### Fixed
 
